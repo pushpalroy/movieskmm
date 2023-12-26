@@ -31,8 +31,10 @@ kotlin {
                 implementation(libs.koin.core)
                 implementation(libs.ktor.core)
                 implementation(libs.ktor.content)
+                implementation(libs.ktor.auth)
                 implementation(libs.ktor.serialization.json)
                 implementation(libs.ktor.logging)
+                implementation(project(":domain"))
             }
         }
 

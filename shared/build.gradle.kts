@@ -30,7 +30,15 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            implementation(project(":data:network"))
+            implementation(project(":domain"))
+            implementation(libs.koin.core)
+            implementation(libs.ktor.core)
+            api(libs.moko.mvvm.core)
+            api(libs.moko.mvvm.flow)
+        }
+        androidMain.dependencies {
+            api(libs.koin.android)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
