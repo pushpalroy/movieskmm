@@ -13,7 +13,7 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 
-fun getHttpClientModule() = module {
+val httpClientModule = module {
     single {
         HttpClient {
             install(Auth) {

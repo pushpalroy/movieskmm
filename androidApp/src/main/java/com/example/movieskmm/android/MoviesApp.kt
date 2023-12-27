@@ -1,14 +1,14 @@
 package com.example.movieskmm.android
 
 import android.app.Application
-import com.example.movieskmm.di.getSharedModules
-import org.koin.core.context.startKoin
+import com.example.movieskmm.di.initKoin
+import org.koin.android.ext.koin.androidContext
 
 class MoviesApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        startKoin {
-            modules(modules = getSharedModules())
+        initKoin {
+            androidContext(this@MoviesApp)
         }
     }
 }
