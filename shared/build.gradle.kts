@@ -3,6 +3,16 @@ plugins {
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
     kotlin("plugin.serialization")
+    id("com.codingfeline.buildkonfig") version "0.15.1"
+}
+
+buildkonfig {
+    packageName = "com.example.movieskmm"
+
+    defaultConfigs {
+        buildConfigField(com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING,
+            "API_READ_ACCESS_TOKEN", ((project.findProperty("api_read_access_token") ?: "") as String))
+    }
 }
 
 kotlin {
@@ -28,17 +38,19 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
-        commonMain.dependencies {
-            implementation(libs.koin.core)
-            implementation(libs.ktor.core)
-            implementation(libs.ktor.content)
-            implementation(libs.ktor.auth)
-            implementation(libs.ktor.serialization.json)
-            implementation(libs.ktor.logging)
-            api(libs.moko.mvvm.core)
-            api(libs.moko.mvvm.flow)
+        val commonMain by getting {
+            dependencies {
+                implementation(libs.koin.core)
+                implementation(libs.ktor.core)
+                implementation(libs.ktor.content)
+                implementation(libs.ktor.auth)
+                implementation(libs.ktor.serialization.json)
+                implementation(libs.ktor.logging)
+                api(libs.moko.mvvm.core)
+                api(libs.moko.mvvm.flow)
+            }
         }
         androidMain.dependencies {
             api(libs.koin.android)

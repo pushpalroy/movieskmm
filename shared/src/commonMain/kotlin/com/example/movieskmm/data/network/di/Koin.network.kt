@@ -1,5 +1,6 @@
 package com.example.movieskmm.data.network.di
 
+import com.example.movieskmm.BuildKonfig
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.auth.Auth
 import io.ktor.client.plugins.auth.providers.BearerTokens
@@ -20,8 +21,8 @@ val httpClientModule = module {
                 bearer {
                     loadTokens {
                         BearerTokens(
-                            accessToken = "",
-                            refreshToken = ""
+                            accessToken = BuildKonfig.API_READ_ACCESS_TOKEN,
+                            refreshToken = BuildKonfig.API_READ_ACCESS_TOKEN
                         )
                     }
                 }
