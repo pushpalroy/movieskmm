@@ -1,6 +1,6 @@
 package com.example.movieskmm.features.nowPlayingMovies
 
-import com.example.domain.movie.GetNowPlayingMoviesUseCase
+import com.example.movieskmm.domain.movie.GetNowPlayingMoviesUseCase
 import dev.icerock.moko.mvvm.flow.cMutableStateFlow
 import dev.icerock.moko.mvvm.flow.cStateFlow
 import dev.icerock.moko.mvvm.viewmodel.ViewModel

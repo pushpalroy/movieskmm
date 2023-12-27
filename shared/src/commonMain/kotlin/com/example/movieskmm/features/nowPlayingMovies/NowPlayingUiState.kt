@@ -1,6 +1,6 @@
 package com.example.movieskmm.features.nowPlayingMovies
 
-import com.example.domain.movie.model.MoviesListDomain
+import com.example.movieskmm.domain.movie.model.MoviesListDomain
 
 sealed interface NowPlayingUiState {
     data class Success(val moviesListDomain: MoviesListDomain) : NowPlayingUiState

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
+    kotlin("plugin.serialization")
 }
 
 kotlin {
@@ -30,18 +31,42 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":data:network"))
-            implementation(project(":domain"))
             implementation(libs.koin.core)
             implementation(libs.ktor.core)
+            implementation(libs.ktor.content)
+            implementation(libs.ktor.auth)
+            implementation(libs.ktor.serialization.json)
+            implementation(libs.ktor.logging)
             api(libs.moko.mvvm.core)
             api(libs.moko.mvvm.flow)
         }
         androidMain.dependencies {
             api(libs.koin.android)
+            implementation(libs.ktor.okhttp)
         }
+
+        val iosX64Main by getting {
+            dependencies {
+                implementation(libs.ktor.darwin)
+            }
+        }
+
+        val iosArm64Main by getting {
+            dependencies {
+                implementation(libs.ktor.darwin)
+            }
+        }
+
+        val iosSimulatorArm64Main by getting {
+            dependencies {
+                implementation(libs.ktor.darwin)
+            }
+        }
+
         commonTest.dependencies {
-            implementation(libs.kotlin.test)
+            implementation(kotlin("test"))
+            implementation(libs.ktor.test)
+            implementation(libs.ktor.mock)
         }
     }
 }

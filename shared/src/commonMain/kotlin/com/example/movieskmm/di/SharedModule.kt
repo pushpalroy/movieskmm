@@ -1,6 +1,6 @@
 package com.example.movieskmm.di
 
-import com.example.network.di.getHttpClientModule
+import com.example.movieskmm.data.network.di.getHttpClientModule
 
 private val sharedModules = listOf(
     getViewModelByPlatform(),

@@ -17,6 +17,3 @@ dependencyResolutionManagement {
 rootProject.name = "MoviesKMM"
 include(":androidApp")
 include(":shared")
-include(":data:local")
-include(":data:network")
-include(":domain")
