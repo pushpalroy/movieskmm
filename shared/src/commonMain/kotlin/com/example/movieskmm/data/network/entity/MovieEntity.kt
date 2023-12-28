@@ -1,13 +1,13 @@
-package com.example.movieskmm.data.network.dto
+package com.example.movieskmm.data.network.entity
 
-import com.example.movieskmm.domain.movie.model.MovieDomain
-import com.example.movieskmm.domain.movie.model.MoviesListDomain
+import com.example.movieskmm.domain.model.MovieResponse
+import com.example.movieskmm.domain.model.MoviesListResponse
 import kotlinx.serialization.SerialName
 
 @kotlinx.serialization.Serializable
-data class MoviesListDto(
+data class MoviesListEntity(
     val page: Int = 0,
-    val results: List<MovieDto> = listOf(),
+    val results: List<MovieEntity> = listOf(),
     @SerialName("total_pages")
     val totalPages: Int = 0,
     @SerialName("total_results")
@@ -15,7 +15,7 @@ data class MoviesListDto(
 )
 
 @kotlinx.serialization.Serializable
-data class MovieDto(
+data class MovieEntity(
     val id: Int,
     val title: String,
     @SerialName("original_title")
@@ -32,8 +32,8 @@ data class MovieDto(
     val releaseDate: String = ""
 )
 
-fun MoviesListDto.asDomain(): MoviesListDomain {
-    return MoviesListDomain(
+fun MoviesListEntity.asDomain(): MoviesListResponse {
+    return MoviesListResponse(
         page = page,
         results = results.map { it.asDomain() },
         totalPages = totalPages,
@@ -41,8 +41,8 @@ fun MoviesListDto.asDomain(): MoviesListDomain {
     )
 }
 
-fun MovieDto.asDomain(): MovieDomain {
-    return MovieDomain(
+fun MovieEntity.asDomain(): MovieResponse {
+    return MovieResponse(
         id = id,
         title = title,
         originalTitle = originalTitle,

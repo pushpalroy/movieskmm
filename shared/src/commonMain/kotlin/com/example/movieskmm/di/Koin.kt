@@ -1,11 +1,11 @@
 package com.example.movieskmm.di
 
-import com.example.movieskmm.data.network.di.httpClientModule
-import com.example.movieskmm.data.network.repository.DefaultMoviesRepo
-import com.example.movieskmm.data.network.service.DefaultMoviesService
-import com.example.movieskmm.data.network.service.MoviesService
-import com.example.movieskmm.domain.movie.GetNowPlayingMoviesUseCase
-import com.example.movieskmm.domain.movie.MoviesRepo
+import com.example.movieskmm.data.network.client.httpClientModule
+import com.example.movieskmm.data.network.repository.MoviesRepoImpl
+import com.example.movieskmm.data.network.sources.MoviesSourceImpl
+import com.example.movieskmm.data.network.sources.MoviesSource
+import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
+import com.example.movieskmm.domain.repo.MoviesRepo
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
@@ -25,13 +25,13 @@ fun initKoin(declaration: KoinAppDeclaration = {}) =
 
 val repoModule = module {
     single<MoviesRepo> {
-        DefaultMoviesRepo(moviesService = get())
+        MoviesRepoImpl(moviesService = get())
     }
 }
 
 val serviceModule = module {
-    single<MoviesService> {
-        DefaultMoviesService(httpClient = get())
+    single<MoviesSource> {
+        MoviesSourceImpl(httpClient = get())
     }
 }
 

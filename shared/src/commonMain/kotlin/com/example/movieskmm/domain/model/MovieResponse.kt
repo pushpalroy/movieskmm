@@ -1,13 +1,13 @@
-package com.example.movieskmm.domain.movie.model
+package com.example.movieskmm.domain.model
 
-data class MoviesListDomain(
+data class MoviesListResponse(
     val page: Int,
-    val results: List<MovieDomain>,
+    val results: List<MovieResponse>,
     val totalPages: Int,
     val totalResults: Int
 )
 
-data class MovieDomain(
+data class MovieResponse(
     val id: Int,
     val title: String,
     val originalTitle: String,

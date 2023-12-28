@@ -1,7 +1,8 @@
-package com.example.movieskmm.data.network.di
+package com.example.movieskmm.data.network.client
 
 import com.example.movieskmm.BuildKonfig
 import io.ktor.client.HttpClient
+import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.auth.Auth
 import io.ktor.client.plugins.auth.providers.BearerTokens
 import io.ktor.client.plugins.auth.providers.bearer
@@ -27,7 +28,12 @@ val httpClientModule = module {
                     }
                 }
             }
-
+            install(HttpTimeout) {
+                val timeout = 30000L
+                connectTimeoutMillis = timeout
+                requestTimeoutMillis = timeout
+                socketTimeoutMillis = timeout
+            }
             install(ContentNegotiation) {
                 json(
                     Json {

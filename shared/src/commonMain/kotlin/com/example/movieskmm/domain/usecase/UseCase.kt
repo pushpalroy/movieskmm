@@ -1,4 +1,4 @@
-package com.example.movieskmm.domain
+package com.example.movieskmm.domain.usecase
 
 interface UseCase<out Result, in ExecutableParam> {
 

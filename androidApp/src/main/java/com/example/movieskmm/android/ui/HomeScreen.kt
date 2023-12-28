@@ -44,7 +44,7 @@ fun HomeScreen() {
                 is NowPlayingUiState.Success -> {
                     val pdfData = (uiState as NowPlayingUiState.Success)
                     Text(
-                        text = pdfData.moviesListDomain.results.first().title,
+                        text = pdfData.moviesListResponse.results.first().title,
                         color = Color.Green
                     )
                 }
