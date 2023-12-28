@@ -1,6 +1,7 @@
 package com.example.movieskmm.features.nowPlayingMovies
 
 import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
+import com.example.movieskmm.domain.util.NetworkResponse
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,8 +19,22 @@ class NowPlayingViewModel(
         _uiState.value = NowPlayingUiState.Loading
         viewModelScope.launch {
             try {
-                val response = getNowPlayingMoviesUseCase.perform()
-                _uiState.value = NowPlayingUiState.Success(moviesListResponse = response)
+                when (val response = getNowPlayingMoviesUseCase.perform()) {
+                    is NetworkResponse.Success -> {
+                        _uiState.value =
+                            NowPlayingUiState.Success(moviesListResponse = response.data)
+                    }
+
+                    is NetworkResponse.Failure -> {
+                        _uiState.value =
+                            NowPlayingUiState.Error(exceptionMessage = response.throwable.message)
+                    }
+
+                    is NetworkResponse.Unauthorized -> {
+                        _uiState.value =
+                            NowPlayingUiState.Error(exceptionMessage = response.throwable.message)
+                    }
+                }
             } catch (e: Exception) {
                 _uiState.value = NowPlayingUiState.Error(exceptionMessage = e.message.orEmpty())
             }

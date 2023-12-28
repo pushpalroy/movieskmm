@@ -50,7 +50,7 @@ fun HomeScreen() {
                 }
 
                 is NowPlayingUiState.Error -> {
-                    val errorMessage = (uiState as NowPlayingUiState.Error).exceptionMessage
+                    val errorMessage = (uiState as NowPlayingUiState.Error).exceptionMessage ?: ""
                     if (errorMessage.isNotEmpty()) {
                         Text(text = errorMessage, color = Color.Red)
                     }
