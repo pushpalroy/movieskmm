@@ -1,0 +1,6 @@
+framework module mokoMvvmFlowSwiftUI {
+  header "mokoMvvmFlowSwiftUI-Swift.h"
+
+  export *
+  module mokoMvvmFlowSwiftUI { export * }
+}

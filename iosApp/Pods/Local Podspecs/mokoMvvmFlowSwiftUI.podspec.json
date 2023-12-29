@@ -1,0 +1,22 @@
+{
+  "name": "mokoMvvmFlowSwiftUI",
+  "version": "0.16.1",
+  "summary": "MOKO MVVM SwiftUI additions for Flow",
+  "description": "some description here",
+  "homepage": "localhost",
+  "license": {
+    "type": "Apache 2"
+  },
+  "authors": "IceRock Development",
+  "source": {
+    "http": "https://repo1.maven.org/maven2/dev/icerock/moko/mvvm-flow-swiftui/0.16.1/mvvm-flow-swiftui-0.16.1.zip",
+    "type": "zip"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "ios": {
+    "vendored_frameworks": "mokoMvvmFlowSwiftUI.xcframework"
+  },
+  "requires_arc": true
+}

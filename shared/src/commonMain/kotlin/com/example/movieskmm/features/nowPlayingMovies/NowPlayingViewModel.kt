@@ -10,9 +10,7 @@ import dev.icerock.moko.mvvm.flow.cStateFlow
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
@@ -41,7 +39,7 @@ class NowPlayingViewModel(
                 when (val response = getNowPlayingMoviesUseCase.perform()) {
                     is NetworkResponse.Success -> {
                         _uiState.value = NowPlayingUiState.Success(
-                            moviesListResponse = response.data
+                            moviesList = response.data
                         )
                         _actions.send(NowPlayingActions.MoviesFetchSuccess)
                     }

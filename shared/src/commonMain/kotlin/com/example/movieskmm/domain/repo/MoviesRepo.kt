@@ -1,10 +1,10 @@
 package com.example.movieskmm.domain.repo
 
-import com.example.movieskmm.domain.model.MoviesListResponse
+import com.example.movieskmm.domain.model.MoviesList
 import com.example.movieskmm.domain.util.NetworkResponse
 
 interface MoviesRepo {
-    suspend fun fetchNowPlayingMovies(): NetworkResponse<MoviesListResponse>
-    suspend fun fetchPopularMovies(): NetworkResponse<MoviesListResponse>
-    suspend fun fetchTopRatedMovies(): NetworkResponse<MoviesListResponse>
+    suspend fun fetchNowPlayingMovies(): NetworkResponse<MoviesList>
+    suspend fun fetchPopularMovies(): NetworkResponse<MoviesList>
+    suspend fun fetchTopRatedMovies(): NetworkResponse<MoviesList>
 }

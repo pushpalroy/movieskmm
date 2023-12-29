@@ -54,10 +54,12 @@ kotlin {
                 api(libs.moko.mvvm.flow)
             }
         }
-        androidMain.dependencies {
-            api(libs.koin.android)
-            api(libs.moko.mvvm.flow.compose)
-            implementation(libs.ktor.okhttp)
+        val androidMain by getting {
+            dependencies {
+                api(libs.koin.android)
+                api(libs.moko.mvvm.flow.compose)
+                implementation(libs.ktor.okhttp)
+            }
         }
 
         val iosX64Main by getting

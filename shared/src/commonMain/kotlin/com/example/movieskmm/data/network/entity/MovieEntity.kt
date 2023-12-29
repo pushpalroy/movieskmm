@@ -1,7 +1,7 @@
 package com.example.movieskmm.data.network.entity
 
-import com.example.movieskmm.domain.model.MovieResponse
-import com.example.movieskmm.domain.model.MoviesListResponse
+import com.example.movieskmm.domain.model.MovieItem
+import com.example.movieskmm.domain.model.MoviesList
 import kotlinx.serialization.SerialName
 
 @kotlinx.serialization.Serializable
@@ -32,8 +32,8 @@ data class MovieEntity(
     val releaseDate: String = ""
 )
 
-fun MoviesListEntity.asDomain(): MoviesListResponse {
-    return MoviesListResponse(
+fun MoviesListEntity.asDomain(): MoviesList {
+    return MoviesList(
         page = page,
         results = results.map { it.asDomain() },
         totalPages = totalPages,
@@ -41,8 +41,8 @@ fun MoviesListEntity.asDomain(): MoviesListResponse {
     )
 }
 
-fun MovieEntity.asDomain(): MovieResponse {
-    return MovieResponse(
+fun MovieEntity.asDomain(): MovieItem {
+    return MovieItem(
         id = id,
         title = title,
         originalTitle = originalTitle,

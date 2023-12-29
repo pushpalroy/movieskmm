@@ -3,13 +3,13 @@ package com.example.movieskmm.data.network.repository
 import com.example.movieskmm.data.network.entity.asDomain
 import com.example.movieskmm.data.network.sources.MoviesSource
 import com.example.movieskmm.domain.repo.MoviesRepo
-import com.example.movieskmm.domain.model.MoviesListResponse
+import com.example.movieskmm.domain.model.MoviesList
 import com.example.movieskmm.domain.util.NetworkResponse
 
 class MoviesRepoImpl(
     private val moviesService: MoviesSource
 ) : MoviesRepo {
-    override suspend fun fetchNowPlayingMovies(): NetworkResponse<MoviesListResponse> {
+    override suspend fun fetchNowPlayingMovies(): NetworkResponse<MoviesList> {
         return when (
             val response = moviesService.fetchNowPlayingMovies()
         ) {
@@ -19,7 +19,7 @@ class MoviesRepoImpl(
         }
     }
 
-    override suspend fun fetchPopularMovies(): NetworkResponse<MoviesListResponse> {
+    override suspend fun fetchPopularMovies(): NetworkResponse<MoviesList> {
         return when (
             val response = moviesService.fetchPopularMovies()
         ) {
@@ -29,7 +29,7 @@ class MoviesRepoImpl(
         }
     }
 
-    override suspend fun fetchTopRatedMovies(): NetworkResponse<MoviesListResponse> {
+    override suspend fun fetchTopRatedMovies(): NetworkResponse<MoviesList> {
         return when (
             val response = moviesService.fetchTopRatedMovies()
         ) {

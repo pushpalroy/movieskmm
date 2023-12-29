@@ -1,0 +1,32 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios15.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name mokoMvvmFlowSwiftUI
+import Combine
+import MultiPlatformLibrary
+import Swift
+import SwiftUI
+import _Concurrency
+@_exported import mokoMvvmFlowSwiftUI
+extension Combine.ObservableObject where Self : MultiPlatformLibrary.ViewModel {
+  public func binding<T, R>(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CMutableStateFlow<T>>, equals: @escaping (T?, T?) -> Swift.Bool, getMapper: @escaping (T) -> R, setMapper: @escaping (R) -> T) -> SwiftUI.Binding<R> where T : AnyObject
+  public func binding(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CMutableStateFlow<Foundation.NSString>>) -> SwiftUI.Binding<Swift.String>
+  public func binding(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CMutableStateFlow<MultiPlatformLibrary.KotlinBoolean>>) -> SwiftUI.Binding<Swift.Bool>
+  public func binding(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CMutableStateFlow<MultiPlatformLibrary.KotlinInt>>) -> SwiftUI.Binding<Swift.Int>
+  public func binding(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CMutableStateFlow<MultiPlatformLibrary.KotlinLong>>) -> SwiftUI.Binding<Swift.Int64>
+  public func binding(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CMutableStateFlow<MultiPlatformLibrary.KotlinFloat>>) -> SwiftUI.Binding<Swift.Float>
+  public func binding(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CMutableStateFlow<MultiPlatformLibrary.KotlinDouble>>) -> SwiftUI.Binding<Swift.Double>
+}
+public func createPublisher<T>(_ cFlow: MultiPlatformLibrary.CFlow<T>) -> Combine.AnyPublisher<T, Swift.Never> where T : AnyObject
+extension MultiPlatformLibrary.ViewModel : Foundation.ObservableObject {
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+}
+extension Combine.ObservableObject where Self : MultiPlatformLibrary.ViewModel {
+  public func state<T, R>(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CStateFlow<T>>, equals: @escaping (T?, T?) -> Swift.Bool, mapper: @escaping (T) -> R) -> R where T : AnyObject
+  public func state(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CStateFlow<MultiPlatformLibrary.KotlinBoolean>>) -> Swift.Bool
+  public func state(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CStateFlow<MultiPlatformLibrary.KotlinDouble>>) -> Swift.Double
+  public func state(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CStateFlow<MultiPlatformLibrary.KotlinFloat>>) -> Swift.Float
+  public func state(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CStateFlow<MultiPlatformLibrary.KotlinInt>>) -> Swift.Int
+  public func state(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CStateFlow<MultiPlatformLibrary.KotlinLong>>) -> Swift.Int64
+  public func state(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CStateFlow<Foundation.NSString>>) -> Swift.String
+  public func state<T>(_ flowKey: Swift.KeyPath<Self, MultiPlatformLibrary.CStateFlow<Foundation.NSArray>>) -> Swift.Array<T>
+}
