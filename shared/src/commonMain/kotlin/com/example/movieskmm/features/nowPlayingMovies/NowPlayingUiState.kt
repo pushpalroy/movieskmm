@@ -8,3 +8,7 @@ sealed interface NowPlayingUiState {
     data object Loading : NowPlayingUiState
     data object Uninitialized : NowPlayingUiState
 }
+
+sealed interface NowPlayingActions {
+    data object MoviesFetchSuccess : NowPlayingActions
+}

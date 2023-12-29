@@ -34,8 +34,10 @@ kotlin {
         ios.deploymentTarget = "16.0"
         podfile = project.file("../iosApp/Podfile")
         framework {
-            baseName = "shared"
-            isStatic = true
+            baseName = "MultiPlatformLibrary"
+            isStatic = false
+            export(libs.moko.mvvm.core)
+            export(libs.moko.mvvm.flow)
         }
     }
 
@@ -54,22 +56,18 @@ kotlin {
         }
         androidMain.dependencies {
             api(libs.koin.android)
+            api(libs.moko.mvvm.flow.compose)
             implementation(libs.ktor.okhttp)
         }
 
-        val iosX64Main by getting {
-            dependencies {
-                implementation(libs.ktor.darwin)
-            }
-        }
-
-        val iosArm64Main by getting {
-            dependencies {
-                implementation(libs.ktor.darwin)
-            }
-        }
-
-        val iosSimulatorArm64Main by getting {
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosSimulatorArm64Main by getting
+        val iosMain by creating {
+            dependsOn(commonMain)
+            iosX64Main.dependsOn(this)
+            iosArm64Main.dependsOn(this)
+            iosSimulatorArm64Main.dependsOn(this)
             dependencies {
                 implementation(libs.ktor.darwin)
             }
