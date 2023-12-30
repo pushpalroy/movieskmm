@@ -1,4 +1,4 @@
-package com.example.movieskmm.android.theme
+package com.example.movieskmm.android.ui.designsystem
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.compositionLocalOf

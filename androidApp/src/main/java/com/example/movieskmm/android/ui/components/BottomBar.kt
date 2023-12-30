@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
-import com.example.movieskmm.android.theme.MoviesAppTheme
-import com.example.movieskmm.android.theme.contentColorFor
+import com.example.movieskmm.android.ui.designsystem.MoviesAppTheme
+import com.example.movieskmm.android.ui.designsystem.contentColorFor
 import com.example.movieskmm.android.ui.navigation.destination.TopLevelDestination
 import kotlinx.collections.immutable.ImmutableList
 

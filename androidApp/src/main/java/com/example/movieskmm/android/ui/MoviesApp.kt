@@ -1,10 +1,10 @@
-package com.example.movieskmm.android
+package com.example.movieskmm.android.ui
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import com.example.movieskmm.android.theme.MoviesAppTheme
+import com.example.movieskmm.android.ui.designsystem.MoviesAppTheme
 import com.example.movieskmm.android.ui.components.MoviesBottomBar
 import com.example.movieskmm.android.ui.components.MoviesScaffold
 import com.example.movieskmm.android.ui.components.MoviesSurface

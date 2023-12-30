@@ -1,6 +1,5 @@
-package com.example.movieskmm.android.ui.toprated
+package com.example.movieskmm.android.ui.screens.toprated
 
-import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,7 +12,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.movieskmm.android.ui.components.MovieList
 import com.example.movieskmm.domain.model.MoviesList

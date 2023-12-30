@@ -51,5 +51,6 @@ internal fun MovieList(
                     )
                 }
             }
-        })
+        }
+    )
 }

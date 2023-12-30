@@ -5,8 +5,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.movieskmm.android.ui.navigation.destination.NowPlayingDestination
-import com.example.movieskmm.android.ui.nowplaying.nowPlayingGraph
-import com.example.movieskmm.android.ui.toprated.topRatedGraph
+import com.example.movieskmm.android.ui.screens.nowplaying.nowPlayingGraph
+import com.example.movieskmm.android.ui.screens.toprated.topRatedGraph
 
 @Composable
 fun MoviesNavHost(

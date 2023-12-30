@@ -1,4 +1,4 @@
-package com.example.movieskmm.android.ui.nowplaying
+package com.example.movieskmm.android.ui.screens.nowplaying
 
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder

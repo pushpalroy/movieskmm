@@ -1,4 +1,4 @@
-package com.example.movieskmm.android.ui.toprated
+package com.example.movieskmm.android.ui.screens.toprated
 
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder

@@ -23,7 +23,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
 import com.example.movieskmm.android.model.SnackBarManager
-import com.example.movieskmm.android.theme.MoviesAppTheme
+import com.example.movieskmm.android.ui.designsystem.MoviesAppTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

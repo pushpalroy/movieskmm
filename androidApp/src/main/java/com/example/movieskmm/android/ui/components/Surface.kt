@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.example.movieskmm.android.theme.MoviesAppTheme
+import com.example.movieskmm.android.ui.designsystem.MoviesAppTheme
 import kotlin.math.ln
 
 @Composable
