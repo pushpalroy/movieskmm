@@ -1,5 +1,6 @@
-package com.example.movieskmm.android.ui.nowplaying
+package com.example.movieskmm.android.ui.toprated
 
+import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,31 +13,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.movieskmm.android.ui.components.MovieList
 import com.example.movieskmm.domain.model.MoviesList
-import com.example.movieskmm.features.nowPlayingMovies.NowPlayingActions
-import com.example.movieskmm.features.nowPlayingMovies.NowPlayingUiState
-import com.example.movieskmm.features.nowPlayingMovies.NowPlayingViewModel
-import dev.icerock.moko.mvvm.flow.compose.observeAsActions
+import com.example.movieskmm.features.topRatedMovies.TopRatedUiState
+import com.example.movieskmm.features.topRatedMovies.TopRatedViewModel
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun NowPlayingScreen(
+fun TopRatedScreen(
     modifier: Modifier = Modifier
 ) {
-    val viewModel: NowPlayingViewModel = getViewModel()
+    val viewModel: TopRatedViewModel = getViewModel()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    viewModel.actions.observeAsActions { action ->
-        when (action) {
-            NowPlayingActions.MoviesFetchSuccess -> {
-                // Do something
-            }
-        }
-    }
 
     LaunchedEffect(Unit) {
-        viewModel.fetchNowPlayingMovies()
+        viewModel.fetchTopRatedMovies()
     }
 
     Column(
@@ -45,19 +38,19 @@ fun NowPlayingScreen(
         verticalArrangement = Arrangement.Center,
     ) {
         when (uiState) {
-            is NowPlayingUiState.Loading -> {
+            is TopRatedUiState.Loading -> {
                 CircularProgressIndicator()
             }
 
-            is NowPlayingUiState.Success -> {
-                val moviesData = (uiState as NowPlayingUiState.Success)
-                NowPlayingMoviesList(
+            is TopRatedUiState.Success -> {
+                val moviesData = (uiState as TopRatedUiState.Success)
+                TopRatedMoviesList(
                     moviesList = moviesData.moviesList
                 )
             }
 
-            is NowPlayingUiState.Error -> {
-                val errorMessage = (uiState as NowPlayingUiState.Error).exceptionMessage ?: ""
+            is TopRatedUiState.Error -> {
+                val errorMessage = (uiState as TopRatedUiState.Error).exceptionMessage ?: ""
                 if (errorMessage.isNotEmpty()) {
                     Text(text = errorMessage, color = Color.Red)
                 }
@@ -69,7 +62,7 @@ fun NowPlayingScreen(
 }
 
 @Composable
-fun NowPlayingMoviesList(
+fun TopRatedMoviesList(
     modifier: Modifier = Modifier,
     moviesList: MoviesList
 ) {

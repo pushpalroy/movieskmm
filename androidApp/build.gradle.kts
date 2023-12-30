@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.util)
     implementation(libs.androidx.compose.lifecycle.runtime)
     implementation(libs.androidx.compose.lifecycle.viewmodel)
+    implementation(libs.kotlinx.collections.immutable)
 
     implementation(libs.koin.androidx.compose)
     implementation(libs.accompanist.systemuicontroller)

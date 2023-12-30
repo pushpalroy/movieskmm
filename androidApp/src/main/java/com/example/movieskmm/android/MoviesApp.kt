@@ -1,50 +1,42 @@
 package com.example.movieskmm.android
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavBackStackEntry
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.NavHost
-import androidx.navigation.navigation
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import com.example.movieskmm.android.theme.MoviesAppTheme
-import com.example.movieskmm.android.ui.home.HomeSections
-import com.example.movieskmm.android.ui.home.addHomeGraph
-import com.example.movieskmm.android.ui.navigation.MainDestinations
-import com.example.movieskmm.android.ui.navigation.rememberMoviesNavController
+import com.example.movieskmm.android.ui.components.MoviesBottomBar
+import com.example.movieskmm.android.ui.components.MoviesScaffold
+import com.example.movieskmm.android.ui.components.MoviesSurface
+import com.example.movieskmm.android.ui.navigation.MoviesNavHost
+import com.example.movieskmm.android.ui.navigation.rememberMoviesAppState
 
 @Composable
-fun MoviesApp() {
+fun MoviesApp(
+    modifier: Modifier = Modifier
+) {
     MoviesAppTheme {
-        val moviesNavController = rememberMoviesNavController()
-        NavHost(
-            navController = moviesNavController.navController,
-            startDestination = MainDestinations.HOME_ROUTE
-        ) {
-            moviesNavGraph(
-                onMovieSelected = moviesNavController::navigateToMovieDetail,
-                upPress = moviesNavController::upPress,
-                onNavigateToRoute = moviesNavController::navigateToBottomBarRoute
-            )
+        val appState = rememberMoviesAppState()
+        val navHostController = appState.navController
+        val destination = remember { appState.topLevelDestination }
+
+        MoviesScaffold(
+            bottomBar = {
+                MoviesBottomBar(
+                    destinations = destination,
+                    onNavigateToDestination = appState::navigate,
+                    currentDestination = appState.currentDestination,
+                )
+            },
+            modifier = modifier
+        ) { paddingValues ->
+            MoviesSurface(
+                modifier = modifier.padding(paddingValues)
+            ) {
+                MoviesNavHost(
+                    navHostController = navHostController
+                )
+            }
         }
     }
-}
-
-private fun NavGraphBuilder.moviesNavGraph(
-    onMovieSelected: (Long, NavBackStackEntry) -> Unit,
-    upPress: () -> Unit,
-    onNavigateToRoute: (String) -> Unit
-) {
-    navigation(
-        route = MainDestinations.HOME_ROUTE,
-        startDestination = HomeSections.NOW_PLAYING.route
-    ) {
-        addHomeGraph(onMovieSelected, onNavigateToRoute)
-    }
-//    composable(
-//        "${MainDestinations.MOVIE_DETAIL_ROUTE}/{${MainDestinations.MOVIE_ID_KEY}}",
-//        arguments = listOf(navArgument(MainDestinations.MOVIE_ID_KEY) { type = NavType.LongType })
-//    ) { backStackEntry ->
-//        val arguments = requireNotNull(backStackEntry.arguments)
-//        val snackId = arguments.getLong(MainDestinations.MOVIE_ID_KEY)
-//        MovieDetail(snackId, upPress)
-//    }
 }
