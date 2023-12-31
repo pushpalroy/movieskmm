@@ -1,6 +1,5 @@
 package com.example.movieskmm.features.popularMovies
 
-import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetPopularMoviesUseCase
 import com.example.movieskmm.domain.util.NetworkResponse
 import com.rickclephas.kmm.viewmodel.KMMViewModel
@@ -33,7 +32,7 @@ open class PopularViewModel : KMMViewModel(), KoinComponent {
         PopularUiState.Uninitialized
     )
 
-    fun fetchPopularMoviesUseCase() {
+    fun fetchPopularMovies() {
         _uiState.value = PopularUiState.Loading
         viewModelScope.coroutineScope.launch {
             try {

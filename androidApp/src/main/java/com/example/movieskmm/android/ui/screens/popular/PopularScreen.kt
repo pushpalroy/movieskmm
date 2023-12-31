@@ -27,7 +27,7 @@ fun PopularScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
-        viewModel.fetchPopularMoviesUseCase()
+        viewModel.fetchPopularMovies()
     }
 
     Column(

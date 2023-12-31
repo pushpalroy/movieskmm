@@ -6,6 +6,7 @@ struct MoviesAppView: View {
         TabView {
             NowPlayingScreenView()
             TopRatedScreenView()
+            PopularScreenView()
         }
     }
 }

@@ -21,6 +21,7 @@
 		F18F3FC22B40495F00A49249 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FC12B40495F00A49249 /* Movies.swift */; };
 		F18F3FC42B410C3700A49249 /* KMMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FC32B410C3700A49249 /* KMMViewModel.swift */; };
 		F18F3FC62B4116B700A49249 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FC52B4116B700A49249 /* EmptyView.swift */; };
+		F18F3FC92B415ACA00A49249 /* PopularScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FC82B415ACA00A49249 /* PopularScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F18F3FC12B40495F00A49249 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		F18F3FC32B410C3700A49249 /* KMMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMMViewModel.swift; sourceTree = "<group>"; };
 		F18F3FC52B4116B700A49249 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		F18F3FC82B415ACA00A49249 /* PopularScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		F18F3FB32B40477F00A49249 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F18F3FC72B415AB900A49249 /* Popular */,
 				F18F3FB52B4047A200A49249 /* NowPlaying */,
 				F18F3FB42B40478F00A49249 /* TopRated */,
 			);
@@ -158,6 +161,14 @@
 				F18F3FC12B40495F00A49249 /* Movies.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F18F3FC72B415AB900A49249 /* Popular */ = {
+			isa = PBXGroup;
+			children = (
+				F18F3FC82B415ACA00A49249 /* PopularScreen.swift */,
+			);
+			path = Popular;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 				F18F3FC22B40495F00A49249 /* Movies.swift in Sources */,
 				F18F3FBD2B4048A100A49249 /* LoadingView.swift in Sources */,
 				F18F3FB22B40472400A49249 /* MovieListView.swift in Sources */,
+				F18F3FC92B415ACA00A49249 /* PopularScreen.swift in Sources */,
 				F18F3FC42B410C3700A49249 /* KMMViewModel.swift in Sources */,
 				F18F3FBF2B4048B000A49249 /* ErrorView.swift in Sources */,
 			);
