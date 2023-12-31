@@ -24,7 +24,7 @@ fun initKoin(declaration: KoinAppDeclaration = {}) =
         )
     }
 
-fun initKoin() = initKoin() {}
+fun initKoin() = initKoin {}
 
 val repoModule = module {
     single<MoviesRepo> {
