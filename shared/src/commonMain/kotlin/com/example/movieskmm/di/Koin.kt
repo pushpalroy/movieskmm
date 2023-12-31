@@ -6,6 +6,7 @@ import com.example.movieskmm.data.network.sources.MoviesSourceImpl
 import com.example.movieskmm.data.network.sources.MoviesSource
 import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
 import com.example.movieskmm.domain.repo.MoviesRepo
+import com.example.movieskmm.domain.usecase.GetPopularMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetTopRatedMoviesUseCase
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
@@ -43,5 +44,8 @@ val useCaseModule = module {
     }
     single<GetTopRatedMoviesUseCase> {
         GetTopRatedMoviesUseCase(moviesRepo = get())
+    }
+    single<GetPopularMoviesUseCase> {
+        GetPopularMoviesUseCase(moviesRepo = get())
     }
 }

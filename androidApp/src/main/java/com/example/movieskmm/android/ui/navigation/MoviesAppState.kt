@@ -10,6 +10,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.movieskmm.android.ui.navigation.destination.MoviesNavDestination
 import com.example.movieskmm.android.ui.navigation.destination.NowPlayingDestination
+import com.example.movieskmm.android.ui.navigation.destination.PopularDestination
 import com.example.movieskmm.android.ui.navigation.destination.TopLevelDestination
 import com.example.movieskmm.android.ui.navigation.destination.TopRatedDestination
 import kotlinx.collections.immutable.ImmutableList
@@ -36,12 +37,14 @@ class MoviesAppState(
         @Composable get() = when (currentDestination?.route) {
             NowPlayingDestination.route -> NowPlayingDestination
             TopRatedDestination.route -> TopRatedDestination
+            PopularDestination.route -> PopularDestination
             else -> null
         }
 
     val topLevelDestination: ImmutableList<TopLevelDestination> = persistentListOf(
         NowPlayingDestination,
         TopRatedDestination,
+        PopularDestination
     )
 
     /**

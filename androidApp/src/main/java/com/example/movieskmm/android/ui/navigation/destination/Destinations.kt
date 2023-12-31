@@ -19,3 +19,12 @@ object TopRatedDestination : TopLevelDestination {
     override val iconTextId: Int = R.string.top_rated
     override val titleTextId: Int = R.string.top_rated
 }
+
+object PopularDestination : TopLevelDestination {
+    override val route = "popular"
+    override val destination = "popular"
+    override val selectedIcon: Int = R.drawable.ic_popular_selected
+    override val unselectedIcon: Int = R.drawable.ic_popular_unselected
+    override val iconTextId: Int = R.string.popular
+    override val titleTextId: Int = R.string.popular
+}
