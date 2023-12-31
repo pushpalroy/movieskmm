@@ -20,7 +20,6 @@ fun initKoin(declaration: KoinAppDeclaration = {}) =
             serviceModule,
             repoModule,
             useCaseModule,
-            viewModelModule
         )
     }
 

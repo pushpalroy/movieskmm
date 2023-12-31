@@ -1,0 +1,6 @@
+framework module KMMViewModelSwiftUI {
+  umbrella header "KMMViewModelSwiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -8,39 +8,30 @@
 
 import Foundation
 import SwiftUI
-import mokoMvvmFlowSwiftUI
 import MultiPlatformLibrary
+import KMMViewModelCore
+import KMMViewModelSwiftUI
 
 struct TopRatedScreenView: View {
     
-    @ObservedObject
-    var viewModel: TopRatedViewModel = KoinHelper().getTopRatedViewModel()
-    
-    @State
-    var uiState: TopRatedUiState = TopRatedUiStateUninitialized()
+    @StateViewModel var viewModel = TopRatedViewModel()
     
     var body: some View {
-        
-        let appUiState = viewModel.uiState
-        
         ScrollView {
             VStack {
-                switch(uiState) {
-                case is TopRatedUiStateLoading:
+                switch(viewModel.uiState) {
+                case is TopRatedUiState.Loading:
                     LoadingView()
-                case let successState as TopRatedUiStateSuccess:
-                    let moviesData = (successState as TopRatedUiStateSuccess).moviesList
+                case let successState as TopRatedUiState.Success:
+                    let moviesData = (successState as TopRatedUiState.Success).moviesList
                     MoviesListView(moviesData: moviesData)
-                case is TopRatedUiStateError:
+                case is TopRatedUiState.Error:
                     ErrorView()
                 default:
                     ErrorView()
                 }
             }.onAppear {
                 viewModel.fetchTopRatedMovies()
-                appUiState.subscribe { state in
-                    self.uiState = state!
-                }
             }
         }
         .tabItem {

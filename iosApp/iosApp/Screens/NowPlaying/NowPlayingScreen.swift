@@ -8,39 +8,31 @@
 
 import Foundation
 import SwiftUI
-import mokoMvvmFlowSwiftUI
 import MultiPlatformLibrary
+import KMMViewModelCore
+import KMMViewModelSwiftUI
+
 
 struct NowPlayingScreenView: View {
     
-    @ObservedObject
-    var viewModel: NowPlayingViewModel = KoinHelper().getNowPlayingViewModel()
-    
-    @State
-    var uiState: NowPlayingUiState = NowPlayingUiStateUninitialized()
+    @StateViewModel var viewModel = NowPlayingViewModel()
     
     var body: some View {
-        
-        let appUiState = viewModel.uiState
-        
         ScrollView {
             VStack {
-                switch(uiState) {
-                case is NowPlayingUiStateLoading:
+                switch(viewModel.uiState) {
+                case is NowPlayingUiState.Loading:
                     LoadingView()
-                case let successState as NowPlayingUiStateSuccess:
-                    let moviesData = (successState as NowPlayingUiStateSuccess).moviesList
+                case let successState as NowPlayingUiState.Success:
+                    let moviesData = (successState as NowPlayingUiState.Success).moviesList
                     MoviesListView(moviesData: moviesData)
-                case is NowPlayingUiStateError:
+                case is NowPlayingUiState.Error:
                     ErrorView()
                 default:
                     ErrorView()
                 }
             }.onAppear {
                 viewModel.fetchNowPlayingMovies()
-                appUiState.subscribe { state in
-                    self.uiState = state!
-                }
             }
         }
         .tabItem {

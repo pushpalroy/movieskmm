@@ -19,6 +19,8 @@
 		F18F3FBD2B4048A100A49249 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FBC2B4048A100A49249 /* LoadingView.swift */; };
 		F18F3FBF2B4048B000A49249 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FBE2B4048B000A49249 /* ErrorView.swift */; };
 		F18F3FC22B40495F00A49249 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FC12B40495F00A49249 /* Movies.swift */; };
+		F18F3FC42B410C3700A49249 /* KMMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FC32B410C3700A49249 /* KMMViewModel.swift */; };
+		F18F3FC62B4116B700A49249 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FC52B4116B700A49249 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		F18F3FBC2B4048A100A49249 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F18F3FBE2B4048B000A49249 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		F18F3FC12B40495F00A49249 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		F18F3FC32B410C3700A49249 /* KMMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMMViewModel.swift; sourceTree = "<group>"; };
+		F18F3FC52B4116B700A49249 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				F18F3FC32B410C3700A49249 /* KMMViewModel.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				F18F3FBA2B40486100A49249 /* ImageCardView.swift */,
 				F18F3FBC2B4048A100A49249 /* LoadingView.swift */,
 				F18F3FBE2B4048B000A49249 /* ErrorView.swift */,
+				F18F3FC52B4116B700A49249 /* EmptyView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -270,12 +276,14 @@
 			files = (
 				F18F3FBB2B40486100A49249 /* ImageCardView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				F18F3FC62B4116B700A49249 /* EmptyView.swift in Sources */,
 				F18F3FB72B4047BF00A49249 /* NowPlayingScreen.swift in Sources */,
 				F1276D772B3E609C00867D9A /* MoviesApp.swift in Sources */,
 				F18F3FB92B40480C00A49249 /* TopRatedScreen.swift in Sources */,
 				F18F3FC22B40495F00A49249 /* Movies.swift in Sources */,
 				F18F3FBD2B4048A100A49249 /* LoadingView.swift in Sources */,
 				F18F3FB22B40472400A49249 /* MovieListView.swift in Sources */,
+				F18F3FC42B410C3700A49249 /* KMMViewModel.swift in Sources */,
 				F18F3FBF2B4048B000A49249 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

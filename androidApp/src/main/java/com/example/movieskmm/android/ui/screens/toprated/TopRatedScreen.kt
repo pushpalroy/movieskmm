@@ -23,7 +23,7 @@ import org.koin.androidx.compose.getViewModel
 fun TopRatedScreen(
     modifier: Modifier = Modifier
 ) {
-    val viewModel: TopRatedViewModel = getViewModel()
+    val viewModel = getViewModel<TopRatedViewModel>()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {

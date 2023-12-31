@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.androidLibrary)
     kotlin("plugin.serialization")
     id("com.codingfeline.buildkonfig") version "0.15.1"
+    id("com.google.devtools.ksp")
+    id("com.rickclephas.kmp.nativecoroutines")
 }
 
 buildkonfig {
@@ -16,13 +18,7 @@ buildkonfig {
 }
 
 kotlin {
-    androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
-        }
-    }
+    androidTarget()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -36,12 +32,13 @@ kotlin {
         framework {
             baseName = "MultiPlatformLibrary"
             isStatic = false
-            export(libs.moko.mvvm.core)
-            export(libs.moko.mvvm.flow)
         }
     }
 
     sourceSets {
+        all {
+            languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
+        }
         val commonMain by getting {
             dependencies {
                 implementation(libs.koin.core)
@@ -50,14 +47,12 @@ kotlin {
                 implementation(libs.ktor.auth)
                 implementation(libs.ktor.serialization.json)
                 implementation(libs.ktor.logging)
-                api(libs.moko.mvvm.core)
-                api(libs.moko.mvvm.flow)
+                api(libs.kmm.viewmodel.core)
             }
         }
         val androidMain by getting {
             dependencies {
                 api(libs.koin.android)
-                api(libs.moko.mvvm.flow.compose)
                 implementation(libs.ktor.okhttp)
             }
         }
@@ -89,4 +84,16 @@ android {
     defaultConfig {
         minSdk = 28
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+kotlin.sourceSets.all {
+    languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions.jvmTarget = "17"
 }

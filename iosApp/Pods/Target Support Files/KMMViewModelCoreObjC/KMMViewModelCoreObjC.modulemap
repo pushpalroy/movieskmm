@@ -1,0 +1,6 @@
+framework module KMMViewModelCoreObjC {
+  umbrella header "KMMViewModelCoreObjC-umbrella.h"
+
+  export *
+  module * { export * }
+}

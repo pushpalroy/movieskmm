@@ -2,46 +2,43 @@ package com.example.movieskmm.features.nowPlayingMovies
 
 import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
 import com.example.movieskmm.domain.util.NetworkResponse
-import dev.icerock.moko.mvvm.flow.CFlow
-import dev.icerock.moko.mvvm.flow.CStateFlow
-import dev.icerock.moko.mvvm.flow.cFlow
-import dev.icerock.moko.mvvm.flow.cMutableStateFlow
-import dev.icerock.moko.mvvm.flow.cStateFlow
-import dev.icerock.moko.mvvm.viewmodel.ViewModel
+import com.rickclephas.kmm.viewmodel.KMMViewModel
+import com.rickclephas.kmm.viewmodel.coroutineScope
+import com.rickclephas.kmm.viewmodel.stateIn
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-class NowPlayingViewModel(
-    private val getNowPlayingMoviesUseCase: GetNowPlayingMoviesUseCase
-) : ViewModel() {
+open class NowPlayingViewModel : KMMViewModel(), KoinComponent {
+
+    private val getNowPlayingMoviesUseCase: GetNowPlayingMoviesUseCase by inject()
 
     /**
      * We need to make changes - from the side of Swift MutableStateFlow, StateFlow,
      * Flow will lose their generic type since they are interfaces. MOKO MVVM provides
      * special CMutableStateFlow, CStateFlow and CFlow classes to store the generic type in iOS.
      */
-    private val _uiState = MutableStateFlow<NowPlayingUiState>(
-        NowPlayingUiState.Uninitialized
-    ).cMutableStateFlow()
-    val uiState: CStateFlow<NowPlayingUiState> = _uiState.asStateFlow().cStateFlow()
+    private val _uiState = MutableStateFlow<NowPlayingUiState>(NowPlayingUiState.Uninitialized)
 
-    private val _actions = Channel<NowPlayingActions>()
-    val actions: CFlow<NowPlayingActions> get() = _actions.receiveAsFlow().cFlow()
+    @NativeCoroutinesState
+    val uiState: StateFlow<NowPlayingUiState> = _uiState.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(),
+        NowPlayingUiState.Uninitialized
+    )
 
     fun fetchNowPlayingMovies() {
         _uiState.value = NowPlayingUiState.Loading
-        viewModelScope.launch {
+        viewModelScope.coroutineScope.launch {
             try {
                 when (val response = getNowPlayingMoviesUseCase.perform()) {
                     is NetworkResponse.Success -> {
-                        _uiState.value = NowPlayingUiState.Success(
-                            moviesList = response.data
-                        )
-                        _actions.send(NowPlayingActions.MoviesFetchSuccess)
+                        _uiState.value = NowPlayingUiState.Success(moviesList = response.data)
                     }
 
                     is NetworkResponse.Failure -> {
@@ -61,7 +58,7 @@ class NowPlayingViewModel(
     }
 
     override fun onCleared() {
-        viewModelScope.cancel()
+        viewModelScope.coroutineScope.cancel()
         super.onCleared()
     }
 }

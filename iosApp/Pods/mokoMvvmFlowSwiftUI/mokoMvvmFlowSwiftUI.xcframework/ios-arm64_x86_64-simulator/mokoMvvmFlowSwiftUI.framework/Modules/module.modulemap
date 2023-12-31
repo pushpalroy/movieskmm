@@ -1,6 +1,0 @@
-framework module mokoMvvmFlowSwiftUI {
-  umbrella header "mokoMvvmFlowSwiftUI.h"
-
-  export *
-  module * { export * }
-}

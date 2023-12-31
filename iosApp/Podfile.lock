@@ -1,21 +1,39 @@
 PODS:
-  - mokoMvvmFlowSwiftUI (0.16.1)
+  - KMMViewModelCore (1.0.0-ALPHA-16):
+    - KMMViewModelCoreObjC (= 1.0.0-ALPHA-16)
+  - KMMViewModelCoreObjC (1.0.0-ALPHA-16)
+  - KMMViewModelSwiftUI (1.0.0-ALPHA-16):
+    - KMMViewModelCore (= 1.0.0-ALPHA-16)
+  - KMPNativeCoroutinesAsync (1.0.0-ALPHA-22):
+    - KMPNativeCoroutinesCore (= 1.0.0-ALPHA-22)
+  - KMPNativeCoroutinesCore (1.0.0-ALPHA-22)
   - shared (1.0)
 
 DEPENDENCIES:
-  - mokoMvvmFlowSwiftUI (from `https://raw.githubusercontent.com/icerockdev/moko-mvvm/release/0.16.1/mokoMvvmFlowSwiftUI.podspec`)
+  - KMMViewModelSwiftUI (= 1.0.0-ALPHA-16)
+  - KMPNativeCoroutinesAsync (= 1.0.0-ALPHA-22)
   - shared (from `../shared`)
 
+SPEC REPOS:
+  trunk:
+    - KMMViewModelCore
+    - KMMViewModelCoreObjC
+    - KMMViewModelSwiftUI
+    - KMPNativeCoroutinesAsync
+    - KMPNativeCoroutinesCore
+
 EXTERNAL SOURCES:
-  mokoMvvmFlowSwiftUI:
-    :podspec: https://raw.githubusercontent.com/icerockdev/moko-mvvm/release/0.16.1/mokoMvvmFlowSwiftUI.podspec
   shared:
     :path: "../shared"
 
 SPEC CHECKSUMS:
-  mokoMvvmFlowSwiftUI: e2ecbc38ea996fc376bf297041aeaad06ac44c89
+  KMMViewModelCore: 54a5649a8629cd054c9729999defd393707eb5cb
+  KMMViewModelCoreObjC: 3f6a68e197125748588cbf35a66719d1b0eae02c
+  KMMViewModelSwiftUI: 87d9dc4971bfc0bee03401110fca561b90be6b12
+  KMPNativeCoroutinesAsync: cced81e32c1bfad1feaea479a5bead9c31833054
+  KMPNativeCoroutinesCore: 4ba940bc6d6a28808def88f79c030c4383e5c28b
   shared: 66fb94f76101fef5c69b59fe6f39a6a51714f8bb
 
-PODFILE CHECKSUM: ea355a3f7cb965385702df2347da072081de053c
+PODFILE CHECKSUM: 9e530727488f7755d808fd41f89718f98d2bd3c3
 
 COCOAPODS: 1.11.3

@@ -1,5 +1,4 @@
 import SwiftUI
-import mokoMvvmFlowSwiftUI
 import MultiPlatformLibrary
 
 struct MoviesAppView: View {

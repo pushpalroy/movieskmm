@@ -3,25 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		3C5647B399E506357801D92C13B5F1E1 /* mokoMvvmFlowSwiftUI */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = B643D250DD447F050C64353356F54BD4 /* Build configuration list for PBXAggregateTarget "mokoMvvmFlowSwiftUI" */;
-			buildPhases = (
-				E2A8337A6AE86F2F963F21FA3CEB400A /* [CP] Copy XCFrameworks */,
-			);
-			dependencies = (
-			);
-			name = mokoMvvmFlowSwiftUI;
-		};
 		8777C9F6889E59EFFD631D80AEE9048B /* shared */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 8349D8E2EC974421A14EF8ABFF6AD6DC /* Build configuration list for PBXAggregateTarget "shared" */;
+			buildConfigurationList = B999BD58A146737F72CA68509B0BCE77 /* Build configuration list for PBXAggregateTarget "shared" */;
 			buildPhases = (
-				BEA8885189D408D600647BDC228A6A20 /* [CP-User] Build shared */,
+				11F372A9E68C08375C21A8D47B3CDB02 /* [CP-User] Build shared */,
+				35C7D8836447FEC746DA683E14000153 /* [CP] Copy dSYMs */,
 			);
 			dependencies = (
 			);
@@ -30,63 +21,256 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1067B740508D12A5B687579DE9FF27F0 /* Pods-iosApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DC7F9924F99FEE67A9AD3BEE09A10C /* Pods-iosApp-dummy.m */; };
-		76D4EEE1DD81286340C428E104968FF4 /* Pods-iosApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F87A626222A8D9B26448A9FEB04FD0DF /* Pods-iosApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA574FA4F3431EDC97BA4333E848FC1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		025F84299D3169B8586A1024C312A94F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B2EC825D9E83A60415DE9B748EBFA0 /* Foundation.framework */; };
+		097F0A29A02F538FB426D27142721D5C /* ObservableViewModelPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DDBB48E1D91A23D77C84F7DBE46AA1 /* ObservableViewModelPublisher.swift */; };
+		0D6AC5091F884930EC8F223BBE1D4FAB /* ChildViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2AC2D18702C0208B032D6AEA32AF1 /* ChildViewModels.swift */; };
+		18FC937F838A7C8FD361034D338CE451 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B2EC825D9E83A60415DE9B748EBFA0 /* Foundation.framework */; };
+		1A7FDE2889389E8A23717C603A0F3B89 /* AsyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395D8AADD7426C0F5AEFFA27210A70FE /* AsyncResult.swift */; };
+		22F35F6B44088980A18865AAFFCB98C5 /* KMMViewModelSwiftUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E4392D4B20D9C01CD47C458F7DE46 /* KMMViewModelSwiftUI-dummy.m */; };
+		2659E62BCC4D69186B4E270F9EA5C338 /* KMPNativeCoroutinesCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 094B472879174C6F2869C821AF8F0E46 /* KMPNativeCoroutinesCore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		291CFDBAA59E3228A2F964FC85D14AED /* ObservableViewModelProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028B418B653ADD9DCA5B09A46B8C62C /* ObservableViewModelProjection.swift */; };
+		3110DFAC0C8F7FC8B964DEFC281D7429 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B2EC825D9E83A60415DE9B748EBFA0 /* Foundation.framework */; };
+		48B86704E13F9EEB5F022EA393320B9D /* KMMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F65154A544BA16B76AA3F690CBAFD3 /* KMMViewModel.swift */; };
+		502360EC32D792B1C27BE5E9FE4D700A /* AsyncFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C2C2F42F3C78DFFA2A0EBC10C07573 /* AsyncFunction.swift */; };
+		5A298620D80A08D60582549720031556 /* NativeSuspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B5914C8E2D61128F69CBF3C23582EA /* NativeSuspend.swift */; };
+		68C53752CC9BA5F1750BA66E5635F8C1 /* KMMViewModelCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB63044DB08D44BD7B5FCB159FBF50E2 /* KMMViewModelCore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6ABFA41741ACB62597827AFD63E392E7 /* KMMViewModelCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E02C5435B75D6FA4CB2093E1A5704B /* KMMViewModelCore-dummy.m */; };
+		6C8218A42F369BF13EE2854846CB28C9 /* KMMViewModelCoreObjC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A31D00FCD7E8EA81282D9DC2210DB10 /* KMMViewModelCoreObjC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E8A83054D9B7BC9390D8677526D8166 /* KMMViewModelCoreObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = D5016AE10C215709DBE8612A9BFA36B3 /* KMMViewModelCoreObjC.m */; };
+		7776386C194C1118825F57F28D6071D2 /* KMPNativeCoroutinesCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B5EC4173C93047BCDC86101D0B9C01 /* KMPNativeCoroutinesCore-dummy.m */; };
+		7FC7FF596D2ED626DAE294A23F9FC2F9 /* NativeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B210FC78A62D3116452250BDE997C1 /* NativeFlow.swift */; };
+		832D9854CA18EB8A327FF47C1B3595A9 /* ObservableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90298621644DA1649CCACE56334B9AC7 /* ObservableViewModel.swift */; };
+		84F91C551034FF3DC6BB80B9EB762C6A /* KMMVMViewModelScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BC76674B7999A66FF6C9B7406395D1 /* KMMVMViewModelScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C24E91DD70E5CAFD5993F93C46EDBC7 /* StateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F9AEC138B89D830AABFCD23E35A9B /* StateViewModel.swift */; };
+		90E1E5C47B81C1FFD81C06A490485FE0 /* NativeCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E498DD37FE56B66E0DF1105E35DB9FAF /* NativeCancellable.swift */; };
+		981211BFE5F9CC695F18BAA98D72F67B /* KMPNativeCoroutinesAsync-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB32346738C4A2E2E84D322F148CB32F /* KMPNativeCoroutinesAsync-dummy.m */; };
+		AEA61DA3D7731491FBA3025163148764 /* KMPNativeCoroutinesAsync-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8DC0BA85F299278C095635B4E837FE /* KMPNativeCoroutinesAsync-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AECB70A602F3EB2059B66EE6C8A09F47 /* KMMViewModelSwiftUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E5E6F736AB200D1B8C8826B9DCD5DE8 /* KMMViewModelSwiftUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9CC044B0145652BAE6DAE8711EE422A /* EnvironmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BFE039A52F12F313D1035E85AD0474 /* EnvironmentViewModel.swift */; };
+		BE87514998419BDDF7FFB16D275A1652 /* Pods-iosApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DC7F9924F99FEE67A9AD3BEE09A10C /* Pods-iosApp-dummy.m */; };
+		C0198A745D02F4ADBFEBAE8DAFD63DE6 /* AsyncSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA47B59C83F3EF860D50D081E5EE073 /* AsyncSequence.swift */; };
+		C814B780B003681AFF44E63D6521849F /* ObservedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4DE84B70B263A339DED66131C22B34 /* ObservedViewModel.swift */; };
+		CD0B74FDAA087EED4EAAA770BEC97D83 /* NativeCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148327143EB5735EA320DE07335DB80E /* NativeCallback.swift */; };
+		DD4181CE562D7BDB8878470D3FD94C19 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6958E6760ABFF0E24F31DC906D76548E /* SwiftUI.framework */; };
+		E844F93B3CEC5D59498927ED290C2634 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B2EC825D9E83A60415DE9B748EBFA0 /* Foundation.framework */; };
+		EE2BCD99C65CCA9F3C4CD43931B03E8B /* Pods-iosApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F87A626222A8D9B26448A9FEB04FD0DF /* Pods-iosApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1880A4AEB7DF5F6DA35F8E6097378EF /* KMMViewModelCoreObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 81C6E7390769C50D81E531A30CBE25BA /* KMMViewModelCoreObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F36E0DF7C148C5D0D1A2DCBBCEDA7CF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B2EC825D9E83A60415DE9B748EBFA0 /* Foundation.framework */; };
+		F43E4F00AA1CA731FAD3038CF5E44400 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B2EC825D9E83A60415DE9B748EBFA0 /* Foundation.framework */; };
+		F56D59C08DE54CBB12513A4312D27C2B /* ObservableViewModelPublishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DD61A0E0E9EA4D0F1B67470F250B4B /* ObservableViewModelPublishers.swift */; };
+		FA13CEB88ACC04A6E007853A59E36F67 /* KMMViewModelCoreObjC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ABFA60C4CEB64239E0CC23AD94632F /* KMMViewModelCoreObjC-dummy.m */; };
+		FA7B989E1C0B7E65389A4E3C7300EE43 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3CE1F2C9B0F50ED68A01A1A0F9DA1E /* Combine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D2C4C8D2F30970495C934DF4135F9B4D /* PBXContainerItemProxy */ = {
+		0AE7F0F83B24392F364AD7562A68B6FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3C5647B399E506357801D92C13B5F1E1;
-			remoteInfo = mokoMvvmFlowSwiftUI;
+			remoteGlobalIDString = FFFB6783B79B68DA14E36A00A348B0B3;
+			remoteInfo = KMPNativeCoroutinesCore;
 		};
-		E135B129C23203161C026BC86A726501 /* PBXContainerItemProxy */ = {
+		0BA0B6F010D4E75E1AA002E7FC637E19 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8777C9F6889E59EFFD631D80AEE9048B;
 			remoteInfo = shared;
 		};
+		1BC2DF7950116ED79B968EB0DBC8D96B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19169E8AD812FA750E1EE5B3E075603E;
+			remoteInfo = KMMViewModelCoreObjC;
+		};
+		7EB7BD02CB824E04987B350FFCB235C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EE2BD7701A3B8E4813A5247932F0FEA;
+			remoteInfo = KMMViewModelSwiftUI;
+		};
+		810EF398F6703FD6773649DA90FC257E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F91BAFE2F1386309176711630BA5305A;
+			remoteInfo = KMPNativeCoroutinesAsync;
+		};
+		B711675C739DA4360D4F840D8554DCD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0521234C0DD3EF3BF7D6DAAF5365301F;
+			remoteInfo = KMMViewModelCore;
+		};
+		B7A097F247CACF77C10E2CD6C36E9265 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0521234C0DD3EF3BF7D6DAAF5365301F;
+			remoteInfo = KMMViewModelCore;
+		};
+		BA139C2EBD85BB6A5C4478B65ACCBEC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19169E8AD812FA750E1EE5B3E075603E;
+			remoteInfo = KMMViewModelCoreObjC;
+		};
+		E82DC98200C4ECF8FDEF81F3BE61A848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFFB6783B79B68DA14E36A00A348B0B3;
+			remoteInfo = KMPNativeCoroutinesCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		009069A386B0A5A8DB76D61AE1586630 /* shared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.debug.xcconfig; sourceTree = "<group>"; };
 		0187F135D5F61750CD24C3E04B6E8B64 /* Pods-iosApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iosApp-frameworks.sh"; sourceTree = "<group>"; };
-		18D3D100B338A428E3570B89B39EABF2 /* mokoMvvmFlowSwiftUI.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = mokoMvvmFlowSwiftUI.xcframework; sourceTree = "<group>"; };
-		34B4193A6A32A90486F795AFC9F465CB /* mokoMvvmFlowSwiftUI-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "mokoMvvmFlowSwiftUI-xcframeworks.sh"; sourceTree = "<group>"; };
-		35548E3BD8DA30925E8FE97E67B84868 /* shared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.release.xcconfig; sourceTree = "<group>"; };
+		094B472879174C6F2869C821AF8F0E46 /* KMPNativeCoroutinesCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMPNativeCoroutinesCore-umbrella.h"; sourceTree = "<group>"; };
+		148327143EB5735EA320DE07335DB80E /* NativeCallback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeCallback.swift; path = KMPNativeCoroutinesCore/NativeCallback.swift; sourceTree = "<group>"; };
+		22BC76674B7999A66FF6C9B7406395D1 /* KMMVMViewModelScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KMMVMViewModelScope.h; path = KMMViewModelCoreObjC/KMMVMViewModelScope.h; sourceTree = "<group>"; };
+		23DD61A0E0E9EA4D0F1B67470F250B4B /* ObservableViewModelPublishers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableViewModelPublishers.swift; path = KMMViewModelCore/ObservableViewModelPublishers.swift; sourceTree = "<group>"; };
+		25BFE039A52F12F313D1035E85AD0474 /* EnvironmentViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnvironmentViewModel.swift; path = KMMViewModelSwiftUI/EnvironmentViewModel.swift; sourceTree = "<group>"; };
+		2622CCF1F7798BD4968E7BC1FF9C8B25 /* KMMViewModelSwiftUI */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KMMViewModelSwiftUI; path = KMMViewModelSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B5EC4173C93047BCDC86101D0B9C01 /* KMPNativeCoroutinesCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KMPNativeCoroutinesCore-dummy.m"; sourceTree = "<group>"; };
+		28B5914C8E2D61128F69CBF3C23582EA /* NativeSuspend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeSuspend.swift; path = KMPNativeCoroutinesCore/NativeSuspend.swift; sourceTree = "<group>"; };
+		2E1863D8E6868BEA75B412B2BA00F401 /* KMPNativeCoroutinesAsync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMPNativeCoroutinesAsync.debug.xcconfig; sourceTree = "<group>"; };
+		33ABFA60C4CEB64239E0CC23AD94632F /* KMMViewModelCoreObjC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KMMViewModelCoreObjC-dummy.m"; sourceTree = "<group>"; };
+		35DDBB48E1D91A23D77C84F7DBE46AA1 /* ObservableViewModelPublisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableViewModelPublisher.swift; path = KMMViewModelCore/ObservableViewModelPublisher.swift; sourceTree = "<group>"; };
+		395D8AADD7426C0F5AEFFA27210A70FE /* AsyncResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncResult.swift; path = KMPNativeCoroutinesAsync/AsyncResult.swift; sourceTree = "<group>"; };
+		39C2C2F42F3C78DFFA2A0EBC10C07573 /* AsyncFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncFunction.swift; path = KMPNativeCoroutinesAsync/AsyncFunction.swift; sourceTree = "<group>"; };
+		3A04D042BAF52346DF6AA2E0610EE3F1 /* KMMViewModelCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KMMViewModelCore.modulemap; sourceTree = "<group>"; };
+		3A3B809E281132DD1366186632C1D9D5 /* KMMViewModelCoreObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMMViewModelCoreObjC.debug.xcconfig; sourceTree = "<group>"; };
 		3F64BADB16C311E9D09DAD0116F684F4 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
-		41EE42C04967341DA5E85FF54575C14E /* mokoMvvmFlowSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = mokoMvvmFlowSwiftUI.debug.xcconfig; sourceTree = "<group>"; };
+		42D33C0A0C5E0619360846847D876734 /* KMMViewModelCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMMViewModelCore-prefix.pch"; sourceTree = "<group>"; };
+		499E69F7E22CF9A0E101531C4B1FD6BD /* KMPNativeCoroutinesAsync-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMPNativeCoroutinesAsync-prefix.pch"; sourceTree = "<group>"; };
+		4E3CE1F2C9B0F50ED68A01A1A0F9DA1E /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Combine.framework; sourceTree = DEVELOPER_DIR; };
 		54DC7F9924F99FEE67A9AD3BEE09A10C /* Pods-iosApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iosApp-dummy.m"; sourceTree = "<group>"; };
+		58B2EC825D9E83A60415DE9B748EBFA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5AC974169B09D4545F741E9A2147610E /* Pods-iosApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iosApp-Info.plist"; sourceTree = "<group>"; };
-		6DCDEAE476C5ECE27383354205B3552D /* MultiPlatformLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultiPlatformLibrary.framework; path = build/cocoapods/framework/MultiPlatformLibrary.framework; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5DA47B59C83F3EF860D50D081E5EE073 /* AsyncSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncSequence.swift; path = KMPNativeCoroutinesAsync/AsyncSequence.swift; sourceTree = "<group>"; };
+		5DB5BDDB972703E263797BE3FDD25E15 /* KMPNativeCoroutinesAsync.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KMPNativeCoroutinesAsync.modulemap; sourceTree = "<group>"; };
+		5E5E6F736AB200D1B8C8826B9DCD5DE8 /* KMMViewModelSwiftUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMMViewModelSwiftUI-umbrella.h"; sourceTree = "<group>"; };
+		6916F43FA3DF419D2E59A399D13971E6 /* KMMViewModelSwiftUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KMMViewModelSwiftUI.modulemap; sourceTree = "<group>"; };
+		6958E6760ABFF0E24F31DC906D76548E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		6F8DC0BA85F299278C095635B4E837FE /* KMPNativeCoroutinesAsync-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMPNativeCoroutinesAsync-umbrella.h"; sourceTree = "<group>"; };
+		734A7EB7736A65B8A61B7858DBED0A43 /* shared.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = shared.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7E0E4392D4B20D9C01CD47C458F7DE46 /* KMMViewModelSwiftUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KMMViewModelSwiftUI-dummy.m"; sourceTree = "<group>"; };
+		7F4DE84B70B263A339DED66131C22B34 /* ObservedViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservedViewModel.swift; path = KMMViewModelSwiftUI/ObservedViewModel.swift; sourceTree = "<group>"; };
+		814414C1624D72E965EDA519B22D112F /* KMMViewModelCoreObjC */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KMMViewModelCoreObjC; path = KMMViewModelCoreObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C6E7390769C50D81E531A30CBE25BA /* KMMViewModelCoreObjC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KMMViewModelCoreObjC.h; path = KMMViewModelCoreObjC/KMMViewModelCoreObjC.h; sourceTree = "<group>"; };
+		836777839B6730F3A1C8AF76437A936D /* KMPNativeCoroutinesCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMPNativeCoroutinesCore.debug.xcconfig; sourceTree = "<group>"; };
+		899F9AEC138B89D830AABFCD23E35A9B /* StateViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StateViewModel.swift; path = KMMViewModelSwiftUI/StateViewModel.swift; sourceTree = "<group>"; };
 		8B524AABE529FB8A2D151B05321336E0 /* Pods-iosApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iosApp.modulemap"; sourceTree = "<group>"; };
-		95B09EA82E7AF9ACCCCAF3E55C859116 /* shared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.debug.xcconfig; sourceTree = "<group>"; };
+		8BA14A1A6BD161DB364B77348896C534 /* KMMViewModelCoreObjC.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KMMViewModelCoreObjC.modulemap; sourceTree = "<group>"; };
+		8FE8FE592ACC0E9B6D0DBBE1BCE2D597 /* KMMViewModelSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMMViewModelSwiftUI.debug.xcconfig; sourceTree = "<group>"; };
+		90298621644DA1649CCACE56334B9AC7 /* ObservableViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableViewModel.swift; path = KMMViewModelCore/ObservableViewModel.swift; sourceTree = "<group>"; };
+		9A31D00FCD7E8EA81282D9DC2210DB10 /* KMMViewModelCoreObjC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMMViewModelCoreObjC-umbrella.h"; sourceTree = "<group>"; };
 		9BB0B8B698D4C35D4F9A07EF70910170 /* Pods-iosApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iosApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		9C72ABC1E49D3E738EA5E01C98B8BB08 /* KMMViewModelSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMMViewModelSwiftUI.release.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF2AC2D18702C0208B032D6AEA32AF1 /* ChildViewModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChildViewModels.swift; path = KMMViewModelCore/ChildViewModels.swift; sourceTree = "<group>"; };
+		9F01BBF31562092DA22243129BF8D3B7 /* KMMViewModelSwiftUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMMViewModelSwiftUI-prefix.pch"; sourceTree = "<group>"; };
 		9F1FFC8B10F4D7D4F37606E8959B3F29 /* Pods-iosApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iosApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9FECCB5AFF87D121F15BA01E683C7932 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		A023042347188C9A4E449AE9F4CC5EF8 /* KMPNativeCoroutinesCore-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KMPNativeCoroutinesCore-Info.plist"; sourceTree = "<group>"; };
+		A235DD92BE80EE1FC2BFA461A7C0FD50 /* KMMViewModelCoreObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMMViewModelCoreObjC.release.xcconfig; sourceTree = "<group>"; };
+		A4B210FC78A62D3116452250BDE997C1 /* NativeFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeFlow.swift; path = KMPNativeCoroutinesCore/NativeFlow.swift; sourceTree = "<group>"; };
 		B097DD7534E741D5C41838011D755842 /* Pods-iosApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-iosApp"; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6C3E81743B4F82A63C908F8B911AC96 /* mokoMvvmFlowSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = mokoMvvmFlowSwiftUI.release.xcconfig; sourceTree = "<group>"; };
+		B371E3437EA62506C8E2455FF9DB5940 /* KMPNativeCoroutinesCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KMPNativeCoroutinesCore.modulemap; sourceTree = "<group>"; };
+		B3AAF4333AF3B9A8C6A7B1BFD17C2D41 /* KMPNativeCoroutinesCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMPNativeCoroutinesCore.release.xcconfig; sourceTree = "<group>"; };
+		B4E02C5435B75D6FA4CB2093E1A5704B /* KMMViewModelCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KMMViewModelCore-dummy.m"; sourceTree = "<group>"; };
+		BB32346738C4A2E2E84D322F148CB32F /* KMPNativeCoroutinesAsync-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KMPNativeCoroutinesAsync-dummy.m"; sourceTree = "<group>"; };
+		BB63044DB08D44BD7B5FCB159FBF50E2 /* KMMViewModelCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMMViewModelCore-umbrella.h"; sourceTree = "<group>"; };
+		BFFD47D2DE7F12D7D4A57A4CAD10051B /* KMMViewModelCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMMViewModelCore.debug.xcconfig; sourceTree = "<group>"; };
+		C209DFF8FC98E913A2737B644EA11E29 /* KMPNativeCoroutinesAsync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMPNativeCoroutinesAsync.release.xcconfig; sourceTree = "<group>"; };
+		C45ACA0C67A776FF6499B0E483B80DF6 /* KMMViewModelSwiftUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KMMViewModelSwiftUI-Info.plist"; sourceTree = "<group>"; };
+		CBB360F2822905300C310CBA06D6A093 /* KMPNativeCoroutinesAsync */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KMPNativeCoroutinesAsync; path = KMPNativeCoroutinesAsync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD95784981BF72DDF2E0E022C3C4CCBE /* KMMViewModelCore-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KMMViewModelCore-Info.plist"; sourceTree = "<group>"; };
+		CDBFA13B032E33B20095EAB00CA6A056 /* MultiPlatformLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultiPlatformLibrary.framework; path = build/cocoapods/framework/MultiPlatformLibrary.framework; sourceTree = "<group>"; };
+		D07687751957C1BE4F205E4AAD1BD36B /* KMPNativeCoroutinesAsync-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KMPNativeCoroutinesAsync-Info.plist"; sourceTree = "<group>"; };
+		D5016AE10C215709DBE8612A9BFA36B3 /* KMMViewModelCoreObjC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KMMViewModelCoreObjC.m; path = KMMViewModelCoreObjC/KMMViewModelCoreObjC.m; sourceTree = "<group>"; };
+		D71962809CEA5348D54075FA8B0BA78F /* KMMViewModelCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMMViewModelCore.release.xcconfig; sourceTree = "<group>"; };
+		D8519404EB092F6DCB0B136C607AE0B1 /* KMPNativeCoroutinesCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMPNativeCoroutinesCore-prefix.pch"; sourceTree = "<group>"; };
+		DF46491DE621C5EBEF6809F3114F2FB9 /* KMMViewModelCoreObjC-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KMMViewModelCoreObjC-Info.plist"; sourceTree = "<group>"; };
+		E08EF25B7D8846398B38F1F71B6003A7 /* KMMViewModelCoreObjC-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMMViewModelCoreObjC-prefix.pch"; sourceTree = "<group>"; };
+		E23ED8A03974E9F66764D2E6B0853DA2 /* shared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.release.xcconfig; sourceTree = "<group>"; };
+		E32954243B605448566BC0C0B0BCF70D /* KMPNativeCoroutinesCore */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KMPNativeCoroutinesCore; path = KMPNativeCoroutinesCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E498DD37FE56B66E0DF1105E35DB9FAF /* NativeCancellable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeCancellable.swift; path = KMPNativeCoroutinesCore/NativeCancellable.swift; sourceTree = "<group>"; };
+		E65A04D83A11443156A141A6DC9578F0 /* shared-copy-dsyms.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "shared-copy-dsyms.sh"; sourceTree = "<group>"; };
+		E8F65154A544BA16B76AA3F690CBAFD3 /* KMMViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KMMViewModel.swift; path = KMMViewModelCore/KMMViewModel.swift; sourceTree = "<group>"; };
+		EB7E2AFF125FEDE8DBE6E43B00961B89 /* KMMViewModelCore */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KMMViewModelCore; path = KMMViewModelCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F028B418B653ADD9DCA5B09A46B8C62C /* ObservableViewModelProjection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableViewModelProjection.swift; path = KMMViewModelSwiftUI/ObservableViewModelProjection.swift; sourceTree = "<group>"; };
 		F87A626222A8D9B26448A9FEB04FD0DF /* Pods-iosApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iosApp-umbrella.h"; sourceTree = "<group>"; };
-		FB1BF8BE937671FB0F330C2D28634477 /* shared.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = shared.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A27B16A8F0C208EC63A7C166E19FEAC0 /* Frameworks */ = {
+		1D67EA89ADCF977BB07B44F2C6BFCF56 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA574FA4F3431EDC97BA4333E848FC1B /* Foundation.framework in Frameworks */,
+				E844F93B3CEC5D59498927ED290C2634 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C0EF5E38BEC2806DE7157DEA8CC1147 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43E4F00AA1CA731FAD3038CF5E44400 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		304F365054DB28D79B1FC3C1673A3123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				025F84299D3169B8586A1024C312A94F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5C11E5D0BA58EADCE8171B301EBA43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F36E0DF7C148C5D0D1A2DCBBCEDA7CF1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A027D7BCA0A465B8355C109EE2E4D0CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA7B989E1C0B7E65389A4E3C7300EE43 /* Combine.framework in Frameworks */,
+				3110DFAC0C8F7FC8B964DEFC281D7429 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A20C8E099F9284FDF21566A98C60A99A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18FC937F838A7C8FD361034D338CE451 /* Foundation.framework in Frameworks */,
+				DD4181CE562D7BDB8878470D3FD94C19 /* SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7996D601BC61A0DA6DA8A78730B3B7ED /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		11C970DEAE48C6D0282DFE54684F53F1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,30 +279,62 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		1F86AA6785DF34AFD5A71790761717DE /* Products */ = {
+		16ADC9D5CC88A8E5801017DDC6BF995A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B097DD7534E741D5C41838011D755842 /* Pods-iosApp */,
+				CDBFA13B032E33B20095EAB00CA6A056 /* MultiPlatformLibrary.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		313FE5FE915A4A924C55AAC02A910D61 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EEF3277DCE2E4B31CF76A57AB68C2BA1 /* shared */,
+				D8A02EC6C8DF3366897E8E9AFF0F6E82 /* shared */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		528C102979F3C15093BE1295A00F0FC7 /* mokoMvvmFlowSwiftUI */ = {
+		3C8197A7590A6C5FA75FCB03F589DDA3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE8B3279D76099BB683580FFADD4FC54 /* Frameworks */,
-				F6795DC75B551141D0014EBC35238489 /* Support Files */,
+				8BA14A1A6BD161DB364B77348896C534 /* KMMViewModelCoreObjC.modulemap */,
+				33ABFA60C4CEB64239E0CC23AD94632F /* KMMViewModelCoreObjC-dummy.m */,
+				DF46491DE621C5EBEF6809F3114F2FB9 /* KMMViewModelCoreObjC-Info.plist */,
+				E08EF25B7D8846398B38F1F71B6003A7 /* KMMViewModelCoreObjC-prefix.pch */,
+				9A31D00FCD7E8EA81282D9DC2210DB10 /* KMMViewModelCoreObjC-umbrella.h */,
+				3A3B809E281132DD1366186632C1D9D5 /* KMMViewModelCoreObjC.debug.xcconfig */,
+				A235DD92BE80EE1FC2BFA461A7C0FD50 /* KMMViewModelCoreObjC.release.xcconfig */,
 			);
-			name = mokoMvvmFlowSwiftUI;
-			path = mokoMvvmFlowSwiftUI;
+			name = "Support Files";
+			path = "../Target Support Files/KMMViewModelCoreObjC";
+			sourceTree = "<group>";
+		};
+		43A8CC77B8A6687948DBEE7103B8EC6E /* KMMViewModelCore */ = {
+			isa = PBXGroup;
+			children = (
+				9DF2AC2D18702C0208B032D6AEA32AF1 /* ChildViewModels.swift */,
+				E8F65154A544BA16B76AA3F690CBAFD3 /* KMMViewModel.swift */,
+				90298621644DA1649CCACE56334B9AC7 /* ObservableViewModel.swift */,
+				35DDBB48E1D91A23D77C84F7DBE46AA1 /* ObservableViewModelPublisher.swift */,
+				23DD61A0E0E9EA4D0F1B67470F250B4B /* ObservableViewModelPublishers.swift */,
+				F879B9C0498A84CA381EA18B5FDDDA90 /* Support Files */,
+			);
+			name = KMMViewModelCore;
+			path = KMMViewModelCore;
+			sourceTree = "<group>";
+		};
+		4B7BE3F01353BE4C346FC74046AAF207 /* KMMViewModelSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				25BFE039A52F12F313D1035E85AD0474 /* EnvironmentViewModel.swift */,
+				F028B418B653ADD9DCA5B09A46B8C62C /* ObservableViewModelProjection.swift */,
+				7F4DE84B70B263A339DED66131C22B34 /* ObservedViewModel.swift */,
+				899F9AEC138B89D830AABFCD23E35A9B /* StateViewModel.swift */,
+				6A7324FA82B65D887BAF534AF7662C68 /* Support Files */,
+			);
+			name = KMMViewModelSwiftUI;
+			path = KMMViewModelSwiftUI;
 			sourceTree = "<group>";
 		};
 		52A898E555C2DBD7D25A7E44754C3FC6 /* Pods-iosApp */ = {
@@ -138,54 +354,98 @@
 			path = "Target Support Files/Pods-iosApp";
 			sourceTree = "<group>";
 		};
-		569B56E5B05425CAE32676C6049DC8CB /* Pod */ = {
+		560F0FDA7E7DFF33C0A630EF4E3CE1B4 /* KMPNativeCoroutinesAsync */ = {
 			isa = PBXGroup;
 			children = (
-				FB1BF8BE937671FB0F330C2D28634477 /* shared.podspec */,
+				39C2C2F42F3C78DFFA2A0EBC10C07573 /* AsyncFunction.swift */,
+				395D8AADD7426C0F5AEFFA27210A70FE /* AsyncResult.swift */,
+				5DA47B59C83F3EF860D50D081E5EE073 /* AsyncSequence.swift */,
+				EFBC7F16F666F3FD9B365E68E2227D44 /* Support Files */,
+			);
+			name = KMPNativeCoroutinesAsync;
+			path = KMPNativeCoroutinesAsync;
+			sourceTree = "<group>";
+		};
+		58DAE3B502B145BFD26ADEF120E929E9 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				734A7EB7736A65B8A61B7858DBED0A43 /* shared.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		5B928543BC95C360575B3BCCE28B0CD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				EB7E2AFF125FEDE8DBE6E43B00961B89 /* KMMViewModelCore */,
+				814414C1624D72E965EDA519B22D112F /* KMMViewModelCoreObjC */,
+				2622CCF1F7798BD4968E7BC1FF9C8B25 /* KMMViewModelSwiftUI */,
+				CBB360F2822905300C310CBA06D6A093 /* KMPNativeCoroutinesAsync */,
+				E32954243B605448566BC0C0B0BCF70D /* KMPNativeCoroutinesCore */,
+				B097DD7534E741D5C41838011D755842 /* Pods-iosApp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A7324FA82B65D887BAF534AF7662C68 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6916F43FA3DF419D2E59A399D13971E6 /* KMMViewModelSwiftUI.modulemap */,
+				7E0E4392D4B20D9C01CD47C458F7DE46 /* KMMViewModelSwiftUI-dummy.m */,
+				C45ACA0C67A776FF6499B0E483B80DF6 /* KMMViewModelSwiftUI-Info.plist */,
+				9F01BBF31562092DA22243129BF8D3B7 /* KMMViewModelSwiftUI-prefix.pch */,
+				5E5E6F736AB200D1B8C8826B9DCD5DE8 /* KMMViewModelSwiftUI-umbrella.h */,
+				8FE8FE592ACC0E9B6D0DBBE1BCE2D597 /* KMMViewModelSwiftUI.debug.xcconfig */,
+				9C72ABC1E49D3E738EA5E01C98B8BB08 /* KMMViewModelSwiftUI.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/KMMViewModelSwiftUI";
+			sourceTree = "<group>";
+		};
+		7996D601BC61A0DA6DA8A78730B3B7ED /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4E3CE1F2C9B0F50ED68A01A1A0F9DA1E /* Combine.framework */,
+				58B2EC825D9E83A60415DE9B748EBFA0 /* Foundation.framework */,
+				6958E6760ABFF0E24F31DC906D76548E /* SwiftUI.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5CB66AAACA3977B45E9869C360E9F289 /* Support Files */ = {
+		956A655F6D8CFE14847D80D0455A890F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				95B09EA82E7AF9ACCCCAF3E55C859116 /* shared.debug.xcconfig */,
-				35548E3BD8DA30925E8FE97E67B84868 /* shared.release.xcconfig */,
+				E65A04D83A11443156A141A6DC9578F0 /* shared-copy-dsyms.sh */,
+				009069A386B0A5A8DB76D61AE1586630 /* shared.debug.xcconfig */,
+				E23ED8A03974E9F66764D2E6B0853DA2 /* shared.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../iosApp/Pods/Target Support Files/shared";
 			sourceTree = "<group>";
 		};
-		AE8B3279D76099BB683580FFADD4FC54 /* Frameworks */ = {
+		97C35EAA4A009915BCF2A40930AF1F2A /* KMPNativeCoroutinesCore */ = {
 			isa = PBXGroup;
 			children = (
-				18D3D100B338A428E3570B89B39EABF2 /* mokoMvvmFlowSwiftUI.xcframework */,
+				148327143EB5735EA320DE07335DB80E /* NativeCallback.swift */,
+				E498DD37FE56B66E0DF1105E35DB9FAF /* NativeCancellable.swift */,
+				A4B210FC78A62D3116452250BDE997C1 /* NativeFlow.swift */,
+				28B5914C8E2D61128F69CBF3C23582EA /* NativeSuspend.swift */,
+				D7B79E13BE3709E4616C657ACA317C3A /* Support Files */,
 			);
-			name = Frameworks;
+			name = KMPNativeCoroutinesCore;
+			path = KMPNativeCoroutinesCore;
 			sourceTree = "<group>";
 		};
-		B064B6952C427BE2341264ECAF4A212E /* Pods */ = {
+		C9E72612B8A06EF8CF948D4922BC7517 /* KMMViewModelCoreObjC */ = {
 			isa = PBXGroup;
 			children = (
-				528C102979F3C15093BE1295A00F0FC7 /* mokoMvvmFlowSwiftUI */,
+				81C6E7390769C50D81E531A30CBE25BA /* KMMViewModelCoreObjC.h */,
+				D5016AE10C215709DBE8612A9BFA36B3 /* KMMViewModelCoreObjC.m */,
+				22BC76674B7999A66FF6C9B7406395D1 /* KMMVMViewModelScope.h */,
+				3C8197A7590A6C5FA75FCB03F589DDA3 /* Support Files */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B289A9D228F1887555823D295068FA83 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6DCDEAE476C5ECE27383354205B3552D /* MultiPlatformLibrary.framework */,
-			);
-			name = Frameworks;
+			name = KMMViewModelCoreObjC;
+			path = KMMViewModelCoreObjC;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -193,75 +453,252 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				313FE5FE915A4A924C55AAC02A910D61 /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				B064B6952C427BE2341264ECAF4A212E /* Pods */,
-				1F86AA6785DF34AFD5A71790761717DE /* Products */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				FDBCB8CF5A945F93E4BC406934842726 /* Pods */,
+				5B928543BC95C360575B3BCCE28B0CD1 /* Products */,
 				11C970DEAE48C6D0282DFE54684F53F1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		D7B79E13BE3709E4616C657ACA317C3A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				B371E3437EA62506C8E2455FF9DB5940 /* KMPNativeCoroutinesCore.modulemap */,
+				27B5EC4173C93047BCDC86101D0B9C01 /* KMPNativeCoroutinesCore-dummy.m */,
+				A023042347188C9A4E449AE9F4CC5EF8 /* KMPNativeCoroutinesCore-Info.plist */,
+				D8519404EB092F6DCB0B136C607AE0B1 /* KMPNativeCoroutinesCore-prefix.pch */,
+				094B472879174C6F2869C821AF8F0E46 /* KMPNativeCoroutinesCore-umbrella.h */,
+				836777839B6730F3A1C8AF76437A936D /* KMPNativeCoroutinesCore.debug.xcconfig */,
+				B3AAF4333AF3B9A8C6A7B1BFD17C2D41 /* KMPNativeCoroutinesCore.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/KMPNativeCoroutinesCore";
 			sourceTree = "<group>";
 		};
-		EEF3277DCE2E4B31CF76A57AB68C2BA1 /* shared */ = {
+		D8A02EC6C8DF3366897E8E9AFF0F6E82 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				B289A9D228F1887555823D295068FA83 /* Frameworks */,
-				569B56E5B05425CAE32676C6049DC8CB /* Pod */,
-				5CB66AAACA3977B45E9869C360E9F289 /* Support Files */,
+				16ADC9D5CC88A8E5801017DDC6BF995A /* Frameworks */,
+				58DAE3B502B145BFD26ADEF120E929E9 /* Pod */,
+				956A655F6D8CFE14847D80D0455A890F /* Support Files */,
 			);
 			name = shared;
 			path = ../../shared;
 			sourceTree = "<group>";
 		};
-		F6795DC75B551141D0014EBC35238489 /* Support Files */ = {
+		EFBC7F16F666F3FD9B365E68E2227D44 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				34B4193A6A32A90486F795AFC9F465CB /* mokoMvvmFlowSwiftUI-xcframeworks.sh */,
-				41EE42C04967341DA5E85FF54575C14E /* mokoMvvmFlowSwiftUI.debug.xcconfig */,
-				B6C3E81743B4F82A63C908F8B911AC96 /* mokoMvvmFlowSwiftUI.release.xcconfig */,
+				5DB5BDDB972703E263797BE3FDD25E15 /* KMPNativeCoroutinesAsync.modulemap */,
+				BB32346738C4A2E2E84D322F148CB32F /* KMPNativeCoroutinesAsync-dummy.m */,
+				D07687751957C1BE4F205E4AAD1BD36B /* KMPNativeCoroutinesAsync-Info.plist */,
+				499E69F7E22CF9A0E101531C4B1FD6BD /* KMPNativeCoroutinesAsync-prefix.pch */,
+				6F8DC0BA85F299278C095635B4E837FE /* KMPNativeCoroutinesAsync-umbrella.h */,
+				2E1863D8E6868BEA75B412B2BA00F401 /* KMPNativeCoroutinesAsync.debug.xcconfig */,
+				C209DFF8FC98E913A2737B644EA11E29 /* KMPNativeCoroutinesAsync.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/mokoMvvmFlowSwiftUI";
+			path = "../Target Support Files/KMPNativeCoroutinesAsync";
+			sourceTree = "<group>";
+		};
+		F879B9C0498A84CA381EA18B5FDDDA90 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A04D042BAF52346DF6AA2E0610EE3F1 /* KMMViewModelCore.modulemap */,
+				B4E02C5435B75D6FA4CB2093E1A5704B /* KMMViewModelCore-dummy.m */,
+				CD95784981BF72DDF2E0E022C3C4CCBE /* KMMViewModelCore-Info.plist */,
+				42D33C0A0C5E0619360846847D876734 /* KMMViewModelCore-prefix.pch */,
+				BB63044DB08D44BD7B5FCB159FBF50E2 /* KMMViewModelCore-umbrella.h */,
+				BFFD47D2DE7F12D7D4A57A4CAD10051B /* KMMViewModelCore.debug.xcconfig */,
+				D71962809CEA5348D54075FA8B0BA78F /* KMMViewModelCore.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/KMMViewModelCore";
+			sourceTree = "<group>";
+		};
+		FDBCB8CF5A945F93E4BC406934842726 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43A8CC77B8A6687948DBEE7103B8EC6E /* KMMViewModelCore */,
+				C9E72612B8A06EF8CF948D4922BC7517 /* KMMViewModelCoreObjC */,
+				4B7BE3F01353BE4C346FC74046AAF207 /* KMMViewModelSwiftUI */,
+				560F0FDA7E7DFF33C0A630EF4E3CE1B4 /* KMPNativeCoroutinesAsync */,
+				97C35EAA4A009915BCF2A40930AF1F2A /* KMPNativeCoroutinesCore */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A217DD9FFA13F7AD9A36A6386EAF4D70 /* Headers */ = {
+		02BA5559FC68BDF2240DD5378F512C6E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76D4EEE1DD81286340C428E104968FF4 /* Pods-iosApp-umbrella.h in Headers */,
+				EE2BCD99C65CCA9F3C4CD43931B03E8B /* Pods-iosApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		742BA3A513BCD7C3B43CB9C01DF60365 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEA61DA3D7731491FBA3025163148764 /* KMPNativeCoroutinesAsync-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87ED68709E38A8D816A7DA2E1A43C6D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AECB70A602F3EB2059B66EE6C8A09F47 /* KMMViewModelSwiftUI-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C76C831330664AF18C67A122F485B703 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1880A4AEB7DF5F6DA35F8E6097378EF /* KMMViewModelCoreObjC.h in Headers */,
+				6C8218A42F369BF13EE2854846CB28C9 /* KMMViewModelCoreObjC-umbrella.h in Headers */,
+				84F91C551034FF3DC6BB80B9EB762C6A /* KMMVMViewModelScope.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E338E47A8AFDBE92FB2B9D050FF40EED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2659E62BCC4D69186B4E270F9EA5C338 /* KMPNativeCoroutinesCore-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0DBD2F49CB0CBA49FE57DAB722E4DD4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C53752CC9BA5F1750BA66E5635F8C1 /* KMMViewModelCore-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		ED39C638569286489CD697A6C8964146 /* Pods-iosApp */ = {
+		0521234C0DD3EF3BF7D6DAAF5365301F /* KMMViewModelCore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6B9D5472579D6AFB1367B502C2BE742 /* Build configuration list for PBXNativeTarget "Pods-iosApp" */;
+			buildConfigurationList = 30C1B27EA28F72712433CB49801AB3C4 /* Build configuration list for PBXNativeTarget "KMMViewModelCore" */;
 			buildPhases = (
-				A217DD9FFA13F7AD9A36A6386EAF4D70 /* Headers */,
-				34761D0CDDF9BAB87C622AAEECF5D991 /* Sources */,
-				A27B16A8F0C208EC63A7C166E19FEAC0 /* Frameworks */,
-				DBA2FFB92904D824D5D27C53A6807019 /* Resources */,
+				F0DBD2F49CB0CBA49FE57DAB722E4DD4 /* Headers */,
+				939DB2FDC814F6B7F588F1CC7B99DF87 /* Sources */,
+				A027D7BCA0A465B8355C109EE2E4D0CE /* Frameworks */,
+				B3C150A100FFFB39AB09BF0497B54D61 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EEBA8547019755AC84AEEA194544B243 /* PBXTargetDependency */,
-				32555A4EB301951EBCEA28FB1C1F13D5 /* PBXTargetDependency */,
+				01E0B07FD8E2476CFCE0C53E1DBB2220 /* PBXTargetDependency */,
+			);
+			name = KMMViewModelCore;
+			productName = KMMViewModelCore;
+			productReference = EB7E2AFF125FEDE8DBE6E43B00961B89 /* KMMViewModelCore */;
+			productType = "com.apple.product-type.framework";
+		};
+		0EE2BD7701A3B8E4813A5247932F0FEA /* KMMViewModelSwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F7C5A61057627FF42F94C55208B85D5 /* Build configuration list for PBXNativeTarget "KMMViewModelSwiftUI" */;
+			buildPhases = (
+				87ED68709E38A8D816A7DA2E1A43C6D3 /* Headers */,
+				AB018E8C4BCCFFF8EBA56DE89CE2C304 /* Sources */,
+				A20C8E099F9284FDF21566A98C60A99A /* Frameworks */,
+				BD9B4605D2F00CD8D955BE55B893DF5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C60135051CB41BE76991C262367BC66D /* PBXTargetDependency */,
+			);
+			name = KMMViewModelSwiftUI;
+			productName = KMMViewModelSwiftUI;
+			productReference = 2622CCF1F7798BD4968E7BC1FF9C8B25 /* KMMViewModelSwiftUI */;
+			productType = "com.apple.product-type.framework";
+		};
+		19169E8AD812FA750E1EE5B3E075603E /* KMMViewModelCoreObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 504F6A2DB2A082F7933A949DAF974F26 /* Build configuration list for PBXNativeTarget "KMMViewModelCoreObjC" */;
+			buildPhases = (
+				C76C831330664AF18C67A122F485B703 /* Headers */,
+				1DD968EA0DAD9D8B6C398FAEBD8775EC /* Sources */,
+				7C5C11E5D0BA58EADCE8171B301EBA43 /* Frameworks */,
+				8B35E26608C591C519A4987B9F1EDC1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMMViewModelCoreObjC;
+			productName = KMMViewModelCoreObjC;
+			productReference = 814414C1624D72E965EDA519B22D112F /* KMMViewModelCoreObjC */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED39C638569286489CD697A6C8964146 /* Pods-iosApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B01816DB9010F2084B25681CEFBCDE55 /* Build configuration list for PBXNativeTarget "Pods-iosApp" */;
+			buildPhases = (
+				02BA5559FC68BDF2240DD5378F512C6E /* Headers */,
+				90349D317184B4E5E0E9D7514A722F41 /* Sources */,
+				1D67EA89ADCF977BB07B44F2C6BFCF56 /* Frameworks */,
+				D044E19931ED94CEE526E0C5734C5447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36A4E184C669E7E53004A9EE255C5F48 /* PBXTargetDependency */,
+				AA66DC7F69522D5AF0E2CA97A495434D /* PBXTargetDependency */,
+				3BAF606CBD94C06DAA6E53A8FFA77F3F /* PBXTargetDependency */,
+				8776CD9B0CD12DA5CA0315B7927561D7 /* PBXTargetDependency */,
+				80778DE1D8D129F50778B1C69C9F3E54 /* PBXTargetDependency */,
+				83AEC68F6661559CDDDE83E81F856D6D /* PBXTargetDependency */,
 			);
 			name = "Pods-iosApp";
 			productName = Pods_iosApp;
 			productReference = B097DD7534E741D5C41838011D755842 /* Pods-iosApp */;
+			productType = "com.apple.product-type.framework";
+		};
+		F91BAFE2F1386309176711630BA5305A /* KMPNativeCoroutinesAsync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CB83A5F237CEA212FFE13EE6C40F270 /* Build configuration list for PBXNativeTarget "KMPNativeCoroutinesAsync" */;
+			buildPhases = (
+				742BA3A513BCD7C3B43CB9C01DF60365 /* Headers */,
+				CEBFC30DFC3E9A5A18AF608E23D03C61 /* Sources */,
+				304F365054DB28D79B1FC3C1673A3123 /* Frameworks */,
+				50C3992AAF25EEA6CB7777DF659A16A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				759B97569C026984CEF04623A107DAE7 /* PBXTargetDependency */,
+			);
+			name = KMPNativeCoroutinesAsync;
+			productName = KMPNativeCoroutinesAsync;
+			productReference = CBB360F2822905300C310CBA06D6A093 /* KMPNativeCoroutinesAsync */;
+			productType = "com.apple.product-type.framework";
+		};
+		FFFB6783B79B68DA14E36A00A348B0B3 /* KMPNativeCoroutinesCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87262E197E08CB3D85B82E4556B982A0 /* Build configuration list for PBXNativeTarget "KMPNativeCoroutinesCore" */;
+			buildPhases = (
+				E338E47A8AFDBE92FB2B9D050FF40EED /* Headers */,
+				AD4894E3B37D99ADAED3695560E7A40D /* Sources */,
+				2C0EF5E38BEC2806DE7157DEA8CC1147 /* Frameworks */,
+				61CC28B6FB2BFF7F47D6696C253B578B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMPNativeCoroutinesCore;
+			productName = KMPNativeCoroutinesCore;
+			productReference = E32954243B605448566BC0C0B0BCF70D /* KMPNativeCoroutinesCore */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -274,7 +711,7 @@
 				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -282,11 +719,15 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 1F86AA6785DF34AFD5A71790761717DE /* Products */;
+			productRefGroup = 5B928543BC95C360575B3BCCE28B0CD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3C5647B399E506357801D92C13B5F1E1 /* mokoMvvmFlowSwiftUI */,
+				0521234C0DD3EF3BF7D6DAAF5365301F /* KMMViewModelCore */,
+				19169E8AD812FA750E1EE5B3E075603E /* KMMViewModelCoreObjC */,
+				0EE2BD7701A3B8E4813A5247932F0FEA /* KMMViewModelSwiftUI */,
+				F91BAFE2F1386309176711630BA5305A /* KMPNativeCoroutinesAsync */,
+				FFFB6783B79B68DA14E36A00A348B0B3 /* KMPNativeCoroutinesCore */,
 				ED39C638569286489CD697A6C8964146 /* Pods-iosApp */,
 				8777C9F6889E59EFFD631D80AEE9048B /* shared */,
 			);
@@ -294,7 +735,42 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DBA2FFB92904D824D5D27C53A6807019 /* Resources */ = {
+		50C3992AAF25EEA6CB7777DF659A16A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61CC28B6FB2BFF7F47D6696C253B578B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B35E26608C591C519A4987B9F1EDC1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3C150A100FFFB39AB09BF0497B54D61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD9B4605D2F00CD8D955BE55B893DF5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D044E19931ED94CEE526E0C5734C5447 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,7 +780,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BEA8885189D408D600647BDC228A6A20 /* [CP-User] Build shared */ = {
+		11F372A9E68C08375C21A8D47B3CDB02 /* [CP-User] Build shared */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -314,67 +790,220 @@
 			shellPath = /bin/sh;
 			shellScript = "                if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n                  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \"YES\"\"\n                  exit 0\n                fi\n                set -ev\n                REPO_ROOT=\"$PODS_TARGET_SRCROOT\"\n                \"$REPO_ROOT/../gradlew\" -p \"$REPO_ROOT\" $KOTLIN_PROJECT_PATH:syncFramework                     -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME                     -Pkotlin.native.cocoapods.archs=\"$ARCHS\"                     -Pkotlin.native.cocoapods.configuration=\"$CONFIGURATION\"\n";
 		};
-		E2A8337A6AE86F2F963F21FA3CEB400A /* [CP] Copy XCFrameworks */ = {
+		35C7D8836447FEC746DA683E14000153 /* [CP] Copy dSYMs */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/mokoMvvmFlowSwiftUI/mokoMvvmFlowSwiftUI-xcframeworks-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/shared/shared-copy-dsyms-input-files.xcfilelist",
 			);
-			name = "[CP] Copy XCFrameworks";
+			name = "[CP] Copy dSYMs";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/mokoMvvmFlowSwiftUI/mokoMvvmFlowSwiftUI-xcframeworks-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/shared/shared-copy-dsyms-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/mokoMvvmFlowSwiftUI/mokoMvvmFlowSwiftUI-xcframeworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/shared/shared-copy-dsyms.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		34761D0CDDF9BAB87C622AAEECF5D991 /* Sources */ = {
+		1DD968EA0DAD9D8B6C398FAEBD8775EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1067B740508D12A5B687579DE9FF27F0 /* Pods-iosApp-dummy.m in Sources */,
+				6E8A83054D9B7BC9390D8677526D8166 /* KMMViewModelCoreObjC.m in Sources */,
+				FA13CEB88ACC04A6E007853A59E36F67 /* KMMViewModelCoreObjC-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90349D317184B4E5E0E9D7514A722F41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE87514998419BDDF7FFB16D275A1652 /* Pods-iosApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		939DB2FDC814F6B7F588F1CC7B99DF87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D6AC5091F884930EC8F223BBE1D4FAB /* ChildViewModels.swift in Sources */,
+				48B86704E13F9EEB5F022EA393320B9D /* KMMViewModel.swift in Sources */,
+				6ABFA41741ACB62597827AFD63E392E7 /* KMMViewModelCore-dummy.m in Sources */,
+				832D9854CA18EB8A327FF47C1B3595A9 /* ObservableViewModel.swift in Sources */,
+				097F0A29A02F538FB426D27142721D5C /* ObservableViewModelPublisher.swift in Sources */,
+				F56D59C08DE54CBB12513A4312D27C2B /* ObservableViewModelPublishers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB018E8C4BCCFFF8EBA56DE89CE2C304 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9CC044B0145652BAE6DAE8711EE422A /* EnvironmentViewModel.swift in Sources */,
+				22F35F6B44088980A18865AAFFCB98C5 /* KMMViewModelSwiftUI-dummy.m in Sources */,
+				291CFDBAA59E3228A2F964FC85D14AED /* ObservableViewModelProjection.swift in Sources */,
+				C814B780B003681AFF44E63D6521849F /* ObservedViewModel.swift in Sources */,
+				8C24E91DD70E5CAFD5993F93C46EDBC7 /* StateViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD4894E3B37D99ADAED3695560E7A40D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7776386C194C1118825F57F28D6071D2 /* KMPNativeCoroutinesCore-dummy.m in Sources */,
+				CD0B74FDAA087EED4EAAA770BEC97D83 /* NativeCallback.swift in Sources */,
+				90E1E5C47B81C1FFD81C06A490485FE0 /* NativeCancellable.swift in Sources */,
+				7FC7FF596D2ED626DAE294A23F9FC2F9 /* NativeFlow.swift in Sources */,
+				5A298620D80A08D60582549720031556 /* NativeSuspend.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBFC30DFC3E9A5A18AF608E23D03C61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502360EC32D792B1C27BE5E9FE4D700A /* AsyncFunction.swift in Sources */,
+				1A7FDE2889389E8A23717C603A0F3B89 /* AsyncResult.swift in Sources */,
+				C0198A745D02F4ADBFEBAE8DAFD63DE6 /* AsyncSequence.swift in Sources */,
+				981211BFE5F9CC695F18BAA98D72F67B /* KMPNativeCoroutinesAsync-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		32555A4EB301951EBCEA28FB1C1F13D5 /* PBXTargetDependency */ = {
+		01E0B07FD8E2476CFCE0C53E1DBB2220 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMMViewModelCoreObjC;
+			target = 19169E8AD812FA750E1EE5B3E075603E /* KMMViewModelCoreObjC */;
+			targetProxy = BA139C2EBD85BB6A5C4478B65ACCBEC9 /* PBXContainerItemProxy */;
+		};
+		36A4E184C669E7E53004A9EE255C5F48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMMViewModelCore;
+			target = 0521234C0DD3EF3BF7D6DAAF5365301F /* KMMViewModelCore */;
+			targetProxy = B7A097F247CACF77C10E2CD6C36E9265 /* PBXContainerItemProxy */;
+		};
+		3BAF606CBD94C06DAA6E53A8FFA77F3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMMViewModelSwiftUI;
+			target = 0EE2BD7701A3B8E4813A5247932F0FEA /* KMMViewModelSwiftUI */;
+			targetProxy = 7EB7BD02CB824E04987B350FFCB235C7 /* PBXContainerItemProxy */;
+		};
+		759B97569C026984CEF04623A107DAE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMPNativeCoroutinesCore;
+			target = FFFB6783B79B68DA14E36A00A348B0B3 /* KMPNativeCoroutinesCore */;
+			targetProxy = 0AE7F0F83B24392F364AD7562A68B6FB /* PBXContainerItemProxy */;
+		};
+		80778DE1D8D129F50778B1C69C9F3E54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMPNativeCoroutinesCore;
+			target = FFFB6783B79B68DA14E36A00A348B0B3 /* KMPNativeCoroutinesCore */;
+			targetProxy = E82DC98200C4ECF8FDEF81F3BE61A848 /* PBXContainerItemProxy */;
+		};
+		83AEC68F6661559CDDDE83E81F856D6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = shared;
 			target = 8777C9F6889E59EFFD631D80AEE9048B /* shared */;
-			targetProxy = E135B129C23203161C026BC86A726501 /* PBXContainerItemProxy */;
+			targetProxy = 0BA0B6F010D4E75E1AA002E7FC637E19 /* PBXContainerItemProxy */;
 		};
-		EEBA8547019755AC84AEEA194544B243 /* PBXTargetDependency */ = {
+		8776CD9B0CD12DA5CA0315B7927561D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = mokoMvvmFlowSwiftUI;
-			target = 3C5647B399E506357801D92C13B5F1E1 /* mokoMvvmFlowSwiftUI */;
-			targetProxy = D2C4C8D2F30970495C934DF4135F9B4D /* PBXContainerItemProxy */;
+			name = KMPNativeCoroutinesAsync;
+			target = F91BAFE2F1386309176711630BA5305A /* KMPNativeCoroutinesAsync */;
+			targetProxy = 810EF398F6703FD6773649DA90FC257E /* PBXContainerItemProxy */;
+		};
+		AA66DC7F69522D5AF0E2CA97A495434D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMMViewModelCoreObjC;
+			target = 19169E8AD812FA750E1EE5B3E075603E /* KMMViewModelCoreObjC */;
+			targetProxy = 1BC2DF7950116ED79B968EB0DBC8D96B /* PBXContainerItemProxy */;
+		};
+		C60135051CB41BE76991C262367BC66D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMMViewModelCore;
+			target = 0521234C0DD3EF3BF7D6DAAF5365301F /* KMMViewModelCore */;
+			targetProxy = B711675C739DA4360D4F840D8554DCD5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		27E9609BB6FEB3D98AC297415D73EE7D /* Release */ = {
+		180D989A7A72E601C85ECAFC081B9B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35548E3BD8DA30925E8FE97E67B84868 /* shared.release.xcconfig */;
+			baseConfigurationReference = 3F64BADB16C311E9D09DAD0116F684F4 /* Pods-iosApp.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iosApp/Pods-iosApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iosApp/Pods-iosApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		29ACEB063F32B1BF76A96D8B5C8A642F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3AAF4333AF3B9A8C6A7B1BFD17C2D41 /* KMPNativeCoroutinesCore.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMPNativeCoroutinesCore/KMPNativeCoroutinesCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMPNativeCoroutinesCore/KMPNativeCoroutinesCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KMPNativeCoroutinesCore/KMPNativeCoroutinesCore.modulemap";
+				PRODUCT_MODULE_NAME = KMPNativeCoroutinesCore;
+				PRODUCT_NAME = KMPNativeCoroutinesCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -440,31 +1069,48 @@
 			};
 			name = Release;
 		};
-		7D76771FA73F308DD4557F91E6E26AA8 /* Debug */ = {
+		3706EEB7D5B0E84F14B4FCE4A5389148 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41EE42C04967341DA5E85FF54575C14E /* mokoMvvmFlowSwiftUI.debug.xcconfig */;
+			baseConfigurationReference = 836777839B6730F3A1C8AF76437A936D /* KMPNativeCoroutinesCore.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMPNativeCoroutinesCore/KMPNativeCoroutinesCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMPNativeCoroutinesCore/KMPNativeCoroutinesCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
+				MODULEMAP_FILE = "Target Support Files/KMPNativeCoroutinesCore/KMPNativeCoroutinesCore.modulemap";
+				PRODUCT_MODULE_NAME = KMPNativeCoroutinesCore;
+				PRODUCT_NAME = KMPNativeCoroutinesCore;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		8B07B4A58906BDB6850C805DF0D899BE /* Release */ = {
+		3F9840FDA27F8042BC05655CB24E35E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6C3E81743B4F82A63C908F8B911AC96 /* mokoMvvmFlowSwiftUI.release.xcconfig */;
+			baseConfigurationReference = E23ED8A03974E9F66764D2E6B0853DA2 /* shared.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,7 +1121,149 @@
 			};
 			name = Release;
 		};
-		AD80BBAAE44A20176DBF61978700424C /* Release */ = {
+		4A25A3138B7BDF52170DC2AEF6FC336D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A235DD92BE80EE1FC2BFA461A7C0FD50 /* KMMViewModelCoreObjC.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMMViewModelCoreObjC/KMMViewModelCoreObjC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMMViewModelCoreObjC/KMMViewModelCoreObjC-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KMMViewModelCoreObjC/KMMViewModelCoreObjC.modulemap";
+				PRODUCT_MODULE_NAME = KMMViewModelCoreObjC;
+				PRODUCT_NAME = KMMViewModelCoreObjC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5EA070F80BC0419C23B60A46584C3051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FE8FE592ACC0E9B6D0DBBE1BCE2D597 /* KMMViewModelSwiftUI.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMMViewModelSwiftUI/KMMViewModelSwiftUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMMViewModelSwiftUI/KMMViewModelSwiftUI-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KMMViewModelSwiftUI/KMMViewModelSwiftUI.modulemap";
+				PRODUCT_MODULE_NAME = KMMViewModelSwiftUI;
+				PRODUCT_NAME = KMMViewModelSwiftUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D43F954359D5B7C69325D73DB7554E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D71962809CEA5348D54075FA8B0BA78F /* KMMViewModelCore.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMMViewModelCore/KMMViewModelCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMMViewModelCore/KMMViewModelCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KMMViewModelCore/KMMViewModelCore.modulemap";
+				PRODUCT_MODULE_NAME = KMMViewModelCore;
+				PRODUCT_NAME = KMMViewModelCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6D6B90EDA1AC3F10E85DD47B3E2553CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFFD47D2DE7F12D7D4A57A4CAD10051B /* KMMViewModelCore.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMMViewModelCore/KMMViewModelCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMMViewModelCore/KMMViewModelCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KMMViewModelCore/KMMViewModelCore.modulemap";
+				PRODUCT_MODULE_NAME = KMMViewModelCore;
+				PRODUCT_NAME = KMMViewModelCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A335E0C22212AD65AE1384DD50721E0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FECCB5AFF87D121F15BA01E683C7932 /* Pods-iosApp.release.xcconfig */;
 			buildSettings = {
@@ -513,28 +1301,10 @@
 			};
 			name = Release;
 		};
-		B25A1C2429B15FBB86AA4312053B69E4 /* Debug */ = {
+		A744BEB42AD37A2AD19D27A2D6DC42BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95B09EA82E7AF9ACCCCAF3E55C859116 /* shared.debug.xcconfig */;
+			baseConfigurationReference = 3A3B809E281132DD1366186632C1D9D5 /* KMMViewModelCoreObjC.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		C39DE37D8ECA176FE29C68660A0A7C2C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F64BADB16C311E9D09DAD0116F684F4 /* Pods-iosApp.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -544,23 +1314,129 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-iosApp/Pods-iosApp-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/KMMViewModelCoreObjC/KMMViewModelCoreObjC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMMViewModelCoreObjC/KMMViewModelCoreObjC-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iosApp/Pods-iosApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/KMMViewModelCoreObjC/KMMViewModelCoreObjC.modulemap";
+				PRODUCT_MODULE_NAME = KMMViewModelCoreObjC;
+				PRODUCT_NAME = KMMViewModelCoreObjC;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DDF8B612D335AB2C1599762B3B726B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C209DFF8FC98E913A2737B644EA11E29 /* KMPNativeCoroutinesAsync.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMPNativeCoroutinesAsync/KMPNativeCoroutinesAsync-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMPNativeCoroutinesAsync/KMPNativeCoroutinesAsync-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KMPNativeCoroutinesAsync/KMPNativeCoroutinesAsync.modulemap";
+				PRODUCT_MODULE_NAME = KMPNativeCoroutinesAsync;
+				PRODUCT_NAME = KMPNativeCoroutinesAsync;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E15B016EEC1E82A44F450B6B80B41248 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C72ABC1E49D3E738EA5E01C98B8BB08 /* KMMViewModelSwiftUI.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMMViewModelSwiftUI/KMMViewModelSwiftUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMMViewModelSwiftUI/KMMViewModelSwiftUI-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KMMViewModelSwiftUI/KMMViewModelSwiftUI.modulemap";
+				PRODUCT_MODULE_NAME = KMMViewModelSwiftUI;
+				PRODUCT_NAME = KMMViewModelSwiftUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F16BF70327BB02D275CDE3F9A3BA3258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E1863D8E6868BEA75B412B2BA00F401 /* KMPNativeCoroutinesAsync.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KMPNativeCoroutinesAsync/KMPNativeCoroutinesAsync-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KMPNativeCoroutinesAsync/KMPNativeCoroutinesAsync-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KMPNativeCoroutinesAsync/KMPNativeCoroutinesAsync.modulemap";
+				PRODUCT_MODULE_NAME = KMPNativeCoroutinesAsync;
+				PRODUCT_NAME = KMPNativeCoroutinesAsync;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -633,9 +1509,35 @@
 			};
 			name = Debug;
 		};
+		F959406367CCF197877224C742431A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 009069A386B0A5A8DB76D61AE1586630 /* shared.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		30C1B27EA28F72712433CB49801AB3C4 /* Build configuration list for PBXNativeTarget "KMMViewModelCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D6B90EDA1AC3F10E85DD47B3E2553CF /* Debug */,
+				6D43F954359D5B7C69325D73DB7554E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -645,29 +1547,56 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8349D8E2EC974421A14EF8ABFF6AD6DC /* Build configuration list for PBXAggregateTarget "shared" */ = {
+		504F6A2DB2A082F7933A949DAF974F26 /* Build configuration list for PBXNativeTarget "KMMViewModelCoreObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B25A1C2429B15FBB86AA4312053B69E4 /* Debug */,
-				27E9609BB6FEB3D98AC297415D73EE7D /* Release */,
+				A744BEB42AD37A2AD19D27A2D6DC42BD /* Debug */,
+				4A25A3138B7BDF52170DC2AEF6FC336D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B643D250DD447F050C64353356F54BD4 /* Build configuration list for PBXAggregateTarget "mokoMvvmFlowSwiftUI" */ = {
+		5CB83A5F237CEA212FFE13EE6C40F270 /* Build configuration list for PBXNativeTarget "KMPNativeCoroutinesAsync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7D76771FA73F308DD4557F91E6E26AA8 /* Debug */,
-				8B07B4A58906BDB6850C805DF0D899BE /* Release */,
+				F16BF70327BB02D275CDE3F9A3BA3258 /* Debug */,
+				DDF8B612D335AB2C1599762B3B726B06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6B9D5472579D6AFB1367B502C2BE742 /* Build configuration list for PBXNativeTarget "Pods-iosApp" */ = {
+		87262E197E08CB3D85B82E4556B982A0 /* Build configuration list for PBXNativeTarget "KMPNativeCoroutinesCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C39DE37D8ECA176FE29C68660A0A7C2C /* Debug */,
-				AD80BBAAE44A20176DBF61978700424C /* Release */,
+				3706EEB7D5B0E84F14B4FCE4A5389148 /* Debug */,
+				29ACEB063F32B1BF76A96D8B5C8A642F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F7C5A61057627FF42F94C55208B85D5 /* Build configuration list for PBXNativeTarget "KMMViewModelSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EA070F80BC0419C23B60A46584C3051 /* Debug */,
+				E15B016EEC1E82A44F450B6B80B41248 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B01816DB9010F2084B25681CEFBCDE55 /* Build configuration list for PBXNativeTarget "Pods-iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180D989A7A72E601C85ECAFC081B9B9A /* Debug */,
+				A335E0C22212AD65AE1384DD50721E0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B999BD58A146737F72CA68509B0BCE77 /* Build configuration list for PBXAggregateTarget "shared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F959406367CCF197877224C742431A5F /* Debug */,
+				3F9840FDA27F8042BC05655CB24E35E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

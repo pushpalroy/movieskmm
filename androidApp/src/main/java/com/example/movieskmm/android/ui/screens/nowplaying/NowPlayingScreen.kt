@@ -15,25 +15,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.movieskmm.android.ui.components.MovieList
 import com.example.movieskmm.domain.model.MoviesList
-import com.example.movieskmm.features.nowPlayingMovies.NowPlayingActions
 import com.example.movieskmm.features.nowPlayingMovies.NowPlayingUiState
 import com.example.movieskmm.features.nowPlayingMovies.NowPlayingViewModel
-import dev.icerock.moko.mvvm.flow.compose.observeAsActions
 import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun NowPlayingScreen(
     modifier: Modifier = Modifier
 ) {
-    val viewModel: NowPlayingViewModel = getViewModel()
+    val viewModel = getViewModel<NowPlayingViewModel>()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    viewModel.actions.observeAsActions { action ->
-        when (action) {
-            NowPlayingActions.MoviesFetchSuccess -> {
-                // Do something
-            }
-        }
-    }
 
     LaunchedEffect(Unit) {
         viewModel.fetchNowPlayingMovies()
