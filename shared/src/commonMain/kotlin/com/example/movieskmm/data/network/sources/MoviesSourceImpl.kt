@@ -1,5 +1,6 @@
 package com.example.movieskmm.data.network.sources
 
+import com.example.movieskmm.data.network.entity.MovieDetailsEntity
 import com.example.movieskmm.data.network.entity.MoviesListEntity
 import com.example.movieskmm.data.util.ApiConstants
 import com.example.movieskmm.domain.util.NetworkResponse
@@ -25,5 +26,10 @@ class MoviesSourceImpl(
     override suspend fun fetchTopRatedMovies(): NetworkResponse<MoviesListEntity> =
         getSafeNetworkResponse {
             httpClient.get("$baseUrl${ApiConstants.ENDPOINT_TOP_RATED_MOVIES}").body()
+        }
+
+    override suspend fun fetchMovieDetails(id: Int): NetworkResponse<MovieDetailsEntity> =
+        getSafeNetworkResponse {
+            httpClient.get("$baseUrl${ApiConstants.ENDPOINT_MOVIE_DETAILS}/$id").body()
         }
 }

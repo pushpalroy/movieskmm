@@ -18,11 +18,6 @@ open class NowPlayingViewModel : KMMViewModel(), KoinComponent {
 
     private val getNowPlayingMoviesUseCase: GetNowPlayingMoviesUseCase by inject()
 
-    /**
-     * We need to make changes - from the side of Swift MutableStateFlow, StateFlow,
-     * Flow will lose their generic type since they are interfaces. MOKO MVVM provides
-     * special CMutableStateFlow, CStateFlow and CFlow classes to store the generic type in iOS.
-     */
     private val _uiState = MutableStateFlow<NowPlayingUiState>(NowPlayingUiState.Uninitialized)
 
     @NativeCoroutinesState

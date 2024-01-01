@@ -3,8 +3,15 @@ package com.example.movieskmm.android.ui.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import com.example.movieskmm.android.ui.navigation.destination.MOVIE_DETAILS_PARAMS
+import com.example.movieskmm.android.ui.navigation.destination.MOVIE_ID_ARGUMENT
+import com.example.movieskmm.android.ui.navigation.destination.MovieDetailsDestination
 import com.example.movieskmm.android.ui.navigation.destination.NowPlayingDestination
+import com.example.movieskmm.android.ui.screens.moviedetails.MovieDetailsScreen
 import com.example.movieskmm.android.ui.screens.nowplaying.nowPlayingGraph
 import com.example.movieskmm.android.ui.screens.popular.popularGraph
 import com.example.movieskmm.android.ui.screens.toprated.topRatedGraph
@@ -21,19 +28,45 @@ fun MoviesNavHost(
         modifier = modifier
     ) {
         nowPlayingGraph(
-            onMovieSelected = {},
+            onMovieSelected = { movieId ->
+                navHostController.navigateToMovieDetails(movieId)
+            },
             navController = navHostController,
             modifier = Modifier
         )
         topRatedGraph(
-            onMovieSelected = {},
+            onMovieSelected = { movieId ->
+                navHostController.navigateToMovieDetails(movieId)
+            },
             navController = navHostController,
             modifier = Modifier
         )
         popularGraph(
-            onMovieSelected = {},
+            onMovieSelected = { movieId ->
+                navHostController.navigateToMovieDetails(movieId)
+            },
             navController = navHostController,
             modifier = Modifier
         )
+        composable(
+            route = MovieDetailsDestination.route + MOVIE_DETAILS_PARAMS,
+            arguments = listOf(
+                navArgument(MOVIE_ID_ARGUMENT) {
+                    type = NavType.IntType
+                    nullable = false
+                }
+            )
+        ) { backStackEntry ->
+            val movieId = backStackEntry.arguments?.getInt(MOVIE_ID_ARGUMENT) ?: 0
+            MovieDetailsScreen(
+                movieId = movieId,
+                modifier = modifier,
+                upPress = { navHostController.navigateUp() }
+            )
+        }
     }
+}
+
+fun NavHostController.navigateToMovieDetails(movieId: Int) {
+    navigate(MovieDetailsDestination.route + "/$movieId")
 }

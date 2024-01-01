@@ -28,3 +28,11 @@ object PopularDestination : TopLevelDestination {
     override val iconTextId: Int = R.string.popular
     override val titleTextId: Int = R.string.popular
 }
+
+object MovieDetailsDestination : MoviesNavDestination {
+    override val route = "movie_details"
+    override val destination = "movie_details"
+}
+
+const val MOVIE_ID_ARGUMENT = "id"
+const val MOVIE_DETAILS_PARAMS = "/{$MOVIE_ID_ARGUMENT}"

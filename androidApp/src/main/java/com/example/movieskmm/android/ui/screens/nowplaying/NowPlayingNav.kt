@@ -7,11 +7,11 @@ import androidx.navigation.compose.composable
 import com.example.movieskmm.android.ui.navigation.destination.NowPlayingDestination
 
 fun NavGraphBuilder.nowPlayingGraph(
-    onMovieSelected: () -> Unit,
+    onMovieSelected: (Int) -> Unit,
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
     composable(NowPlayingDestination.route) {
-        NowPlayingScreen(modifier)
+        NowPlayingScreen(onMovieSelected = onMovieSelected, modifier = modifier)
     }
 }

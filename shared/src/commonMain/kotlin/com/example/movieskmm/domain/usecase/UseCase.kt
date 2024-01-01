@@ -17,5 +17,5 @@ interface UseCase<out Result, in ExecutableParam> {
      * @param params
      * @return
      */
-    fun perform(params: ExecutableParam): Result? = throw NotImplementedError()
+    suspend fun perform(params: ExecutableParam): Result? = throw NotImplementedError()
 }

@@ -21,7 +21,8 @@ import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun PopularScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onMovieSelected: (Int) -> Unit
 ) {
     val viewModel = getViewModel<PopularViewModel>()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -43,7 +44,8 @@ fun PopularScreen(
             is PopularUiState.Success -> {
                 val moviesData = (uiState as PopularUiState.Success)
                 PopularMoviesList(
-                    moviesList = moviesData.moviesList
+                    moviesList = moviesData.moviesList,
+                    onMovieSelected = onMovieSelected
                 )
             }
 
@@ -62,7 +64,8 @@ fun PopularScreen(
 @Composable
 fun PopularMoviesList(
     modifier: Modifier = Modifier,
-    moviesList: MoviesList
+    moviesList: MoviesList,
+    onMovieSelected: (Int) -> Unit
 ) {
     Column(
         modifier.fillMaxWidth(),
@@ -71,6 +74,7 @@ fun PopularMoviesList(
         MovieList(
             modifier = Modifier,
             listItems = moviesList.results,
-            onclick = {})
+            onClick = onMovieSelected
+        )
     }
 }

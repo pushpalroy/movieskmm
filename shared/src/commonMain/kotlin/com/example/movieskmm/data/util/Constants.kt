@@ -6,4 +6,5 @@ object ApiConstants {
     const val ENDPOINT_NOW_PLAYING_MOVIES = "/movie/now_playing"
     const val ENDPOINT_POPULAR_MOVIES = "/movie/popular"
     const val ENDPOINT_TOP_RATED_MOVIES = "/movie/top_rated"
+    const val ENDPOINT_MOVIE_DETAILS = "/movie"
 }

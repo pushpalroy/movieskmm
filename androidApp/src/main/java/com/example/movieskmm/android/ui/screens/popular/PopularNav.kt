@@ -7,11 +7,11 @@ import androidx.navigation.compose.composable
 import com.example.movieskmm.android.ui.navigation.destination.PopularDestination
 
 fun NavGraphBuilder.popularGraph(
-    onMovieSelected: () -> Unit,
+    onMovieSelected: (Int) -> Unit,
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
     composable(PopularDestination.route) {
-        PopularScreen(modifier)
+        PopularScreen(onMovieSelected = onMovieSelected, modifier = modifier)
     }
 }

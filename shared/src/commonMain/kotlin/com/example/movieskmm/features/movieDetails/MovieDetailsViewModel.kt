@@ -1,6 +1,7 @@
-package com.example.movieskmm.features.topRatedMovies
+package com.example.movieskmm.features.movieDetails
 
-import com.example.movieskmm.domain.usecase.GetTopRatedMoviesUseCase
+import com.example.movieskmm.domain.usecase.GetMovieDetailsByIdUseCase
+import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
 import com.example.movieskmm.domain.util.NetworkResponse
 import com.rickclephas.kmm.viewmodel.KMMViewModel
 import com.rickclephas.kmm.viewmodel.coroutineScope
@@ -14,40 +15,40 @@ import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-open class TopRatedViewModel : KMMViewModel(), KoinComponent {
+open class MovieDetailsViewModel : KMMViewModel(), KoinComponent {
 
-    private val getTopRatedMoviesUseCase: GetTopRatedMoviesUseCase by inject()
+    private val getMovieDetailsByIdUseCase: GetMovieDetailsByIdUseCase by inject()
 
-    private val _uiState = MutableStateFlow<TopRatedUiState>(TopRatedUiState.Uninitialized)
+    private val _uiState = MutableStateFlow<MovieDetailsUiState>(MovieDetailsUiState.Loading)
 
     @NativeCoroutinesState
-    val uiState: StateFlow<TopRatedUiState> = _uiState.stateIn(
+    val uiState: StateFlow<MovieDetailsUiState> = _uiState.stateIn(
         viewModelScope,
         SharingStarted.WhileSubscribed(),
-        TopRatedUiState.Uninitialized
+        MovieDetailsUiState.Loading
     )
 
-    fun fetchTopRatedMovies() {
-        _uiState.value = TopRatedUiState.Loading
+    fun fetchMovieDetails(movieId: Int) {
+        _uiState.value = MovieDetailsUiState.Loading
         viewModelScope.coroutineScope.launch {
             try {
-                when (val response = getTopRatedMoviesUseCase.perform()) {
+                when (val response = getMovieDetailsByIdUseCase.perform(id = movieId)) {
                     is NetworkResponse.Success -> {
-                        _uiState.value = TopRatedUiState.Success(moviesList = response.data)
+                        _uiState.value = MovieDetailsUiState.Success(movieDetails = response.data)
                     }
 
                     is NetworkResponse.Failure -> {
                         _uiState.value =
-                            TopRatedUiState.Error(exceptionMessage = response.throwable.message)
+                            MovieDetailsUiState.Error(exceptionMessage = response.throwable.message)
                     }
 
                     is NetworkResponse.Unauthorized -> {
                         _uiState.value =
-                            TopRatedUiState.Error(exceptionMessage = response.throwable.message)
+                            MovieDetailsUiState.Error(exceptionMessage = response.throwable.message)
                     }
                 }
             } catch (e: Exception) {
-                _uiState.value = TopRatedUiState.Error(exceptionMessage = e.message.orEmpty())
+                _uiState.value = MovieDetailsUiState.Error(exceptionMessage = e.message.orEmpty())
             }
         }
     }

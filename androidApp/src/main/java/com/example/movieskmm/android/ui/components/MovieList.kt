@@ -25,7 +25,7 @@ import com.example.movieskmm.domain.model.MovieItem
 internal fun MovieList(
     modifier: Modifier = Modifier,
     listItems: List<MovieItem>,
-    onclick: (id: Int) -> Unit
+    onClick: (id: Int) -> Unit
 ) {
     LazyVerticalGrid(columns = GridCells.Fixed(2),
         modifier = modifier.padding(start = 5.dp, end = 5.dp, top = 0.dp),
@@ -48,7 +48,7 @@ internal fun MovieList(
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(5))
                             .clickable {
-                                onclick(it.id)
+                                onClick(it.id)
                             },
                         contentScale = ContentScale.Crop,
                     )

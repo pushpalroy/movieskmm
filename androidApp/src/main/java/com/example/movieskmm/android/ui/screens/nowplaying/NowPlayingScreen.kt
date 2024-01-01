@@ -21,7 +21,8 @@ import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun NowPlayingScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onMovieSelected: (Int) -> Unit
 ) {
     val viewModel = getViewModel<NowPlayingViewModel>()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -43,7 +44,8 @@ fun NowPlayingScreen(
             is NowPlayingUiState.Success -> {
                 val moviesData = (uiState as NowPlayingUiState.Success)
                 NowPlayingMoviesList(
-                    moviesList = moviesData.moviesList
+                    moviesList = moviesData.moviesList,
+                    onMovieSelected = onMovieSelected
                 )
             }
 
@@ -62,7 +64,8 @@ fun NowPlayingScreen(
 @Composable
 fun NowPlayingMoviesList(
     modifier: Modifier = Modifier,
-    moviesList: MoviesList
+    moviesList: MoviesList,
+    onMovieSelected: (Int) -> Unit
 ) {
     Column(
         modifier.fillMaxWidth(),
@@ -71,6 +74,7 @@ fun NowPlayingMoviesList(
         MovieList(
             modifier = Modifier,
             listItems = moviesList.results,
-            onclick = {})
+            onClick = onMovieSelected
+        )
     }
 }

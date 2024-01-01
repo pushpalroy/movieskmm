@@ -21,6 +21,7 @@ import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun TopRatedScreen(
+    onMovieSelected: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val viewModel = getViewModel<TopRatedViewModel>()
@@ -43,7 +44,8 @@ fun TopRatedScreen(
             is TopRatedUiState.Success -> {
                 val moviesData = (uiState as TopRatedUiState.Success)
                 TopRatedMoviesList(
-                    moviesList = moviesData.moviesList
+                    moviesList = moviesData.moviesList,
+                    onMovieSelected = onMovieSelected
                 )
             }
 
@@ -62,7 +64,8 @@ fun TopRatedScreen(
 @Composable
 fun TopRatedMoviesList(
     modifier: Modifier = Modifier,
-    moviesList: MoviesList
+    moviesList: MoviesList,
+    onMovieSelected: (Int) -> Unit
 ) {
     Column(
         modifier.fillMaxWidth(),
@@ -71,6 +74,7 @@ fun TopRatedMoviesList(
         MovieList(
             modifier = Modifier,
             listItems = moviesList.results,
-            onclick = {})
+            onClick = onMovieSelected
+        )
     }
 }

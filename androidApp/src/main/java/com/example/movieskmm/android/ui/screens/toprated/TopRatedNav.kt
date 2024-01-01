@@ -7,11 +7,11 @@ import androidx.navigation.compose.composable
 import com.example.movieskmm.android.ui.navigation.destination.TopRatedDestination
 
 fun NavGraphBuilder.topRatedGraph(
-    onMovieSelected: () -> Unit,
+    onMovieSelected: (Int) -> Unit,
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
     composable(TopRatedDestination.route) {
-        TopRatedScreen(modifier)
+        TopRatedScreen(onMovieSelected = onMovieSelected, modifier = modifier)
     }
 }
