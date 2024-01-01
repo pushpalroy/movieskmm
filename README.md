@@ -1,28 +1,28 @@
 ## 📋 MoviesKMM
 
-  <p> Jetpack Compose and SwiftUI based Kotlin Multiplatform sample project (based on [TMDB API](https://developer.themoviedb.org/)).</p>
+  Jetpack Compose and SwiftUI based Kotlin Multiplatform sample project (based on [TMDB API](https://developer.themoviedb.org/)).
 
   <p>
       <a href = "https://developer.android.com/jetpack/androidx/releases/compose-compiler">
-        <img src = "https://img.shields.io/badge/Compose%20Multiplatform-1.5.4-blue.svg?color=blue&style=for-the-badge" />
+        <img src = "https://img.shields.io/badge/Compose-1.5.4-blue.svg?color=blue&style=for-the-badge" alt="Compose"/>
       </a>
       <a href="https://kotlinlang.org/docs/releases.html">
-        <img src="https://img.shields.io/badge/Kotlin-1.9.21-blue.svg?color=blue&style=for-the-badge"/>
+        <img src="https://img.shields.io/badge/Kotlin-1.9.21-blue.svg?color=blue&style=for-the-badge" alt="Kotlin"/>
       </a>
       <a href = "https://github.com/pushpalroy/movieskmm/stargazers">
-        <img src="https://img.shields.io/github/stars/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" />
+        <img src="https://img.shields.io/github/stars/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Stars" />
       </a>
       <a href = "https://github.com/pushpalroy/movieskmm/network/members">
-          <img src="https://img.shields.io/github/forks/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" />
+          <img src="https://img.shields.io/github/forks/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Members"/>
       </a>
       <a href = "https://github.com/pushpalroy/movieskmm/watchers">
-          <img src="https://img.shields.io/github/watchers/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" />
+          <img src="https://img.shields.io/github/watchers/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Watchers"/>
       </a>
       <a href = "https://github.com/pushpalroy/movieskmm/pulls">
-         <img src="https://img.shields.io/github/issues-pr/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Pull Requests Badge"/>
+         <img src="https://img.shields.io/github/issues-pr/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Pull Requests"/>
       </a>
       <a href = "https://github.com/pushpalroy/movieskmm/issues">
-          <img src="https://img.shields.io/github/issues/pushpalroy/movieskmm?color=orange&style=for-the-badge" />
+          <img src="https://img.shields.io/github/issues/pushpalroy/movieskmm?color=orange&style=for-the-badge" alt="Issues"/>
       </a>
   </p>
 
