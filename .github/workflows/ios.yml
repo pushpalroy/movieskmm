@@ -26,7 +26,7 @@ jobs:
 
       # Build ios app
       - name: Build iOS app
-        id: build_ios_shared_code
+        id: generate_debug_build
         run: xcodebuild -workspace iosApp/iosApp.xcworkspace -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 8' build
 
 

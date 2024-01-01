@@ -37,7 +37,7 @@ jobs:
       run: chmod +x gradlew
 
     # Generate debug build
-    - name: Generate Debug Build
+    - name: Build Android app
       id: generate_debug_build
       if: always()
       run: ./gradlew assembleDebug
@@ -45,4 +45,4 @@ jobs:
       # Build ios shared code
     - name: Build iOS shared code
       id: build_ios_shared_code
-      run: ./gradlew :common:compileKotlinIosArm64
+      run: ./gradlew :shared:compileKotlinIosArm64
