@@ -30,12 +30,14 @@
 
 | Tools           | Link                                                                        |
 |:----------------|:----------------------------------------------------------------------------|
-| Language        | [Kotlin](https://kotlinlang.org)                                            |
 | Framework       | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      |
+| Android UI      | [Jetpack Compose](https://developer.android.com/jetpack/compose)            |
+| iOS UI          | [SwiftUI](https://developer.apple.com/documentation/swiftui)                |
 | Lifecycle       | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               |
 | Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) |
 | DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  |
 | Networking      | [KTor](https://github.com/ktorio/ktor)                                      |
+| Serialization   | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)    |
 
 ### Check your environment
 
