@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -26,7 +28,7 @@ internal fun MovieList(
     onclick: (id: Int) -> Unit
 ) {
     LazyVerticalGrid(columns = GridCells.Fixed(2),
-        modifier = modifier.padding(start = 5.dp, end = 5.dp, top = 10.dp),
+        modifier = modifier.padding(start = 5.dp, end = 5.dp, top = 0.dp),
         content = {
             items(listItems) {
                 Column(
@@ -44,6 +46,7 @@ internal fun MovieList(
                         modifier = Modifier
                             .height(250.dp)
                             .fillMaxWidth()
+                            .clip(RoundedCornerShape(5))
                             .clickable {
                                 onclick(it.id)
                             },
