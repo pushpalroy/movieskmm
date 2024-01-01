@@ -28,14 +28,14 @@
 
 ### 👨‍💻 Tech stack
 
-| Tools               |                                    Link                                     |
-|:--------------------|:---------------------------------------------------------------------------:|
-| 🤖  Language        |                      [Kotlin](https://kotlinlang.org)                       |
-| 🩶  Framework       |   [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)    |
-| 🕜  Lifecycle       |        [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)        |
-| 📁  Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) |
-| 💉  DI              |         [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)          |
-| 🌐  Networking      |                   [KTor](https://github.com/ktorio/ktor)                    |
+| Tools           | Link                                                                        |
+|:----------------|:----------------------------------------------------------------------------|
+| Language        | [Kotlin](https://kotlinlang.org)                                            |
+| Framework       | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      |
+| Lifecycle       | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               |
+| Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) |
+| DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  |
+| Networking      | [KTor](https://github.com/ktorio/ktor)                                      |
 
 ### Check your environment
 
