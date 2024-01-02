@@ -63,6 +63,27 @@ Before you start, use the [KDoctor](https://github.com/Kotlin/kdoctor) tool to e
 
 Otherwise, KDoctor will highlight which parts of your setup still need to be configured and will suggest a way to fix them.
 
+### 🖥️  Screens
+
+<table style="width:100%">
+  <tr>
+    <th>Home (iOS)</th>
+    <th>Details (iOS)</th>
+  </tr>
+  <tr>
+    <td><img src = "art/screens/home_ios.png" width="100%" alt="Home iOS"/></td> 
+    <td><img src = "art/screens/details_ios.png" width="100%" alt="Details iOS"/></td>
+  </tr>
+  <tr>
+    <th>Home (Android)</th>
+    <th>Board (Android)</th>
+  </tr>
+  <tr>
+    <td><img src = "art/screens/home_android.png" width="100%" alt="Home Android"/></td> 
+    <td><img src = "art/screens/details_android.png" width="100%" alt="Details Android"/></td>
+  </tr>
+</table>
+
 ## Understanding the project structure
 
 Open the project in Android Studio and switch the view from **Android** to **Project** to see all the files and targets belonging to the project:
