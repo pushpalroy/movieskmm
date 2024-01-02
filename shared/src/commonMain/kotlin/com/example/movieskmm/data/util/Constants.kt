@@ -8,3 +8,7 @@ object ApiConstants {
     const val ENDPOINT_TOP_RATED_MOVIES = "/movie/top_rated"
     const val ENDPOINT_MOVIE_DETAILS = "/movie"
 }
+
+object FileDownloadConstants {
+    const val BASE_URL = "https://file-examples.com/storage/fe3666494365908ae9beb40/2017/10/"
+}

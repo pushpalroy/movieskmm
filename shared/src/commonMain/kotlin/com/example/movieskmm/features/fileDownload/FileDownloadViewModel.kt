@@ -1,6 +1,6 @@
-package com.example.movieskmm.features.movieDetails
+package com.example.movieskmm.features.fileDownload
 
-import com.example.movieskmm.domain.usecase.GetMovieDetailsByIdUseCase
+import com.example.movieskmm.domain.usecase.FileDownloadUseCase
 import com.example.movieskmm.domain.util.NetworkResponse
 import com.rickclephas.kmm.viewmodel.KMMViewModel
 import com.rickclephas.kmm.viewmodel.coroutineScope
@@ -14,40 +14,40 @@ import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-open class MovieDetailsViewModel : KMMViewModel(), KoinComponent {
+open class FileDownloadViewModel : KMMViewModel(), KoinComponent {
 
-    private val getMovieDetailsByIdUseCase: GetMovieDetailsByIdUseCase by inject()
+    private val fileDownloadUseCase: FileDownloadUseCase by inject()
 
-    private val _uiState = MutableStateFlow<MovieDetailsUiState>(MovieDetailsUiState.Loading)
+    private val _uiState = MutableStateFlow<FileUiState>(FileUiState.Loading)
 
     @NativeCoroutinesState
-    val uiState: StateFlow<MovieDetailsUiState> = _uiState.stateIn(
+    val uiState: StateFlow<FileUiState> = _uiState.stateIn(
         viewModelScope,
         SharingStarted.WhileSubscribed(),
-        MovieDetailsUiState.Loading
+        FileUiState.Loading
     )
 
-    fun fetchMovieDetails(movieId: Int) {
-        _uiState.value = MovieDetailsUiState.Loading
+    fun downloadPdfFile() {
+        _uiState.value = FileUiState.Loading
         viewModelScope.coroutineScope.launch {
             try {
-                when (val response = getMovieDetailsByIdUseCase.perform(id = movieId)) {
+                when (val response = fileDownloadUseCase.perform()) {
                     is NetworkResponse.Success -> {
-                        _uiState.value = MovieDetailsUiState.Success(movieDetails = response.data)
+                        _uiState.value = FileUiState.Success(pdfData = response.data)
                     }
 
                     is NetworkResponse.Failure -> {
                         _uiState.value =
-                            MovieDetailsUiState.Error(exceptionMessage = response.throwable.message)
+                            FileUiState.Error(exceptionMessage = response.throwable.message)
                     }
 
                     is NetworkResponse.Unauthorized -> {
                         _uiState.value =
-                            MovieDetailsUiState.Error(exceptionMessage = response.throwable.message)
+                            FileUiState.Error(exceptionMessage = response.throwable.message)
                     }
                 }
             } catch (e: Exception) {
-                _uiState.value = MovieDetailsUiState.Error(exceptionMessage = e.message.orEmpty())
+                _uiState.value = FileUiState.Error(exceptionMessage = e.message.orEmpty())
             }
         }
     }

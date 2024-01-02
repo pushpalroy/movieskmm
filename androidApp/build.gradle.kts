@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.ktor.client.android)
 
     implementation(libs.coil.compose)
+    implementation(libs.android.pdf.reader)
 
     debugImplementation(libs.androidx.compose.ui.tooling)
 }

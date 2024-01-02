@@ -1,5 +1,6 @@
 package com.example.movieskmm.android.di
 
+import com.example.movieskmm.features.fileDownload.FileDownloadViewModel
 import com.example.movieskmm.features.movieDetails.MovieDetailsViewModel
 import com.example.movieskmm.features.nowPlayingMovies.NowPlayingViewModel
 import com.example.movieskmm.features.popularMovies.PopularViewModel
@@ -12,4 +13,5 @@ val viewModelModule = module {
     viewModel { TopRatedViewModel() }
     viewModel { PopularViewModel() }
     viewModel { MovieDetailsViewModel() }
+    viewModel { FileDownloadViewModel() }
 }

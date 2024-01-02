@@ -11,8 +11,10 @@ import com.example.movieskmm.android.ui.navigation.destination.MOVIE_DETAILS_PAR
 import com.example.movieskmm.android.ui.navigation.destination.MOVIE_ID_ARGUMENT
 import com.example.movieskmm.android.ui.navigation.destination.MovieDetailsDestination
 import com.example.movieskmm.android.ui.navigation.destination.NowPlayingDestination
+import com.example.movieskmm.android.ui.navigation.destination.PdfViewerDestination
 import com.example.movieskmm.android.ui.screens.moviedetails.MovieDetailsScreen
 import com.example.movieskmm.android.ui.screens.nowplaying.nowPlayingGraph
+import com.example.movieskmm.android.ui.screens.pdfviewer.PdfViewerScreen
 import com.example.movieskmm.android.ui.screens.popular.popularGraph
 import com.example.movieskmm.android.ui.screens.toprated.topRatedGraph
 
@@ -61,6 +63,14 @@ fun MoviesNavHost(
             MovieDetailsScreen(
                 movieId = movieId,
                 modifier = modifier,
+                upPress = { navHostController.navigateUp() },
+                navigateToPdfViewer = {
+                    navHostController.navigate(PdfViewerDestination.route)
+                }
+            )
+        }
+        composable(route = PdfViewerDestination.route) {
+            PdfViewerScreen(
                 upPress = { navHostController.navigateUp() }
             )
         }

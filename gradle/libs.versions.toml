@@ -14,12 +14,12 @@ ktor = "2.3.7"
 ktorLogging = "2.3.2"
 coroutines = "1.7.3"
 compose-compiler = "1.5.7"
-moko-mvvm = "0.16.1"
 compose-material3 = "1.1.2"
 composeViewModel = "2.6.2"
 androidx-activityCompose = "1.8.2"
 androidx-navigation = "2.7.6"
 org-jetbrains-kotlin-jvm = "1.9.21"
+bouquet = "1.1.2"
 
 [libraries]
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
@@ -39,6 +39,7 @@ androidx-compose-animation = { module = "androidx.compose.animation:animation" }
 androidx-compose-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "composeViewModel" }
 androidx-compose-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "composeViewModel" }
 androidx-compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
+android-pdf-reader = { module = "io.github.grizzi91:bouquet", version.ref = "bouquet" }
 
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
@@ -62,10 +63,6 @@ kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collec
 
 kmm-viewmodel-core = { module = "com.rickclephas.kmm:kmm-viewmodel-core", version.ref = "kmmViewmodelCore" }
 kmp-nativecoroutines-gradle-plugin = { module = "com.rickclephas.kmp:kmp-nativecoroutines-gradle-plugin", version.ref = "kmpNativecoroutinesGradlePlugin" }
-
-moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mvvm" }
-moko-mvvm-flow = { module = "dev.icerock.moko:mvvm-flow", version.ref = "moko-mvvm" }
-moko-mvvm-flow-compose = { module = "dev.icerock.moko:mvvm-flow-compose", version.ref = "moko-mvvm" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

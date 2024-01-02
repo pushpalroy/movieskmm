@@ -34,5 +34,10 @@ object MovieDetailsDestination : MoviesNavDestination {
     override val destination = "movie_details"
 }
 
+object PdfViewerDestination : MoviesNavDestination {
+    override val route = "pdf_viewer"
+    override val destination = "pdf_viewer"
+}
+
 const val MOVIE_ID_ARGUMENT = "id"
 const val MOVIE_DETAILS_PARAMS = "/{$MOVIE_ID_ARGUMENT}"

@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,7 +27,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
@@ -41,6 +42,7 @@ import org.koin.androidx.compose.getViewModel
 fun MovieDetailsScreen(
     modifier: Modifier = Modifier,
     movieId: Int,
+    navigateToPdfViewer: () -> Unit,
     upPress: () -> Unit,
 ) {
     val viewModel = getViewModel<MovieDetailsViewModel>()
@@ -165,6 +167,23 @@ fun MovieDetailsScreen(
                             style = MoviesAppTheme.typography.body1,
                             color = MoviesAppTheme.colors.textPrimary,
                             modifier = Modifier.padding(horizontal = 16.dp)
+                        )
+                    }
+
+                    IconButton(
+                        onClick = navigateToPdfViewer,
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp)
+                            .size(36.dp)
+                            .background(
+                                color = MoviesAppTheme.colors.uiBackgroundTertiary.copy(alpha = 0.20f),
+                                shape = CircleShape
+                            )
+                    ) {
+                        Icon(
+                            imageVector = Icons.Outlined.Info,
+                            tint = MoviesAppTheme.colors.iconPrimaryActive,
+                            contentDescription = "Download"
                         )
                     }
                 }
