@@ -12,6 +12,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		E54553E56E4269260EE20100 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB0DFCFC12191F90DC484F /* Pods_iosApp.framework */; };
 		F1276D772B3E609C00867D9A /* MoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1276D762B3E609C00867D9A /* MoviesApp.swift */; };
+		F18E92902B43CE9E002B93D5 /* MovieDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E928F2B43CE9D002B93D5 /* MovieDetailsScreen.swift */; };
 		F18F3FB22B40472400A49249 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FB12B40472400A49249 /* MovieListView.swift */; };
 		F18F3FB72B4047BF00A49249 /* NowPlayingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FB62B4047BF00A49249 /* NowPlayingScreen.swift */; };
 		F18F3FB92B40480C00A49249 /* TopRatedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F3FB82B40480C00A49249 /* TopRatedScreen.swift */; };
@@ -33,6 +34,7 @@
 		B27973259187E6A7057F317F /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D45AD570A14DC39ACA54E94C /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		F1276D762B3E609C00867D9A /* MoviesApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesApp.swift; sourceTree = "<group>"; };
+		F18E928F2B43CE9D002B93D5 /* MovieDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsScreen.swift; sourceTree = "<group>"; };
 		F18F3FB12B40472400A49249 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		F18F3FB62B4047BF00A49249 /* NowPlayingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingScreen.swift; sourceTree = "<group>"; };
 		F18F3FB82B40480C00A49249 /* TopRatedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedScreen.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 			path = iosApp;
 			sourceTree = "<group>";
 		};
+		F18E928E2B43CE82002B93D5 /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				F18E928F2B43CE9D002B93D5 /* MovieDetailsScreen.swift */,
+			);
+			path = MovieDetails;
+			sourceTree = "<group>";
+		};
 		F18F3FB02B4046E500A49249 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +139,7 @@
 		F18F3FB32B40477F00A49249 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F18E928E2B43CE82002B93D5 /* MovieDetails */,
 				F18F3FC72B415AB900A49249 /* Popular */,
 				F18F3FB52B4047A200A49249 /* NowPlaying */,
 				F18F3FB42B40478F00A49249 /* TopRated */,
@@ -279,6 +290,7 @@
 				F18F3FC62B4116B700A49249 /* EmptyView.swift in Sources */,
 				F18F3FB72B4047BF00A49249 /* NowPlayingScreen.swift in Sources */,
 				F1276D772B3E609C00867D9A /* MoviesApp.swift in Sources */,
+				F18E92902B43CE9E002B93D5 /* MovieDetailsScreen.swift in Sources */,
 				F18F3FB92B40480C00A49249 /* TopRatedScreen.swift in Sources */,
 				F18F3FBD2B4048A100A49249 /* LoadingView.swift in Sources */,
 				F18F3FB22B40472400A49249 /* MovieListView.swift in Sources */,

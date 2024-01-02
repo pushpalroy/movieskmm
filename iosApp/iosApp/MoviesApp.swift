@@ -3,10 +3,12 @@ import MultiPlatformLibrary
 
 struct MoviesAppView: View {
     var body: some View {
-        TabView {
-            NowPlayingScreenView()
-            TopRatedScreenView()
-            PopularScreenView()
+        NavigationView {
+            TabView {
+                NowPlayingScreenView()
+                TopRatedScreenView()
+                PopularScreenView()
+            }
         }
     }
 }
