@@ -40,6 +40,12 @@
 | Serialization   | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)    |
 | BuildConfig     | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                       |
 
+In this project, [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) is used, to work with flows in iOS.
+It is an open-source solution that supports cancellation and generics with flows, which the Kotlin/Native compiler doesn't yet provide by default.
+It helps to consume suspending functions and flows from iOS. It directly supports the async/await, Combine, and RxSwift approaches to concurrency.
+KMP-NativeCoroutines has built-in support for [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel), also used in this project to create a common ViewModel. 
+Coroutines inside your KMMViewModel will (by default) use the CoroutineScope from the ViewModelScope.
+
 ## Architecture
 <table style="width:100%">
   <tr>
