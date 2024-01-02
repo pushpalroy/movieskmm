@@ -1,20 +1,14 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
-    kotlin("plugin.serialization")
-    id("com.codingfeline.buildkonfig") version "0.15.1"
+    alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.buildkonfig)
     id("com.google.devtools.ksp")
     id("com.rickclephas.kmp.nativecoroutines")
-}
-
-buildkonfig {
-    packageName = "com.example.movieskmm"
-
-    defaultConfigs {
-        buildConfigField(com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING,
-            "API_READ_ACCESS_TOKEN", ((project.findProperty("api_read_access_token") ?: "") as String))
-    }
 }
 
 kotlin {
@@ -87,6 +81,26 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+val localProperties = Properties()
+localProperties.load(rootProject.file("local.properties").reader())
+
+buildkonfig {
+    packageName = "com.example.movieskmm"
+    val props = Properties()
+    try {
+        props.load(file("../local.properties").inputStream())
+    } catch (e: Exception) {
+    }
+
+    defaultConfigs {
+        buildConfigField(
+            FieldSpec.Type.STRING,
+            "API_READ_ACCESS_TOKEN",
+            props["api_read_access_token"]?.toString() ?: "abc"
+        )
     }
 }
 

@@ -10,5 +10,5 @@ object ApiConstants {
 }
 
 object FileDownloadConstants {
-    const val BASE_URL = "https://file-examples.com/storage/fe3666494365908ae9beb40/2017/10/"
+    const val BASE_URL = "https://file-examples.com/storage/fe58d8f01f65948d7979fab/2017/10/"
 }
