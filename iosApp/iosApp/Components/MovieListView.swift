@@ -21,20 +21,7 @@ struct MoviesListView: View {
             spacing: 20
         ) {
             ForEach(moviesData.results, id: \.id) { item in
-                ImageCardView(
-                    movieItem: MovieItem(
-                        id: Int(item.id),
-                        title: item.title,
-                        originalTitle: item.originalTitle,
-                        overview: item.overview,
-                        backdropPath: item.backdropPath,
-                        posterPath: item.posterPath,
-                        voteAverage: item.voteAverage,
-                        voteCount: Int(item.id),
-                        popularity: item.popularity,
-                        releaseDate: item.releaseDate
-                    )
-                )
+                ImageCardView(movieItem: item)
             }
         }.padding(10)
     }

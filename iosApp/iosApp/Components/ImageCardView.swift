@@ -8,9 +8,10 @@
 
 import Foundation
 import SwiftUI
+import MultiPlatformLibrary
 
 struct ImageCardView: View {
-    var movieItem: MovieItem
+    var movieItem: MultiPlatformLibrary.MovieItem
     
     var body: some View {
         VStack {
