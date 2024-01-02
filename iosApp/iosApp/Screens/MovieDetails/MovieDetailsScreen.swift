@@ -68,6 +68,14 @@ struct MovieDetailsView: View {
                 LabelValueView(label: "Vote", value: String(format: "%.2f", movieDetails.voteAverage))
                 LabelValueView(label: "Popularity", value: String(format: "%.2f", movieDetails.popularity))
                 LabelValueView(label: "Budget", value: String(format: "%.2f", movieDetails.budget))
+                NavigationLink(destination: PdfViewerScreenView()) {
+                    Image(systemName: "arrow.down.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.blue)
+                }
+                .padding()
             }
             .padding(.top, 12)
             .padding(.horizontal, 16)

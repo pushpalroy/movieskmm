@@ -13,6 +13,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import kotlin.io.encoding.Base64
+import kotlin.io.encoding.ExperimentalEncodingApi
 
 open class FileDownloadViewModel : KMMViewModel(), KoinComponent {
 
@@ -27,13 +29,17 @@ open class FileDownloadViewModel : KMMViewModel(), KoinComponent {
         FileUiState.Loading
     )
 
+    @OptIn(ExperimentalEncodingApi::class)
     fun downloadPdfFile() {
         _uiState.value = FileUiState.Loading
         viewModelScope.coroutineScope.launch {
             try {
                 when (val response = fileDownloadUseCase.perform()) {
                     is NetworkResponse.Success -> {
-                        _uiState.value = FileUiState.Success(pdfData = response.data)
+                        _uiState.value = FileUiState.Success(
+                            pdfData = response.data,
+                            base64EncodedPdfData = Base64.encode(response.data)
+                        )
                     }
 
                     is NetworkResponse.Failure -> {

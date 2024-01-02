@@ -1,7 +1,7 @@
 package com.example.movieskmm.features.fileDownload
 
 sealed class FileUiState {
-    data class Success(val pdfData: ByteArray) : FileUiState() {
+    data class Success(val pdfData: ByteArray, val base64EncodedPdfData: String) : FileUiState() {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (other == null || this::class != other::class) return false
