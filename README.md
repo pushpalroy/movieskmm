@@ -110,6 +110,10 @@ The `androidApp` module depends on and uses the `shared` module as a regular And
 This is an Xcode project that builds into an iOS application.
 It depends on and uses the `shared` module as a CocoaPods dependency.
 
+## How to get started
+
+Generate the API key from [The Movie Database API](https://developer.themoviedb.org), place the key in 'gradle.properties' file as 'api_read_access_token=<YOUR_API_KEY_HERE>'.
+
 ## Run your application
 
 ### On Android
