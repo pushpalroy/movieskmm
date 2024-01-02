@@ -6,9 +6,9 @@ plugins {
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.kmpNativeCoroutines)
     alias(libs.plugins.buildkonfig)
-    id("com.google.devtools.ksp")
-    id("com.rickclephas.kmp.nativecoroutines")
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
