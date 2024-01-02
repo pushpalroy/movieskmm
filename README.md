@@ -1,4 +1,4 @@
-## 📋 MoviesKMM
+## MoviesKMM
 
   Jetpack Compose and SwiftUI based Kotlin Multiplatform sample project (based on [TMDB API](https://developer.themoviedb.org/)).
 
@@ -26,7 +26,7 @@
       </a>
   </p>
 
-### 👨‍💻 Tech stack
+### Tech stack
 
 | Tools           | Link                                                                        |
 |:----------------|:----------------------------------------------------------------------------|
@@ -38,6 +38,15 @@
 | DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  |
 | Networking      | [KTor](https://github.com/ktorio/ktor)                                      |
 | Serialization   | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)    |
+| BuildConfig     | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                       |
+
+## Architecture
+<table style="width:100%">
+  <tr>
+    <td><img src = "art/movies_kmm_architecture.png"  alt="Architecture diagram"/></td>
+  </tr>
+</table>
+
 
 ### Check your environment
 
@@ -63,7 +72,7 @@ Before you start, use the [KDoctor](https://github.com/Kotlin/kdoctor) tool to e
 
 Otherwise, KDoctor will highlight which parts of your setup still need to be configured and will suggest a way to fix them.
 
-### 🖥️  Screens
+### Screens
 
 <table style="width:100%">
   <tr>
