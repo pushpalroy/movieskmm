@@ -68,19 +68,19 @@ Otherwise, KDoctor will highlight which parts of your setup still need to be con
 <table style="width:100%">
   <tr>
     <th>Home (iOS)</th>
-    <th>Details (iOS)</th>
-  </tr>
-  <tr>
-    <td><img src = "art/screens/home_ios.png" width="100%" alt="Home iOS"/></td> 
-    <td><img src = "art/screens/details_ios.png" width="100%" alt="Details iOS"/></td>
-  </tr>
-  <tr>
     <th>Home (Android)</th>
-    <th>Board (Android)</th>
   </tr>
   <tr>
-    <td><img src = "art/screens/home_android.png" width="100%" alt="Home Android"/></td> 
-    <td><img src = "art/screens/details_android.png" width="100%" alt="Details Android"/></td>
+    <td><img src = "art/screens/home_ios.png" width="800" alt="Home iOS"/></td> 
+    <td><img src = "art/screens/home_android.png" width="800" alt="Home Android"/></td>
+  </tr>
+  <tr>
+    <th>Details (iOS)</th>
+    <th>Details (Android)</th>
+  </tr>
+  <tr>
+    <td><img src = "art/screens/details_ios.png" width="800" alt="Details iOS"/></td> 
+    <td><img src = "art/screens/details_android.png" width="800" alt="Details Android"/></td>
   </tr>
 </table>
 
@@ -88,13 +88,13 @@ Otherwise, KDoctor will highlight which parts of your setup still need to be con
 
 Open the project in Android Studio and switch the view from **Android** to **Project** to see all the files and targets belonging to the project:
 
-Your Compose Multiplatform project includes 3 modules:
+Your Kotlin Multiplatform project includes 3 modules:
 
 ### shared
 
 This is a Kotlin module that contains the logic common for both Android and iOS applications, that is, the code you share between platforms.
 
-This `shared` module is also where you’ll write your Compose Multiplatform code.
+This `shared` module is also where you’ll write your Kotlin Multiplatform code.
 In `shared/src/commonMain/kotlin/App.kt`, you can find the shared root `@Composable` function for your app.
 
 It uses Gradle as the build system. You can add dependencies and change settings in `shared/build.gradle.kts`.
@@ -145,7 +145,7 @@ To run your application on an iOS simulator in Android Studio, modify the `iosAp
 
 #### Running on a real device
 
-You can run your Compose Multiplatform application on a real iOS device for free.
+You can run your Kotlin Multiplatform application on a real iOS device for free.
 To do so, you'll need the following:
 
 * The `TEAM_ID` associated with your [Apple ID](https://support.apple.com/en-us/HT204316)
