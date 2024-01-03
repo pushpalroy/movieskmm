@@ -33,27 +33,25 @@ open class FileDownloadViewModel : KMMViewModel(), KoinComponent {
     fun downloadPdfFile() {
         _uiState.value = FileUiState.Loading
         viewModelScope.coroutineScope.launch {
-            try {
-                when (val response = fileDownloadUseCase.perform()) {
-                    is NetworkResponse.Success -> {
-                        _uiState.value = FileUiState.Success(
-                            pdfData = response.data,
-                            base64EncodedPdfData = Base64.encode(response.data)
-                        )
-                    }
-
-                    is NetworkResponse.Failure -> {
-                        _uiState.value =
-                            FileUiState.Error(exceptionMessage = response.throwable.message)
-                    }
-
-                    is NetworkResponse.Unauthorized -> {
-                        _uiState.value =
-                            FileUiState.Error(exceptionMessage = response.throwable.message)
-                    }
+            when (val response = fileDownloadUseCase.perform()) {
+                is NetworkResponse.Success -> {
+                    _uiState.value = FileUiState.Success(
+                        pdfData = response.data,
+                        base64EncodedPdfData = Base64.encode(response.data)
+                    )
                 }
-            } catch (e: Exception) {
-                _uiState.value = FileUiState.Error(exceptionMessage = e.message.orEmpty())
+
+                is NetworkResponse.Failure -> {
+                    _uiState.value = FileUiState.Error(
+                        exceptionMessage = response.throwable.message
+                    )
+                }
+
+                is NetworkResponse.Unauthorized -> {
+                    _uiState.value = FileUiState.Error(
+                        exceptionMessage = response.throwable.message
+                    )
+                }
             }
         }
     }

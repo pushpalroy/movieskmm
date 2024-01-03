@@ -30,24 +30,21 @@ open class NowPlayingViewModel : KMMViewModel(), KoinComponent {
     fun fetchNowPlayingMovies() {
         _uiState.value = NowPlayingUiState.Loading
         viewModelScope.coroutineScope.launch {
-            try {
-                when (val response = getNowPlayingMoviesUseCase.perform()) {
-                    is NetworkResponse.Success -> {
-                        _uiState.value = NowPlayingUiState.Success(moviesList = response.data)
-                    }
-
-                    is NetworkResponse.Failure -> {
-                        _uiState.value =
-                            NowPlayingUiState.Error(exceptionMessage = response.throwable.message)
-                    }
-
-                    is NetworkResponse.Unauthorized -> {
-                        _uiState.value =
-                            NowPlayingUiState.Error(exceptionMessage = response.throwable.message)
-                    }
+            when (val response = getNowPlayingMoviesUseCase.perform()) {
+                is NetworkResponse.Success -> {
+                    _uiState.value = NowPlayingUiState.Success(moviesList = response.data)
                 }
-            } catch (e: Exception) {
-                _uiState.value = NowPlayingUiState.Error(exceptionMessage = e.message.orEmpty())
+
+                is NetworkResponse.Failure -> {
+                    _uiState.value = NowPlayingUiState.Error(
+                        exceptionMessage = response.throwable.message
+                    )
+                }
+
+                is NetworkResponse.Unauthorized -> {
+                    _uiState.value =
+                        NowPlayingUiState.Error(exceptionMessage = response.throwable.message)
+                }
             }
         }
     }

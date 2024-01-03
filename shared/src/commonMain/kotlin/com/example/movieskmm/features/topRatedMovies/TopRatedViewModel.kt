@@ -30,24 +30,22 @@ open class TopRatedViewModel : KMMViewModel(), KoinComponent {
     fun fetchTopRatedMovies() {
         _uiState.value = TopRatedUiState.Loading
         viewModelScope.coroutineScope.launch {
-            try {
-                when (val response = getTopRatedMoviesUseCase.perform()) {
-                    is NetworkResponse.Success -> {
-                        _uiState.value = TopRatedUiState.Success(moviesList = response.data)
-                    }
-
-                    is NetworkResponse.Failure -> {
-                        _uiState.value =
-                            TopRatedUiState.Error(exceptionMessage = response.throwable.message)
-                    }
-
-                    is NetworkResponse.Unauthorized -> {
-                        _uiState.value =
-                            TopRatedUiState.Error(exceptionMessage = response.throwable.message)
-                    }
+            when (val response = getTopRatedMoviesUseCase.perform()) {
+                is NetworkResponse.Success -> {
+                    _uiState.value = TopRatedUiState.Success(moviesList = response.data)
                 }
-            } catch (e: Exception) {
-                _uiState.value = TopRatedUiState.Error(exceptionMessage = e.message.orEmpty())
+
+                is NetworkResponse.Failure -> {
+                    _uiState.value = TopRatedUiState.Error(
+                        exceptionMessage = response.throwable.message
+                    )
+                }
+
+                is NetworkResponse.Unauthorized -> {
+                    _uiState.value = TopRatedUiState.Error(
+                        exceptionMessage = response.throwable.message
+                    )
+                }
             }
         }
     }

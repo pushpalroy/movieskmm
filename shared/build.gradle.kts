@@ -42,6 +42,7 @@ kotlin {
                 implementation(libs.ktor.serialization.json)
                 implementation(libs.ktor.logging)
                 api(libs.kmm.viewmodel.core)
+                api(libs.logging.napier)
             }
         }
         val androidMain by getting {

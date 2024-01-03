@@ -30,24 +30,21 @@ open class MovieDetailsViewModel : KMMViewModel(), KoinComponent {
     fun fetchMovieDetails(movieId: Int) {
         _uiState.value = MovieDetailsUiState.Loading
         viewModelScope.coroutineScope.launch {
-            try {
-                when (val response = getMovieDetailsByIdUseCase.perform(id = movieId)) {
-                    is NetworkResponse.Success -> {
-                        _uiState.value = MovieDetailsUiState.Success(movieDetails = response.data)
-                    }
-
-                    is NetworkResponse.Failure -> {
-                        _uiState.value =
-                            MovieDetailsUiState.Error(exceptionMessage = response.throwable.message)
-                    }
-
-                    is NetworkResponse.Unauthorized -> {
-                        _uiState.value =
-                            MovieDetailsUiState.Error(exceptionMessage = response.throwable.message)
-                    }
+            when (val response = getMovieDetailsByIdUseCase.perform(params = movieId)) {
+                is NetworkResponse.Success -> {
+                    _uiState.value = MovieDetailsUiState.Success(movieDetails = response.data)
                 }
-            } catch (e: Exception) {
-                _uiState.value = MovieDetailsUiState.Error(exceptionMessage = e.message.orEmpty())
+
+                is NetworkResponse.Failure -> {
+                    _uiState.value = MovieDetailsUiState.Error(
+                        exceptionMessage = response.throwable.message
+                    )
+                }
+
+                is NetworkResponse.Unauthorized -> {
+                    _uiState.value =
+                        MovieDetailsUiState.Error(exceptionMessage = response.throwable.message)
+                }
             }
         }
     }

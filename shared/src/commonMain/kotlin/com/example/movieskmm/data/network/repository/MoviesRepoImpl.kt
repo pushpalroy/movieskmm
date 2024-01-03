@@ -6,6 +6,7 @@ import com.example.movieskmm.domain.model.MovieDetails
 import com.example.movieskmm.domain.repo.MoviesRepo
 import com.example.movieskmm.domain.model.MoviesList
 import com.example.movieskmm.domain.util.NetworkResponse
+import io.github.aakira.napier.Napier
 
 class MoviesRepoImpl(
     private val moviesService: MoviesSource
@@ -15,8 +16,15 @@ class MoviesRepoImpl(
             val response = moviesService.fetchNowPlayingMovies()
         ) {
             is NetworkResponse.Success -> NetworkResponse.Success(response.data.asDomain())
-            is NetworkResponse.Failure -> NetworkResponse.Failure(response.throwable)
-            is NetworkResponse.Unauthorized -> NetworkResponse.Unauthorized(response.throwable)
+            is NetworkResponse.Failure -> {
+                Napier.e("Error in fetching now playing movies: ${response.throwable.message}")
+                return NetworkResponse.Failure(response.throwable)
+            }
+
+            is NetworkResponse.Unauthorized -> {
+                Napier.e("Unauthorized in fetching now playing movies: ${response.throwable.message}")
+                return NetworkResponse.Unauthorized(response.throwable)
+            }
         }
     }
 
@@ -25,8 +33,15 @@ class MoviesRepoImpl(
             val response = moviesService.fetchPopularMovies()
         ) {
             is NetworkResponse.Success -> NetworkResponse.Success(response.data.asDomain())
-            is NetworkResponse.Failure -> NetworkResponse.Failure(response.throwable)
-            is NetworkResponse.Unauthorized -> NetworkResponse.Unauthorized(response.throwable)
+            is NetworkResponse.Failure -> {
+                Napier.e("Error in fetching popular movies: ${response.throwable.message}")
+                return NetworkResponse.Failure(response.throwable)
+            }
+
+            is NetworkResponse.Unauthorized -> {
+                Napier.e("Unauthorized in fetching popular movies: ${response.throwable.message}")
+                return NetworkResponse.Unauthorized(response.throwable)
+            }
         }
     }
 
@@ -35,8 +50,15 @@ class MoviesRepoImpl(
             val response = moviesService.fetchTopRatedMovies()
         ) {
             is NetworkResponse.Success -> NetworkResponse.Success(response.data.asDomain())
-            is NetworkResponse.Failure -> NetworkResponse.Failure(response.throwable)
-            is NetworkResponse.Unauthorized -> NetworkResponse.Unauthorized(response.throwable)
+            is NetworkResponse.Failure -> {
+                Napier.e("Error in fetching top rated movies: ${response.throwable.message}")
+                return NetworkResponse.Failure(response.throwable)
+            }
+
+            is NetworkResponse.Unauthorized -> {
+                Napier.e("Unauthorized in fetching top rated movies: ${response.throwable.message}")
+                return NetworkResponse.Unauthorized(response.throwable)
+            }
         }
     }
 
@@ -45,8 +67,15 @@ class MoviesRepoImpl(
             val response = moviesService.fetchMovieDetails(id)
         ) {
             is NetworkResponse.Success -> NetworkResponse.Success(response.data.asDomain())
-            is NetworkResponse.Failure -> NetworkResponse.Failure(response.throwable)
-            is NetworkResponse.Unauthorized -> NetworkResponse.Unauthorized(response.throwable)
+            is NetworkResponse.Failure -> {
+                Napier.e("Error in fetching movie details: ${response.throwable.message}")
+                return NetworkResponse.Failure(response.throwable)
+            }
+
+            is NetworkResponse.Unauthorized -> {
+                Napier.e("Unauthorized in fetching movie details: ${response.throwable.message}")
+                return NetworkResponse.Unauthorized(response.throwable)
+            }
         }
     }
 }

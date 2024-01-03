@@ -30,24 +30,21 @@ open class PopularViewModel : KMMViewModel(), KoinComponent {
     fun fetchPopularMovies() {
         _uiState.value = PopularUiState.Loading
         viewModelScope.coroutineScope.launch {
-            try {
-                when (val response = getPopularMoviesUseCase.perform()) {
-                    is NetworkResponse.Success -> {
-                        _uiState.value = PopularUiState.Success(moviesList = response.data)
-                    }
-
-                    is NetworkResponse.Failure -> {
-                        _uiState.value =
-                            PopularUiState.Error(exceptionMessage = response.throwable.message)
-                    }
-
-                    is NetworkResponse.Unauthorized -> {
-                        _uiState.value =
-                            PopularUiState.Error(exceptionMessage = response.throwable.message)
-                    }
+            when (val response = getPopularMoviesUseCase.perform()) {
+                is NetworkResponse.Success -> {
+                    _uiState.value = PopularUiState.Success(moviesList = response.data)
                 }
-            } catch (e: Exception) {
-                _uiState.value = PopularUiState.Error(exceptionMessage = e.message.orEmpty())
+
+                is NetworkResponse.Failure -> {
+                    _uiState.value = PopularUiState.Error(
+                        exceptionMessage = response.throwable.message
+                    )
+                }
+
+                is NetworkResponse.Unauthorized -> {
+                    _uiState.value =
+                        PopularUiState.Error(exceptionMessage = response.throwable.message)
+                }
             }
         }
     }
