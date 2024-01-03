@@ -12,6 +12,7 @@ import com.example.movieskmm.android.ui.navigation.destination.MOVIE_ID_ARGUMENT
 import com.example.movieskmm.android.ui.navigation.destination.MovieDetailsDestination
 import com.example.movieskmm.android.ui.navigation.destination.NowPlayingDestination
 import com.example.movieskmm.android.ui.navigation.destination.PdfViewerDestination
+import com.example.movieskmm.android.ui.screens.favmovies.favouriteGraph
 import com.example.movieskmm.android.ui.screens.moviedetails.MovieDetailsScreen
 import com.example.movieskmm.android.ui.screens.nowplaying.nowPlayingGraph
 import com.example.movieskmm.android.ui.screens.pdfviewer.PdfViewerScreen
@@ -44,6 +45,13 @@ fun MoviesNavHost(
             modifier = Modifier
         )
         popularGraph(
+            onMovieSelected = { movieId ->
+                navHostController.navigateToMovieDetails(movieId)
+            },
+            navController = navHostController,
+            modifier = Modifier
+        )
+        favouriteGraph(
             onMovieSelected = { movieId ->
                 navHostController.navigateToMovieDetails(movieId)
             },

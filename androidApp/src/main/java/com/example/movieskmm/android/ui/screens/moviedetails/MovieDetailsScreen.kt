@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Favorite
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
@@ -34,6 +35,7 @@ import coil.request.ImageRequest
 import com.example.movieskmm.android.ui.components.mirroringBackIcon
 import com.example.movieskmm.android.ui.designsystem.MoviesAppTheme
 import com.example.movieskmm.data.util.ApiConstants
+import com.example.movieskmm.domain.model.asMovieItem
 import com.example.movieskmm.features.movieDetails.MovieDetailsUiState
 import com.example.movieskmm.features.movieDetails.MovieDetailsViewModel
 import org.koin.androidx.compose.getViewModel
@@ -184,6 +186,21 @@ fun MovieDetailsScreen(
                             imageVector = Icons.Outlined.Info,
                             tint = MoviesAppTheme.colors.iconPrimaryActive,
                             contentDescription = "Download"
+                        )
+                    }
+
+                    IconButton(
+                        onClick = {
+                            viewModel.addMovieToFav(movie.asMovieItem())
+                        },
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp)
+                            .size(36.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Outlined.Favorite,
+                            tint = MoviesAppTheme.colors.iconPrimaryActive,
+                            contentDescription = "Add to favorite"
                         )
                     }
                 }

@@ -29,6 +29,15 @@ object PopularDestination : TopLevelDestination {
     override val titleTextId: Int = R.string.popular
 }
 
+object FavouritesDestination : TopLevelDestination {
+    override val route = "favourites"
+    override val destination = "favourites"
+    override val selectedIcon: Int = R.drawable.ic_favourite_selected
+    override val unselectedIcon: Int = R.drawable.ic_favourite_unselected
+    override val iconTextId: Int = R.string.favourites
+    override val titleTextId: Int = R.string.favourites
+}
+
 object MovieDetailsDestination : MoviesNavDestination {
     override val route = "movie_details"
     override val destination = "movie_details"

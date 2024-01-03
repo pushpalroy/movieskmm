@@ -1,8 +1,10 @@
 package com.example.movieskmm.di
 
+import com.example.movieskmm.data.local.sources.MoviesLocalSource
+import com.example.movieskmm.data.local.sources.MoviesLocalSourceImpl
 import com.example.movieskmm.data.network.client.httpClientModule
-import com.example.movieskmm.data.network.repository.FileDownloadRepoImpl
-import com.example.movieskmm.data.network.repository.MoviesRepoImpl
+import com.example.movieskmm.data.repo.FileDownloadRepoImpl
+import com.example.movieskmm.data.repo.MoviesRepoImpl
 import com.example.movieskmm.data.network.sources.FileDownloadSource
 import com.example.movieskmm.data.network.sources.FileDownloadSourceImpl
 import com.example.movieskmm.data.network.sources.MoviesSourceImpl
@@ -10,7 +12,9 @@ import com.example.movieskmm.data.network.sources.MoviesSource
 import com.example.movieskmm.domain.repo.FileDownloadRepo
 import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
 import com.example.movieskmm.domain.repo.MoviesRepo
+import com.example.movieskmm.domain.usecase.AddMovieToFavUseCase
 import com.example.movieskmm.domain.usecase.FileDownloadUseCase
+import com.example.movieskmm.domain.usecase.GetAllFavMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetMovieDetailsByIdUseCase
 import com.example.movieskmm.domain.usecase.GetPopularMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetTopRatedMoviesUseCase
@@ -25,15 +29,17 @@ fun initKoin(declaration: KoinAppDeclaration = {}) =
 
         modules(
             httpClientModule,
-            serviceModule,
+            networkServiceModule,
+            localServiceModule,
             repoModule,
             useCaseModule,
+            platformModule()
         )
     }
 
 fun initKoin() = initKoin {}
 
-val serviceModule = module {
+val networkServiceModule = module {
     single<MoviesSource> {
         MoviesSourceImpl(httpClient = get(named("movies")))
     }
@@ -42,9 +48,18 @@ val serviceModule = module {
     }
 }
 
+val localServiceModule = module {
+    single<MoviesLocalSource> {
+        MoviesLocalSourceImpl(driver = get())
+    }
+}
+
 val repoModule = module {
     single<MoviesRepo> {
-        MoviesRepoImpl(moviesService = get())
+        MoviesRepoImpl(
+            moviesNetworkService = get(),
+            moviesLocalService = get()
+        )
     }
     single<FileDownloadRepo> {
         FileDownloadRepoImpl(fileDownloadService = get())
@@ -66,5 +81,11 @@ val useCaseModule = module {
     }
     single<FileDownloadUseCase> {
         FileDownloadUseCase(fileDownloadRepo = get())
+    }
+    single<AddMovieToFavUseCase> {
+        AddMovieToFavUseCase(moviesRepo = get())
+    }
+    single<GetAllFavMoviesUseCase> {
+        GetAllFavMoviesUseCase(moviesRepo = get())
     }
 }

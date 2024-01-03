@@ -8,6 +8,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.movieskmm.android.ui.navigation.destination.FavouritesDestination
 import com.example.movieskmm.android.ui.navigation.destination.MoviesNavDestination
 import com.example.movieskmm.android.ui.navigation.destination.NowPlayingDestination
 import com.example.movieskmm.android.ui.navigation.destination.PopularDestination
@@ -38,13 +39,15 @@ class MoviesAppState(
             NowPlayingDestination.route -> NowPlayingDestination
             TopRatedDestination.route -> TopRatedDestination
             PopularDestination.route -> PopularDestination
+            FavouritesDestination.route -> FavouritesDestination
             else -> null
         }
 
     val topLevelDestination: ImmutableList<TopLevelDestination> = persistentListOf(
         NowPlayingDestination,
         TopRatedDestination,
-        PopularDestination
+        PopularDestination,
+        FavouritesDestination
     )
 
     /**

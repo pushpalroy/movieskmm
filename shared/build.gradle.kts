@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.kmpNativeCoroutines)
     alias(libs.plugins.buildkonfig)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -41,6 +42,7 @@ kotlin {
                 implementation(libs.ktor.auth)
                 implementation(libs.ktor.serialization.json)
                 implementation(libs.ktor.logging)
+                implementation(libs.sqldelight.runtime)
                 api(libs.kmm.viewmodel.core)
                 api(libs.logging.napier)
             }
@@ -49,6 +51,7 @@ kotlin {
             dependencies {
                 api(libs.koin.android)
                 implementation(libs.ktor.okhttp)
+                implementation(libs.sqldelight.android.driver)
             }
         }
 
@@ -62,6 +65,7 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
             dependencies {
                 implementation(libs.ktor.darwin)
+                implementation(libs.sqldelight.native.driver)
             }
         }
 
@@ -111,4 +115,10 @@ kotlin.sourceSets.all {
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions.jvmTarget = "17"
+}
+
+sqldelight {
+    database("AppDatabase") {
+        packageName = "com.example.movieskmm.data.local.db"
+    }
 }

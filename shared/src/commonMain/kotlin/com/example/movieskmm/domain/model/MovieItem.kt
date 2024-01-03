@@ -1,5 +1,7 @@
 package com.example.movieskmm.domain.model
 
+import com.example.movieskmm.data.local.entity.LocalMovieEntity
+
 data class MoviesList(
     val page: Int,
     val results: List<MovieItem>,
@@ -19,3 +21,14 @@ data class MovieItem(
     val popularity: Double,
     val releaseDate: String
 )
+
+fun MovieItem.asLocalEntity(): LocalMovieEntity {
+    return LocalMovieEntity(
+        id = id,
+        title = title,
+        overview = overview,
+        backdropPath = backdropPath,
+        posterPath = posterPath,
+        voteAverage = voteAverage
+    )
+}

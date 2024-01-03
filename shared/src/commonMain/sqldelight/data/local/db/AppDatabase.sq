@@ -1,0 +1,20 @@
+CREATE TABLE favourite_movie (
+    id INTEGER NOT NULL PRIMARY KEY,
+    title TEXT,
+    overview TEXT,
+    backdropPath TEXT,
+    posterPath TEXT,
+    voteAverage TEXT
+);
+
+insertMovie:
+INSERT OR REPLACE INTO favourite_movie(id, title, overview, backdropPath, posterPath, voteAverage) VALUES(?,?,?,?,?,?);
+
+selectAllMovies:
+SELECT * FROM favourite_movie;
+
+selectAllMoviesOrderByTitle:
+SELECT * FROM favourite_movie ORDER BY title ASC;
+
+deleteMovieById:
+DELETE FROM favourite_movie WHERE id = ?;

@@ -1,5 +1,7 @@
 package com.example.movieskmm.features.movieDetails
 
+import com.example.movieskmm.domain.model.MovieItem
+import com.example.movieskmm.domain.usecase.AddMovieToFavUseCase
 import com.example.movieskmm.domain.usecase.GetMovieDetailsByIdUseCase
 import com.example.movieskmm.domain.util.NetworkResponse
 import com.rickclephas.kmm.viewmodel.KMMViewModel
@@ -17,6 +19,7 @@ import org.koin.core.component.inject
 open class MovieDetailsViewModel : KMMViewModel(), KoinComponent {
 
     private val getMovieDetailsByIdUseCase: GetMovieDetailsByIdUseCase by inject()
+    private val addMovieToFavUseCase: AddMovieToFavUseCase by inject()
 
     private val _uiState = MutableStateFlow<MovieDetailsUiState>(MovieDetailsUiState.Loading)
 
@@ -46,6 +49,12 @@ open class MovieDetailsViewModel : KMMViewModel(), KoinComponent {
                         MovieDetailsUiState.Error(exceptionMessage = response.throwable.message)
                 }
             }
+        }
+    }
+
+    fun addMovieToFav(movieItem: MovieItem) {
+        viewModelScope.coroutineScope.launch {
+            addMovieToFavUseCase.perform(params = movieItem)
         }
     }
 

@@ -15,3 +15,18 @@ data class MovieDetails(
     val revenue: Long,
     val tagline: String,
 )
+
+fun MovieDetails.asMovieItem(): MovieItem {
+    return MovieItem(
+        id = id,
+        title = title,
+        originalTitle = originalTitle,
+        overview = overview,
+        backdropPath = backdropPath,
+        posterPath = posterPath,
+        voteAverage = voteAverage,
+        voteCount = voteCount,
+        popularity = popularity,
+        releaseDate = releaseDate
+    )
+}

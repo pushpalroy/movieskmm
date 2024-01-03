@@ -1,4 +1,4 @@
-package com.example.movieskmm.data.network.repository
+package com.example.movieskmm.data.repo
 
 import com.example.movieskmm.data.network.sources.FileDownloadSource
 import com.example.movieskmm.domain.repo.FileDownloadRepo
