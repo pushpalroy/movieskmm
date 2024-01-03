@@ -8,6 +8,7 @@ struct MoviesAppView: View {
                 NowPlayingScreenView()
                 TopRatedScreenView()
                 PopularScreenView()
+                FavouritesScreenView()
             }
         }
     }

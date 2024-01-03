@@ -11,6 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		E54553E56E4269260EE20100 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB0DFCFC12191F90DC484F /* Pods_iosApp.framework */; };
+		F1198FCA2B457AC9005AAB5B /* FavouritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1198FC92B457AC9005AAB5B /* FavouritesScreen.swift */; };
 		F1276D772B3E609C00867D9A /* MoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1276D762B3E609C00867D9A /* MoviesApp.swift */; };
 		F18E92902B43CE9E002B93D5 /* MovieDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E928F2B43CE9D002B93D5 /* MovieDetailsScreen.swift */; };
 		F18E92932B4426BC002B93D5 /* PdfViewerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E92922B4426BC002B93D5 /* PdfViewerScreen.swift */; };
@@ -35,6 +36,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B27973259187E6A7057F317F /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D45AD570A14DC39ACA54E94C /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		F1198FC92B457AC9005AAB5B /* FavouritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesScreen.swift; sourceTree = "<group>"; };
 		F1276D762B3E609C00867D9A /* MoviesApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesApp.swift; sourceTree = "<group>"; };
 		F18E928F2B43CE9D002B93D5 /* MovieDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsScreen.swift; sourceTree = "<group>"; };
 		F18E92922B4426BC002B93D5 /* PdfViewerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewerScreen.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			path = iosApp;
 			sourceTree = "<group>";
 		};
+		F1198FC82B457AA8005AAB5B /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				F1198FC92B457AC9005AAB5B /* FavouritesScreen.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
 		F18E928E2B43CE82002B93D5 /* MovieDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +162,7 @@
 		F18F3FB32B40477F00A49249 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F1198FC82B457AA8005AAB5B /* Favourites */,
 				F18E92912B44269F002B93D5 /* PdfViewer */,
 				F18E928E2B43CE82002B93D5 /* MovieDetails */,
 				F18F3FC72B415AB900A49249 /* Popular */,
@@ -306,6 +317,7 @@
 				F18E92952B442A16002B93D5 /* PdfViewer.swift in Sources */,
 				F1276D772B3E609C00867D9A /* MoviesApp.swift in Sources */,
 				F18E92902B43CE9E002B93D5 /* MovieDetailsScreen.swift in Sources */,
+				F1198FCA2B457AC9005AAB5B /* FavouritesScreen.swift in Sources */,
 				F18F3FB92B40480C00A49249 /* TopRatedScreen.swift in Sources */,
 				F18F3FBD2B4048A100A49249 /* LoadingView.swift in Sources */,
 				F18F3FB22B40472400A49249 /* MovieListView.swift in Sources */,

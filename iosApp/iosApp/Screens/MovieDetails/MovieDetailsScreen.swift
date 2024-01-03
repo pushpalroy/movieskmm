@@ -24,7 +24,9 @@ struct MovieDetailsScreenView: View {
                 LoadingView()
             case let successState as MovieDetailsUiState.Success:
                 let moviesDetailsData = (successState as MovieDetailsUiState.Success).movieDetails
-                MovieDetailsView(movieDetails: moviesDetailsData)
+                MovieDetailsView(movieDetails: moviesDetailsData, addToFavAction: {
+                    viewModel.addMovieToFav(movieItem: moviesDetailsData.asMovieItem())
+                })
             case is MovieDetailsUiState.Error:
                 ErrorView()
             default:
@@ -39,6 +41,7 @@ struct MovieDetailsScreenView: View {
 struct MovieDetailsView: View {
     
     var movieDetails: MultiPlatformLibrary.MovieDetails
+    let addToFavAction: () -> Void
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -74,6 +77,14 @@ struct MovieDetailsView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
                         .foregroundColor(.blue)
+                }
+                .padding()
+                Button(action: addToFavAction) {
+                    Image(systemName: "heart.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.red)
                 }
                 .padding()
             }

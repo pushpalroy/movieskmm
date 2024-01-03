@@ -26,3 +26,20 @@ struct MoviesListView: View {
         }.padding(10)
     }
 }
+
+struct FavMoviesListView: View {
+    var moviesData: [MovieItem]
+    var body: some View {
+        LazyVGrid(
+            columns: [
+                GridItem(.flexible()),
+                GridItem(.flexible())
+            ],
+            spacing: 20
+        ) {
+            ForEach(moviesData, id: \.id) { item in
+                ImageCardView(movieItem: item)
+            }
+        }.padding(10)
+    }
+}
