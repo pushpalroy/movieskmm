@@ -37,6 +37,7 @@
 | Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) |
 | DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  |
 | Networking      | [KTor](https://github.com/ktorio/ktor)                                      |
+| Database        | [SQLDelight](https://github.com/cashapp/sqldelight)                         |
 | Serialization   | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)    |
 | BuildConfig     | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                       |
 | Logging         | [Napier](https://github.com/AAkira/Napier)                                  |
@@ -49,6 +50,8 @@ KMP-NativeCoroutines has built-in support for [KMM-ViewModel](https://github.com
 Coroutines inside your KMMViewModel will (by default) use the CoroutineScope from the ViewModelScope.
 
 ## Architecture
+
+The codebase completely follows [Uncle Bob's style](https://www.freecodecamp.org/news/a-quick-introduction-to-clean-architecture-990c014448d2/)!
 <table style="width:100%">
   <tr>
     <td><img src = "art/movies_kmm_architecture.png"  alt="Architecture diagram"/></td>
