@@ -28,7 +28,7 @@
 
 ### Tech stack
 
-| Tools           | Link                                                                        |
+| Purpose         | Tool used                                                                   |
 |:----------------|:----------------------------------------------------------------------------|
 | Framework       | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      |
 | Android UI      | [Jetpack Compose](https://developer.android.com/jetpack/compose)            |
@@ -40,6 +40,7 @@
 | Serialization   | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)    |
 | BuildConfig     | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                       |
 | Logging         | [Napier](https://github.com/AAkira/Napier)                                  |
+| Lint Check      | [Detekt](https://github.com/detekt/detekt)                                  |
 
 In this project, [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) is used, to work with flows in iOS.
 It is an open-source solution that supports cancellation and generics with flows, which the Kotlin/Native compiler doesn't yet provide by default.
