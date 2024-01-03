@@ -21,7 +21,14 @@ struct MoviesListView: View {
             spacing: 20
         ) {
             ForEach(moviesData.results, id: \.id) { item in
-                ImageCardView(movieItem: item)
+                VStack(alignment: .leading){
+                    ImageCardView(movieItem: item)
+                    Text(item.title)
+                        .font(.caption)
+                        .lineLimit(1)
+                        .bold()
+                        .padding(.top, 4)
+                }
             }
         }.padding(10)
     }
@@ -38,7 +45,14 @@ struct FavMoviesListView: View {
             spacing: 20
         ) {
             ForEach(moviesData, id: \.id) { item in
-                ImageCardView(movieItem: item)
+                VStack(alignment: .leading){
+                    ImageCardView(movieItem: item)
+                    Text(item.title)
+                        .font(.caption)
+                        .lineLimit(1)
+                        .bold()
+                        .padding(.top, 4)
+                }
             }
         }.padding(10)
     }

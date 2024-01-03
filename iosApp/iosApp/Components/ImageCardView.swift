@@ -16,10 +16,11 @@ struct ImageCardView: View {
     var body: some View {
         NavigationLink(destination: MovieDetailsScreenView(movieId: Int32(movieItem.id))) {
             VStack {
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w342" + movieItem.posterPath)) { image in
+                AsyncImage(
+                    url: URL(string: "https://image.tmdb.org/t/p/w342" + movieItem.posterPath)) { image in
                     image.resizable().aspectRatio(contentMode: .fill)
                 } placeholder: {
-                    ProgressView()
+                    Color.purple.opacity(0.1)
                 }
                 .frame(height: 250)
                 .overlay(RoundedRectangle(cornerRadius: 10)

@@ -1,5 +1,8 @@
 package com.example.movieskmm.android.ui
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -22,11 +25,17 @@ fun MoviesApp(
 
         MoviesScaffold(
             bottomBar = {
-                MoviesBottomBar(
-                    destinations = destination,
-                    onNavigateToDestination = appState::navigate,
-                    currentDestination = appState.currentDestination,
-                )
+                AnimatedVisibility(
+                    visible = appState.currentTopLevelDestination != null,
+                    enter = expandVertically(),
+                    exit = shrinkVertically()
+                ) {
+                    MoviesBottomBar(
+                        destinations = destination,
+                        onNavigateToDestination = appState::navigate,
+                        currentDestination = appState.currentDestination,
+                    )
+                }
             },
             modifier = modifier
         ) { paddingValues ->
