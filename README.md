@@ -1,6 +1,6 @@
 ## MoviesKMM
 
-  Jetpack Compose and SwiftUI based Kotlin Multiplatform sample project (based on [TMDB API](https://developer.themoviedb.org/)).
+  Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on [TMDB API](https://developer.themoviedb.org/)).
 
   <p>
       <a href = "https://developer.android.com/jetpack/androidx/releases/compose-compiler">
@@ -24,7 +24,10 @@
       <a href = "https://github.com/pushpalroy/movieskmm/issues">
           <img src="https://img.shields.io/github/issues/pushpalroy/movieskmm?color=orange&style=for-the-badge" alt="Issues"/>
       </a>
-  </p>
+  </p> 
+  
+  ![CI-MAIN](https://github.com/pushpalroy/movieskmm/actions/workflows/android.yml/badge.svg?branch=main) 
+  ![CI-MAIN](https://github.com/pushpalroy/movieskmm/actions/workflows/ios.yml/badge.svg?branch=main)
 
 ### Tech stack
 
