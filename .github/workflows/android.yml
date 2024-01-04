@@ -19,6 +19,16 @@ jobs:
         distribution: "zulu"
         java-version: 17
 
+      # Copy secrets
+    - name: Copy secrets
+      id: copy_secrets
+      env:
+        API_READ_ACCESS_TOKEN: ${{ secrets.API_READ_ACCESS_TOKEN }}
+      run: |
+        touch ./local.properties
+        echo api_read_access_token=\"$API_READ_ACCESS_TOKEN\" >> ./local.properties
+        cat ./local.properties
+
     # Caching gradle packages
     - uses: actions/cache@v3
       name: Cache Gradle for quicker builds
