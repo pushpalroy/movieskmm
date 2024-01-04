@@ -1,33 +1,17 @@
 ## MoviesKMM
 
-  Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on [TMDB API](https://developer.themoviedb.org/)).
+Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on [TMDB API](https://developer.themoviedb.org/)).
 
-  <p>
-      <a href = "https://developer.android.com/jetpack/androidx/releases/compose-compiler">
-        <img src = "https://img.shields.io/badge/Compose-1.5.4-blue.svg?color=blue&style=for-the-badge" alt="Compose"/>
-      </a>
-      <a href="https://kotlinlang.org/docs/releases.html">
-        <img src="https://img.shields.io/badge/Kotlin-1.9.21-blue.svg?color=blue&style=for-the-badge" alt="Kotlin"/>
-      </a>
-      <a href = "https://github.com/pushpalroy/movieskmm/stargazers">
-        <img src="https://img.shields.io/github/stars/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Stars" />
-      </a>
-      <a href = "https://github.com/pushpalroy/movieskmm/network/members">
-          <img src="https://img.shields.io/github/forks/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Members"/>
-      </a>
-      <a href = "https://github.com/pushpalroy/movieskmm/watchers">
-          <img src="https://img.shields.io/github/watchers/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Watchers"/>
-      </a>
-      <a href = "https://github.com/pushpalroy/movieskmm/pulls">
-         <img src="https://img.shields.io/github/issues-pr/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge" alt="Pull Requests"/>
-      </a>
-      <a href = "https://github.com/pushpalroy/movieskmm/issues">
-          <img src="https://img.shields.io/github/issues/pushpalroy/movieskmm?color=orange&style=for-the-badge" alt="Issues"/>
-      </a>
-  </p> 
+![Compose](https://img.shields.io/badge/Compose-1.5.4-blue.svg?color=blue&style=for-the-badge)
+![Kotlin](https://img.shields.io/badge/Kotlin-1.9.21-blue.svg?color=blue&style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge)
+![Watchers](https://img.shields.io/github/watchers/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge)
+![Pull Request](https://img.shields.io/github/issues-pr/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/pushpalroy/movieskmm?color=orange&style=for-the-badge)
   
-  ![CI-MAIN](https://github.com/pushpalroy/movieskmm/actions/workflows/android.yml/badge.svg?branch=main) 
-  ![CI-MAIN](https://github.com/pushpalroy/movieskmm/actions/workflows/ios.yml/badge.svg?branch=main)
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/android.yml?style=for-the-badge&label=Android%20CI) 
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/ios.yml?style=for-the-badge&label=iOS%20CI) 
 
 ### Tech stack
 
