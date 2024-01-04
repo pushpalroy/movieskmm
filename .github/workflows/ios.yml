@@ -1,6 +1,10 @@
 name: iOS CI
 
-on: pull_request
+on:
+    pull_request:
+      branches: [ main ]
+    push:
+      branches: [ main ]
 
 # Cancel any current or previous job from the same PR
 concurrency:
