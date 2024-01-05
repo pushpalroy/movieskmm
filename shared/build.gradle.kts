@@ -1,8 +1,4 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec
-import org.jetbrains.kotlin.gradle.plugin.KotlinCompilation
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetContainer
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import java.util.Properties
 
 plugins {
@@ -21,8 +17,6 @@ kotlin {
     iosX64()
     iosArm64()
     iosSimulatorArm64()
-//    iosIntermediateSourceSets(iosX64(), iosArm64(), iosSimulatorArm64())
-    //applyDefaultHierarchyTemplate()
 
     cocoapods {
         summary = "Common library for the MoviesKMM app"
@@ -30,10 +24,11 @@ kotlin {
         version = "1.0"
         ios.deploymentTarget = "16.0"
         podfile = project.file("../iosApp/Podfile")
+        pod("SQLCipher", libs.versions.iosSqlCipher.get())
         framework {
             baseName = "MultiPlatformLibrary"
-            //binaryOption("bundleId", "com.example.movieskmm.MultiPlatformLibrary")
-            isStatic = false
+            binaryOption("bundleId", "com.example.movieskmm.MultiPlatformLibrary")
+            isStatic = true
         }
     }
 
@@ -51,6 +46,7 @@ kotlin {
                 implementation(libs.ktor.serialization.json)
                 implementation(libs.ktor.logging)
                 implementation(libs.sqldelight.runtime)
+                implementation(libs.sqlDelight.coroutinesExt)
                 implementation(libs.stately.common)
                 api(libs.kmm.viewmodel.core)
                 api(libs.logging.napier)
@@ -59,6 +55,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 api(libs.koin.android)
+                api(libs.commonsware.saferoom)
                 implementation(libs.ktor.okhttp)
                 implementation(libs.sqldelight.android.driver)
             }
@@ -77,10 +74,6 @@ kotlin {
                 implementation(libs.sqldelight.native.driver)
             }
         }
-//        iosMain.dependencies {
-//            implementation(libs.ktor.darwin)
-//            implementation(libs.sqldelight.native.driver)
-//        }
 
         commonTest.dependencies {
             implementation(kotlin("test"))
@@ -135,30 +128,6 @@ sqldelight {
         create("AppDatabase") {
             packageName.set("com.example.movieskmm.data.local.db")
         }
+        linkSqlite = false
     }
-    //linkSqlite.set(false)
 }
-
-//FIXME https://github.com/cashapp/sqldelight/issues/4523
-//fun KotlinSourceSetContainer.iosIntermediateSourceSets(vararg iosTargets: KotlinNativeTarget) {
-//    val children: List<Pair<KotlinSourceSet, KotlinSourceSet>> = iosTargets.map { target ->
-//        val main = target.compilations.getByName(KotlinCompilation.MAIN_COMPILATION_NAME).defaultSourceSet
-//        val test = target.compilations.getByName(KotlinCompilation.TEST_COMPILATION_NAME).defaultSourceSet
-//        return@map main to test
-//    }
-//    val parent: Pair<KotlinSourceSet, KotlinSourceSet> = Pair(
-//        first = sourceSets.getByName(KotlinSourceSet.COMMON_MAIN_SOURCE_SET_NAME),
-//        second = sourceSets.getByName(KotlinSourceSet.COMMON_TEST_SOURCE_SET_NAME)
-//    )
-//    createIntermediateSourceSet("iosMain", children.map { it.first }, parent.first)
-//    createIntermediateSourceSet("iosTest", children.map { it.second }, parent.second)
-//}
-//
-//fun KotlinSourceSetContainer.createIntermediateSourceSet(
-//    name: String,
-//    children: List<KotlinSourceSet>,
-//    parent: KotlinSourceSet
-//): KotlinSourceSet = sourceSets.maybeCreate(name).apply {
-//    dependsOn(parent)
-//    children.forEach { it.dependsOn(this) }
-//}

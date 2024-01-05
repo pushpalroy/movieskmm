@@ -1,5 +1,6 @@
 package com.example.movieskmm.di
 
+import com.example.movieskmm.data.local.db.DbHelper
 import com.example.movieskmm.data.local.sources.MoviesLocalSource
 import com.example.movieskmm.data.local.sources.MoviesLocalSourceImpl
 import com.example.movieskmm.data.network.client.httpClientModule
@@ -19,6 +20,7 @@ import com.example.movieskmm.domain.usecase.GetMovieDetailsByIdUseCase
 import com.example.movieskmm.domain.usecase.GetPopularMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetTopRatedMoviesUseCase
 import org.koin.core.context.startKoin
+import org.koin.core.module.Module
 import org.koin.core.qualifier.named
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
@@ -30,6 +32,7 @@ fun initKoin(declaration: KoinAppDeclaration = {}) =
         modules(
             httpClientModule,
             networkServiceModule,
+            daoModule,
             localServiceModule,
             repoModule,
             useCaseModule,
@@ -48,9 +51,13 @@ val networkServiceModule = module {
     }
 }
 
+val daoModule: Module = module {
+    factory { get<DbHelper>().appDatabaseDAO }
+}
+
 val localServiceModule = module {
     single<MoviesLocalSource> {
-        MoviesLocalSourceImpl(driver = get())
+        MoviesLocalSourceImpl(dao = get())
     }
 }
 

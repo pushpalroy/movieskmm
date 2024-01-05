@@ -13,6 +13,11 @@
   "platforms": {
     "ios": "16.0"
   },
+  "dependencies": {
+    "SQLCipher": [
+      "4.5.4"
+    ]
+  },
   "pod_target_xcconfig": {
     "KOTLIN_PROJECT_PATH": ":shared",
     "PRODUCT_MODULE_NAME": "MultiPlatformLibrary"
