@@ -10,6 +10,9 @@ import io.github.aakira.napier.Napier
 import kotlinx.cinterop.*
 import platform.Foundation.*
 
+/**
+ * Reused this class from: https://github.com/softartdev/NoteDelight
+ */
 object IosCipherUtils {
 
     private val dbDirPath: String by lazy {
