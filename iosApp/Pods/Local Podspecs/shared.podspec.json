@@ -1,13 +1,13 @@
 {
   "name": "shared",
   "version": "1.0",
-  "homepage": "Link to the Shared Module homepage",
+  "homepage": "https://github.com/pushpalroy/movieskmm",
   "source": {
     "http": ""
   },
   "authors": "",
   "license": "",
-  "summary": "Some description for the Shared Module",
+  "summary": "Common library for the MoviesKMM app",
   "vendored_frameworks": "build/cocoapods/framework/MultiPlatformLibrary.framework",
   "libraries": "c++",
   "platforms": {

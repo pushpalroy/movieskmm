@@ -4,7 +4,7 @@ import com.example.movieskmm.data.local.db.AppDatabase
 import com.example.movieskmm.data.local.db.util.asFlow
 import com.example.movieskmm.data.local.db.util.mapToList
 import com.example.movieskmm.data.local.entity.LocalMovieEntity
-import com.squareup.sqldelight.db.SqlDriver
+import app.cash.sqldelight.db.SqlDriver
 import data.local.db.Favourite_movie
 import kotlinx.coroutines.flow.Flow
 

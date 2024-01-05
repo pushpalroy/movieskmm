@@ -1,7 +1,7 @@
 package com.example.movieskmm.data.local.db.util
 
 
-import com.squareup.sqldelight.Query
+import app.cash.sqldelight.Query
 
 /*
  * Copyright (C) 2018 Square, Inc.
