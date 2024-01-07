@@ -4,4 +4,5 @@ target 'iosApp' do
   pod 'shared', :path => '../shared'
   pod 'KMMViewModelSwiftUI', '1.0.0-ALPHA-16'
   pod 'KMPNativeCoroutinesAsync', '1.0.0-ALPHA-22'
+  pod 'SQLCipher', '4.5.4'
 end
