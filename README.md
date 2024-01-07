@@ -25,6 +25,7 @@ Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on 
 | DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  |
 | Networking      | [KTor](https://github.com/ktorio/ktor)                                      |
 | Database        | [SQLDelight](https://github.com/cashapp/sqldelight)                         |
+| Encryption      | [SQLCipher](https://github.com/sqlcipher/sqlcipher)                         |
 | Serialization   | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)    |
 | BuildConfig     | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                       |
 | Logging         | [Napier](https://github.com/AAkira/Napier)                                  |
@@ -44,6 +45,21 @@ The codebase completely follows [Uncle Bob's style](https://www.freecodecamp.org
     <td><img src = "art/movies_kmm_architecture.png"  alt="Architecture diagram"/></td>
   </tr>
 </table>
+
+
+## Reference and Inspiration
+
+The project has referred to multiple blogs and open-source resources for learning purpose.
+The most important are:
+
+1. [BikeShare](https://github.com/joreilly/BikeShare) by [John O'Reilly](https://twitter.com/joreilly) - Learnt a lot of crucial things like how to use KMMViewModel along with Native Coroutines.
+2. [HarvestTimeKMP](https://github.com/mutualmobile/HarvestTimeKMP) by the amazing team at [Mutual Mobile](https://mutualmobile.com/): [Anmol Verma](https://twitter.com/oianmol), [Shubham Singh](https://twitter.com/shubhsingh0708), (Yugesh Jain
+   )[https://twitter.com/YugeshJain] & others- A good Clean Architecture with KMM project.
+3. [NoteDelight](https://github.com/softartdev/NoteDelight) by Artur Babichev - Learnt & referred a of his code for database encryption with Cipher.
+4. [KaMPKitSQLCipher](https://github.com/touchlab-lab/KaMPKitSQLCipher) by the [Touch Lab](https://touchlab.co/).
+5. [Multiplatform Encryption with SQLDelight and SQLCipher](https://dev.to/touchlab/multiplatform-encryption-with-sqldelight-and-sqlcipher-5do4) by [Sam Hill
+   ](https://github.com/samhill303)
+6. [SQLCipher and KMM](https://medium.com/@kpgalligan/sqlcipher-and-kmm-58d96ea8095d) by [Kevin Galligan](https://twitter.com/kpgalligan)
 
 
 ### Check your environment
@@ -119,7 +135,11 @@ It depends on and uses the `shared` module as a CocoaPods dependency.
 
 ## How to get started
 
-Generate the API key from [The Movie Database API](https://developer.themoviedb.org), place the key in `local.properties` file as `api_read_access_token=<YOUR_API_KEY_HERE>`.
+In `local.properties` file:
+1. Generate the API key from [The Movie Database API](https://developer.themoviedb.org), place the key as `api_read_access_token=<YOUR_API_KEY_HERE>`.
+2. Create a unique passphrase for SQLCipher encryption and add as `db_encryption_pass=<YOUR_API_KEY_HERE>`.
+
+If you are forking the project and want the build through Github Actions, add the above keys as secrets.
 
 ## Run your application
 
