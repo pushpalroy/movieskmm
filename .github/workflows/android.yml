@@ -28,9 +28,11 @@ jobs:
       id: copy_secrets
       env:
         API_READ_ACCESS_TOKEN: ${{ secrets.API_READ_ACCESS_TOKEN }}
+        DB_ENCRYPTION_PASS: ${{ secrets.DB_ENCRYPTION_PASS }}
       run: |
         touch ./local.properties
         echo api_read_access_token=\"$API_READ_ACCESS_TOKEN\" >> ./local.properties
+        echo db_encryption_pass=\"$DB_ENCRYPTION_PASS\" >> ./local.properties
         cat ./local.properties
 
     # Caching gradle packages
