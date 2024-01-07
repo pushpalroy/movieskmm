@@ -13,17 +13,12 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-latest-xlarge
     steps:
       # Code checkout
       - name: Checkout code
         id: checkout_code
         uses: actions/checkout@v4
-
-      - name: Xcode Select Version
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: 14.1.0
 
       # Copy secrets
       - name: Copy secrets
