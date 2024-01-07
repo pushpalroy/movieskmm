@@ -22,7 +22,7 @@ kotlin {
         summary = "Common library for the MoviesKMM app"
         homepage = "https://github.com/pushpalroy/movieskmm"
         version = "1.0"
-        ios.deploymentTarget = "16.0"
+        ios.deploymentTarget = "14.0"
         podfile = project.file("../iosApp/Podfile")
         pod("SQLCipher", libs.versions.iosSqlCipher.get())
         framework {
