@@ -40,6 +40,9 @@ jobs:
           distribution: "zulu"
           java-version: 17
 
+      - name: Install Xcode Command Line Tools
+        run: xcode-select --install
+
       # Grant execute permission for gradlew
       - name: Grant execute permission for gradlew
         id: grant_gradle_permission
@@ -61,3 +64,7 @@ jobs:
       - name: Build iOS app
         id: generate_debug_build
         run: xcodebuild -workspace iosApp/iosApp.xcworkspace -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 8' build
+
+      - name: Display config.log
+        if: failure() # Only runs if the previous steps failed
+        run: cat /config.log
