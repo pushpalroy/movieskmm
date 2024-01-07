@@ -20,6 +20,11 @@ jobs:
         id: checkout_code
         uses: actions/checkout@v4
 
+      - name: Xcode Select Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: 15.1
+
       # Copy secrets
       - name: Copy secrets
         id: copy_secrets
@@ -44,14 +49,6 @@ jobs:
       - name: Grant execute permission for gradlew
         id: grant_gradle_permission
         run: chmod +x gradlew
-
-      # Purge cache
-      - name: Purge cache
-        id: purge_cache
-        uses: MyAlbum/purge-cache@v2
-        with:
-          accessed: true
-          max-age: 1
 
       # Caching gradle packages
       - uses: actions/cache@v3
