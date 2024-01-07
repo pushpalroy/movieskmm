@@ -45,6 +45,14 @@ jobs:
         id: grant_gradle_permission
         run: chmod +x gradlew
 
+      # Purge cache
+      - name: Purge cache
+        id: purge_cache
+        uses: MyAlbum/purge-cache@v2
+        with:
+          accessed: true
+          max-age: 1
+
       # Caching gradle packages
       - uses: actions/cache@v3
         name: Cache Gradle for quicker builds
