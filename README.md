@@ -52,10 +52,9 @@ The codebase completely follows [Uncle Bob's style](https://www.freecodecamp.org
 The project has referred to multiple blogs and open-source resources for learning purpose.
 The most important are:
 
-1. [BikeShare](https://github.com/joreilly/BikeShare) by [John O'Reilly](https://twitter.com/joreilly) - Learnt a lot of crucial things like how to use KMMViewModel along with Native Coroutines.
-2. [HarvestTimeKMP](https://github.com/mutualmobile/HarvestTimeKMP) by the amazing team at [Mutual Mobile](https://mutualmobile.com/): [Anmol Verma](https://twitter.com/oianmol), [Shubham Singh](https://twitter.com/shubhsingh0708), (Yugesh Jain
-   )[https://twitter.com/YugeshJain] & others- A good Clean Architecture with KMM project.
-3. [NoteDelight](https://github.com/softartdev/NoteDelight) by Artur Babichev - Learnt & referred a of his code for database encryption with Cipher.
+1. [BikeShare](https://github.com/joreilly/BikeShare) by [John O'Reilly](https://twitter.com/joreilly) - Good use of KMMViewModel along with Native Coroutines.
+2. [HarvestTimeKMP](https://github.com/mutualmobile/HarvestTimeKMP) by the amazing team at [Mutual Mobile](https://mutualmobile.com/): [Anmol Verma](https://twitter.com/oianmol), [Shubham Singh](https://twitter.com/shubhsingh0708), [Yugesh Jain](https://twitter.com/YugeshJain) & others - A good Clean Architecture with KMM project.
+3. [NoteDelight](https://github.com/softartdev/NoteDelight) by Artur Babichev - Amazing use of Database encryption with Cipher.
 4. [KaMPKitSQLCipher](https://github.com/touchlab-lab/KaMPKitSQLCipher) by the [Touch Lab](https://touchlab.co/).
 5. [Multiplatform Encryption with SQLDelight and SQLCipher](https://dev.to/touchlab/multiplatform-encryption-with-sqldelight-and-sqlcipher-5do4) by [Sam Hill
    ](https://github.com/samhill303)

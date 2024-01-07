@@ -35,6 +35,11 @@ jobs:
         echo db_encryption_pass=\"$DB_ENCRYPTION_PASS\" >> ./local.properties
         cat ./local.properties
 
+      # Grant execute permission for gradlew
+    - name: Grant execute permission for gradlew
+      id: grant_gradle_permission
+      run: chmod +x gradlew
+
     # Caching gradle packages
     - uses: actions/cache@v3
       name: Cache Gradle for quicker builds
@@ -46,11 +51,6 @@ jobs:
         key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
-
-    # Grant execute permission for gradlew
-    - name: Grant execute permission for gradlew
-      id: grant_gradle_permission
-      run: chmod +x gradlew
 
     # Generate debug build
     - name: Build Android app

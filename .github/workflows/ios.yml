@@ -40,6 +40,23 @@ jobs:
           distribution: "zulu"
           java-version: 17
 
+      # Grant execute permission for gradlew
+      - name: Grant execute permission for gradlew
+        id: grant_gradle_permission
+        run: chmod +x gradlew
+
+      # Caching gradle packages
+      - uses: actions/cache@v3
+        name: Cache Gradle for quicker builds
+        id: caching_gradle
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
       # Build ios app
       - name: Build iOS app
         id: generate_debug_build
