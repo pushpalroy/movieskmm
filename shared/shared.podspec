@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
     spec.vendored_frameworks      = 'build/cocoapods/framework/MultiPlatformLibrary.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '14.0'
-    spec.dependency 'SQLCipher', '4.5.4'
+    spec.dependency 'SQLCipher', '4.5.5'
                 
     if !Dir.exist?('build/cocoapods/framework/MultiPlatformLibrary.framework') || Dir.empty?('build/cocoapods/framework/MultiPlatformLibrary.framework')
         raise "
