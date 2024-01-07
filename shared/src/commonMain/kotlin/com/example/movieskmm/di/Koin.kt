@@ -14,11 +14,14 @@ import com.example.movieskmm.domain.repo.FileDownloadRepo
 import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
 import com.example.movieskmm.domain.repo.MoviesRepo
 import com.example.movieskmm.domain.usecase.AddMovieToFavUseCase
+import com.example.movieskmm.domain.usecase.security.CheckEncryptionPassphraseUseCase
+import com.example.movieskmm.domain.usecase.security.EnableEncryptionUseCase
 import com.example.movieskmm.domain.usecase.FileDownloadUseCase
 import com.example.movieskmm.domain.usecase.GetAllFavMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetMovieDetailsByIdUseCase
 import com.example.movieskmm.domain.usecase.GetPopularMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetTopRatedMoviesUseCase
+import com.example.movieskmm.domain.usecase.security.CloseDatabaseUseCase
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.core.qualifier.named
@@ -94,5 +97,14 @@ val useCaseModule = module {
     }
     single<GetAllFavMoviesUseCase> {
         GetAllFavMoviesUseCase(moviesRepo = get())
+    }
+    single<EnableEncryptionUseCase> {
+        EnableEncryptionUseCase(dbHelper = get<DbHelper>())
+    }
+    single<CheckEncryptionPassphraseUseCase> {
+        CheckEncryptionPassphraseUseCase(dbHelper = get<DbHelper>())
+    }
+    single<CloseDatabaseUseCase> {
+        CloseDatabaseUseCase(dbHelper = get<DbHelper>())
     }
 }

@@ -112,6 +112,12 @@ buildkonfig {
             "API_READ_ACCESS_TOKEN",
             props["api_read_access_token"]?.toString() ?: "abc"
         )
+
+        buildConfigField(
+            FieldSpec.Type.STRING,
+            "DB_ENCRYPTION_PASS",
+            props["db_encryption_pass"]?.toString() ?: "12345"
+        )
     }
 }
 
