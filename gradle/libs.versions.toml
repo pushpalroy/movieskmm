@@ -26,7 +26,7 @@ ksp = "1.9.21-1.0.15"
 napier = "2.6.1"
 detekt = "1.19.0"
 sqldelight = "2.0.1"
-iosSqlCipher = "4.5.5"
+iosSqlCipher = "4.5.4"
 saferoom = "1.3.0"
 
 [libraries]

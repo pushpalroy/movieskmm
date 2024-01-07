@@ -11,7 +11,7 @@
   "vendored_frameworks": "build/cocoapods/framework/MultiPlatformLibrary.framework",
   "libraries": "c++",
   "platforms": {
-    "ios": "16.0"
+    "ios": "14.0"
   },
   "dependencies": {
     "SQLCipher": [
