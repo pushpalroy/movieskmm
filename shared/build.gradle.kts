@@ -19,6 +19,7 @@ plugins {
 kotlin {
     androidTarget()
     iosIntermediateSourceSets(iosX64(), iosArm64(), iosSimulatorArm64())
+    applyDefaultHierarchyTemplate()
 
     cocoapods {
         summary = "Common library for the MoviesKMM app"
@@ -136,8 +137,8 @@ sqldelight {
         create("AppDatabase") {
             packageName.set("com.example.movieskmm.data.local.db")
         }
-        linkSqlite = false
     }
+    linkSqlite.set(false)
 }
 
 // FIXME https://github.com/cashapp/sqldelight/issues/4523
