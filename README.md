@@ -15,27 +15,28 @@ Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on 
 
 ### Tech stack
 
-| Purpose         | Tool used                                                                   |
-|:----------------|:----------------------------------------------------------------------------|
-| Framework       | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      |
-| Android UI      | [Jetpack Compose](https://developer.android.com/jetpack/compose)            |
-| iOS UI          | [SwiftUI](https://developer.apple.com/documentation/swiftui)                |
-| Lifecycle       | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               |
-| Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) |
-| DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  |
-| Networking      | [KTor](https://github.com/ktorio/ktor)                                      |
-| Database        | [SQLDelight](https://github.com/cashapp/sqldelight)                         |
-| Encryption      | [SQLCipher](https://github.com/sqlcipher/sqlcipher)                         |
-| Serialization   | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)    |
-| BuildConfig     | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                       |
-| Logging         | [Napier](https://github.com/AAkira/Napier)                                  |
-| Lint Check      | [Detekt](https://github.com/detekt/detekt)                                  |
+| Purpose         | Tool used                                                                   | Purpose       | Tool used                                                                |
+|:----------------|-----------------------------------------------------------------------------|---------------|:-------------------------------------------------------------------------|
+| Framework       | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      | Database      | [SQLDelight](https://github.com/cashapp/sqldelight)                      |
+| Android UI      | [Jetpack Compose](https://developer.android.com/jetpack/compose)            | Encryption    | [SQLCipher](https://github.com/sqlcipher/sqlcipher)                      |
+| iOS UI          | [SwiftUI](https://developer.apple.com/documentation/swiftui)                | Serialization | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization) |
+| Lifecycle       | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               | BuildConfig   | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                    |
+| Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) | Logging       | [Napier](https://github.com/AAkira/Napier)                               |
+| DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  | Lint Check    | [Detekt](https://github.com/detekt/detekt)                               |
+| Networking      | [KTor](https://github.com/ktorio/ktor)                                      |               |                                                                          |
 
 In this project, [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) is used, to work with flows in iOS.
 It is an open-source solution that supports cancellation and generics with flows, which the Kotlin/Native compiler doesn't yet provide by default.
 It helps to consume suspending functions and flows from iOS. It directly supports the async/await, Combine, and RxSwift approaches to concurrency.
 KMP-NativeCoroutines has built-in support for [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel), also used in this project to create a common ViewModel. 
 Coroutines inside your KMMViewModel will (by default) use the CoroutineScope from the ViewModelScope.
+
+SQLCipher is a standalone fork of the SQLite database library that adds 256 bit AES encryption of database files.
+
+## Known Issues
+
+There is currently a CI failure for IOS build due to SQLCipher which has been reported here: 
+https://github.com/sqlcipher/sqlcipher/issues/502. The build is otherwise working fine locally. 
 
 ## Architecture
 

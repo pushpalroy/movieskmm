@@ -57,11 +57,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # Initialize pods
-      - name: Initialize pods
-        run: ./gradlew shared:podInstall
-
       # Build ios app
       - name: Build iOS app
         id: generate_debug_build
-        run: xcodebuild -workspace iosApp/iosApp.xcworkspace -configuration Debug -scheme iosApp -sdk iphonesimulator
+        run: xcodebuild -workspace iosApp/iosApp.xcworkspace -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 8' build
