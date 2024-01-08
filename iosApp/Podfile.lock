@@ -7,7 +7,13 @@ PODS:
   - KMPNativeCoroutinesAsync (1.0.0-ALPHA-22):
     - KMPNativeCoroutinesCore (= 1.0.0-ALPHA-22)
   - KMPNativeCoroutinesCore (1.0.0-ALPHA-22)
-  - shared (1.0)
+  - shared (1.0):
+    - SQLCipher (= 4.5.5)
+  - SQLCipher (4.5.5):
+    - SQLCipher/standard (= 4.5.5)
+  - SQLCipher/common (4.5.5)
+  - SQLCipher/standard (4.5.5):
+    - SQLCipher/common
 
 DEPENDENCIES:
   - KMMViewModelSwiftUI (= 1.0.0-ALPHA-16)
@@ -21,6 +27,7 @@ SPEC REPOS:
     - KMMViewModelSwiftUI
     - KMPNativeCoroutinesAsync
     - KMPNativeCoroutinesCore
+    - SQLCipher
 
 EXTERNAL SOURCES:
   shared:
@@ -32,8 +39,9 @@ SPEC CHECKSUMS:
   KMMViewModelSwiftUI: 87d9dc4971bfc0bee03401110fca561b90be6b12
   KMPNativeCoroutinesAsync: cced81e32c1bfad1feaea479a5bead9c31833054
   KMPNativeCoroutinesCore: 4ba940bc6d6a28808def88f79c030c4383e5c28b
-  shared: 66fb94f76101fef5c69b59fe6f39a6a51714f8bb
+  shared: 3b07084e205ab55507f1aaf6e53113e6e5282d3f
+  SQLCipher: f2e96b3822e3006b379181a0e4fd145f6de29b56
 
-PODFILE CHECKSUM: 9e530727488f7755d808fd41f89718f98d2bd3c3
+PODFILE CHECKSUM: 95d52e3ae4cf4cd87871061ded1f034a271a26a0
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.14.3

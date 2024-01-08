@@ -1,4 +1,8 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec
+import org.jetbrains.kotlin.gradle.plugin.KotlinCompilation
+import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
+import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetContainer
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import java.util.Properties
 
 plugins {
@@ -14,25 +18,27 @@ plugins {
 
 kotlin {
     androidTarget()
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
+    iosIntermediateSourceSets(iosX64(), iosArm64(), iosSimulatorArm64())
+    applyDefaultHierarchyTemplate()
 
     cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
+        summary = "Common library for the MoviesKMM app"
+        homepage = "https://github.com/pushpalroy/movieskmm"
         version = "1.0"
-        ios.deploymentTarget = "16.0"
+        ios.deploymentTarget = "14.0"
         podfile = project.file("../iosApp/Podfile")
+        pod("SQLCipher", libs.versions.iosSqlCipher.get())
         framework {
             baseName = "MultiPlatformLibrary"
-            isStatic = false
+            binaryOption("bundleId", "com.example.movieskmm.MultiPlatformLibrary")
+            isStatic = true
         }
     }
 
     sourceSets {
         all {
             languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
+            languageSettings.optIn("kotlin.RequiresOptIn")
         }
         val commonMain by getting {
             dependencies {
@@ -43,6 +49,8 @@ kotlin {
                 implementation(libs.ktor.serialization.json)
                 implementation(libs.ktor.logging)
                 implementation(libs.sqldelight.runtime)
+                implementation(libs.sqlDelight.coroutinesExt)
+                implementation(libs.stately.common)
                 api(libs.kmm.viewmodel.core)
                 api(libs.logging.napier)
             }
@@ -50,6 +58,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 api(libs.koin.android)
+                api(libs.commonsware.saferoom)
                 implementation(libs.ktor.okhttp)
                 implementation(libs.sqldelight.android.driver)
             }
@@ -58,7 +67,7 @@ kotlin {
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
-        val iosMain by creating {
+        val iosMain by getting {
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
@@ -106,6 +115,12 @@ buildkonfig {
             "API_READ_ACCESS_TOKEN",
             props["api_read_access_token"]?.toString() ?: "abc"
         )
+
+        buildConfigField(
+            FieldSpec.Type.STRING,
+            "DB_ENCRYPTION_PASS",
+            props["db_encryption_pass"]?.toString() ?: "12345"
+        )
     }
 }
 
@@ -118,7 +133,34 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 }
 
 sqldelight {
-    database("AppDatabase") {
-        packageName = "com.example.movieskmm.data.local.db"
+    databases {
+        create("AppDatabase") {
+            packageName.set("com.example.movieskmm.data.local.db")
+        }
     }
+    linkSqlite.set(false)
+}
+
+// FIXME https://github.com/cashapp/sqldelight/issues/4523
+fun KotlinSourceSetContainer.iosIntermediateSourceSets(vararg iosTargets: KotlinNativeTarget) {
+    val children: List<Pair<KotlinSourceSet, KotlinSourceSet>> = iosTargets.map { target ->
+        val main = target.compilations.getByName(KotlinCompilation.MAIN_COMPILATION_NAME).defaultSourceSet
+        val test = target.compilations.getByName(KotlinCompilation.TEST_COMPILATION_NAME).defaultSourceSet
+        return@map main to test
+    }
+    val parent: Pair<KotlinSourceSet, KotlinSourceSet> = Pair(
+        first = sourceSets.getByName(KotlinSourceSet.COMMON_MAIN_SOURCE_SET_NAME),
+        second = sourceSets.getByName(KotlinSourceSet.COMMON_TEST_SOURCE_SET_NAME)
+    )
+    createIntermediateSourceSet("iosMain", children.map { it.first }, parent.first)
+    createIntermediateSourceSet("iosTest", children.map { it.second }, parent.second)
+}
+
+fun KotlinSourceSetContainer.createIntermediateSourceSet(
+    name: String,
+    children: List<KotlinSourceSet>,
+    parent: KotlinSourceSet
+): KotlinSourceSet = sourceSets.maybeCreate(name).apply {
+    dependsOn(parent)
+    children.forEach { it.dependsOn(this) }
 }

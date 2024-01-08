@@ -15,26 +15,28 @@ Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on 
 
 ### Tech stack
 
-| Purpose         | Tool used                                                                   |
-|:----------------|:----------------------------------------------------------------------------|
-| Framework       | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      |
-| Android UI      | [Jetpack Compose](https://developer.android.com/jetpack/compose)            |
-| iOS UI          | [SwiftUI](https://developer.apple.com/documentation/swiftui)                |
-| Lifecycle       | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               |
-| Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) |
-| DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  |
-| Networking      | [KTor](https://github.com/ktorio/ktor)                                      |
-| Database        | [SQLDelight](https://github.com/cashapp/sqldelight)                         |
-| Serialization   | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)    |
-| BuildConfig     | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                       |
-| Logging         | [Napier](https://github.com/AAkira/Napier)                                  |
-| Lint Check      | [Detekt](https://github.com/detekt/detekt)                                  |
+| Purpose         | Tool used                                                                   | Purpose       | Tool used                                                                |
+|:----------------|:----------------------------------------------------------------------------|:--------------|:-------------------------------------------------------------------------|
+| Framework       | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      | Database      | [SQLDelight](https://github.com/cashapp/sqldelight)                      |
+| Android UI      | [Jetpack Compose](https://developer.android.com/jetpack/compose)            | Encryption    | [SQLCipher](https://github.com/sqlcipher/sqlcipher)                      |
+| iOS UI          | [SwiftUI](https://developer.apple.com/documentation/swiftui)                | Serialization | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization) |
+| Lifecycle       | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               | BuildConfig   | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                    |
+| Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) | Logging       | [Napier](https://github.com/AAkira/Napier)                               |
+| DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  | Lint Check    | [Detekt](https://github.com/detekt/detekt)                               |
+| Networking      | [KTor](https://github.com/ktorio/ktor)                                      | Image Loading | [Coroutine Image Loader](https://github.com/coil-kt/coil)                |
 
 In this project, [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) is used, to work with flows in iOS.
 It is an open-source solution that supports cancellation and generics with flows, which the Kotlin/Native compiler doesn't yet provide by default.
 It helps to consume suspending functions and flows from iOS. It directly supports the async/await, Combine, and RxSwift approaches to concurrency.
 KMP-NativeCoroutines has built-in support for [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel), also used in this project to create a common ViewModel. 
 Coroutines inside your KMMViewModel will (by default) use the CoroutineScope from the ViewModelScope.
+
+SQLCipher is a standalone fork of the SQLite database library that adds 256 bit AES encryption of database files.
+
+## Known Issues
+
+There is currently a CI failure for IOS build due to SQLCipher which has been reported here: 
+https://github.com/sqlcipher/sqlcipher/issues/502. The build is otherwise working fine locally. 
 
 ## Architecture
 
@@ -44,6 +46,20 @@ The codebase completely follows [Uncle Bob's style](https://www.freecodecamp.org
     <td><img src = "art/movies_kmm_architecture.png"  alt="Architecture diagram"/></td>
   </tr>
 </table>
+
+
+## Reference and Inspiration
+
+The project has referred to multiple blogs and open-source resources for learning purpose.
+The most important are:
+
+1. [BikeShare](https://github.com/joreilly/BikeShare) by [John O'Reilly](https://twitter.com/joreilly) - Good use of KMMViewModel along with Native Coroutines.
+2. [HarvestTimeKMP](https://github.com/mutualmobile/HarvestTimeKMP) by the amazing team at [Mutual Mobile](https://mutualmobile.com/): [Anmol Verma](https://twitter.com/oianmol), [Shubham Singh](https://twitter.com/shubhsingh0708), [Yugesh Jain](https://twitter.com/YugeshJain) & others - A good Clean Architecture with KMM project.
+3. [NoteDelight](https://github.com/softartdev/NoteDelight) by Artur Babichev - Amazing use of Database encryption with Cipher.
+4. [KaMPKitSQLCipher](https://github.com/touchlab-lab/KaMPKitSQLCipher) by the [Touch Lab](https://touchlab.co/).
+5. [Multiplatform Encryption with SQLDelight and SQLCipher](https://dev.to/touchlab/multiplatform-encryption-with-sqldelight-and-sqlcipher-5do4) by [Sam Hill
+   ](https://github.com/samhill303)
+6. [SQLCipher and KMM](https://medium.com/@kpgalligan/sqlcipher-and-kmm-58d96ea8095d) by [Kevin Galligan](https://twitter.com/kpgalligan)
 
 
 ### Check your environment
@@ -119,7 +135,11 @@ It depends on and uses the `shared` module as a CocoaPods dependency.
 
 ## How to get started
 
-Generate the API key from [The Movie Database API](https://developer.themoviedb.org), place the key in `local.properties` file as `api_read_access_token=<YOUR_API_KEY_HERE>`.
+In `local.properties` file:
+1. Generate the API key from [The Movie Database API](https://developer.themoviedb.org), place the key as `api_read_access_token=<YOUR_API_KEY_HERE>`.
+2. Create a unique passphrase for SQLCipher encryption and add as `db_encryption_pass=<YOUR_API_KEY_HERE>`.
+
+If you are forking the project and want the build through Github Actions, add the above keys as secrets.
 
 ## Run your application
 

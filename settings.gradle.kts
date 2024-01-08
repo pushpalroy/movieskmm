@@ -11,6 +11,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://s3.amazonaws.com/repo.commonsware.com")
     }
 }
 

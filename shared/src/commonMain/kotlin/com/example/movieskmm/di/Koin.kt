@@ -1,5 +1,6 @@
 package com.example.movieskmm.di
 
+import com.example.movieskmm.data.local.db.DbHelper
 import com.example.movieskmm.data.local.sources.MoviesLocalSource
 import com.example.movieskmm.data.local.sources.MoviesLocalSourceImpl
 import com.example.movieskmm.data.network.client.httpClientModule
@@ -13,12 +14,16 @@ import com.example.movieskmm.domain.repo.FileDownloadRepo
 import com.example.movieskmm.domain.usecase.GetNowPlayingMoviesUseCase
 import com.example.movieskmm.domain.repo.MoviesRepo
 import com.example.movieskmm.domain.usecase.AddMovieToFavUseCase
+import com.example.movieskmm.domain.usecase.security.CheckEncryptionPassphraseUseCase
+import com.example.movieskmm.domain.usecase.security.EnableEncryptionUseCase
 import com.example.movieskmm.domain.usecase.FileDownloadUseCase
 import com.example.movieskmm.domain.usecase.GetAllFavMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetMovieDetailsByIdUseCase
 import com.example.movieskmm.domain.usecase.GetPopularMoviesUseCase
 import com.example.movieskmm.domain.usecase.GetTopRatedMoviesUseCase
+import com.example.movieskmm.domain.usecase.security.CloseDatabaseUseCase
 import org.koin.core.context.startKoin
+import org.koin.core.module.Module
 import org.koin.core.qualifier.named
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
@@ -30,6 +35,7 @@ fun initKoin(declaration: KoinAppDeclaration = {}) =
         modules(
             httpClientModule,
             networkServiceModule,
+            daoModule,
             localServiceModule,
             repoModule,
             useCaseModule,
@@ -48,9 +54,13 @@ val networkServiceModule = module {
     }
 }
 
+val daoModule: Module = module {
+    factory { get<DbHelper>().appDatabaseDAO }
+}
+
 val localServiceModule = module {
     single<MoviesLocalSource> {
-        MoviesLocalSourceImpl(driver = get())
+        MoviesLocalSourceImpl(dao = get())
     }
 }
 
@@ -87,5 +97,14 @@ val useCaseModule = module {
     }
     single<GetAllFavMoviesUseCase> {
         GetAllFavMoviesUseCase(moviesRepo = get())
+    }
+    single<EnableEncryptionUseCase> {
+        EnableEncryptionUseCase(dbHelper = get<DbHelper>())
+    }
+    single<CheckEncryptionPassphraseUseCase> {
+        CheckEncryptionPassphraseUseCase(dbHelper = get<DbHelper>())
+    }
+    single<CloseDatabaseUseCase> {
+        CloseDatabaseUseCase(dbHelper = get<DbHelper>())
     }
 }

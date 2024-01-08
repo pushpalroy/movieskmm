@@ -1,15 +1,15 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'shared'
     spec.version                  = '1.0'
-    spec.homepage                 = 'Link to the Shared Module homepage'
+    spec.homepage                 = 'https://github.com/pushpalroy/movieskmm'
     spec.source                   = { :http=> ''}
     spec.authors                  = ''
     spec.license                  = ''
-    spec.summary                  = 'Some description for the Shared Module'
+    spec.summary                  = 'Common library for the MoviesKMM app'
     spec.vendored_frameworks      = 'build/cocoapods/framework/MultiPlatformLibrary.framework'
     spec.libraries                = 'c++'
-    spec.ios.deployment_target = '16.0'
-                
+    spec.ios.deployment_target = '14.0'
+    spec.dependency 'SQLCipher', '4.5.5'
                 
     if !Dir.exist?('build/cocoapods/framework/MultiPlatformLibrary.framework') || Dir.empty?('build/cocoapods/framework/MultiPlatformLibrary.framework')
         raise "
