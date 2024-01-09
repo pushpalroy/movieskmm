@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-14.2
+    runs-on: macos-latest
     steps:
       # Code checkout
       - name: Checkout code
@@ -60,4 +60,4 @@ jobs:
       # Build ios app
       - name: Build iOS app
         id: generate_debug_build
-        run: xcodebuild -workspace iosApp/iosApp.xcworkspace -configuration Debug -scheme iosApp -sdk iphonesimulator build
+        run: xcodebuild -workspace iosApp/iosApp.xcworkspace -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 8' build
