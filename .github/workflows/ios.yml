@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-14.2
     steps:
       # Code checkout
       - name: Checkout code
