@@ -80,9 +80,30 @@ kotlin {
 
         commonTest.dependencies {
             implementation(kotlin("test"))
+            implementation(kotlin("test-common"))
+            implementation(kotlin("test-annotations-common"))
             implementation(libs.ktor.test)
             implementation(libs.ktor.mock)
+            implementation(libs.coroutines.test)
+            implementation(libs.koin.test)
         }
+
+        val androidUnitTest by getting {
+            dependsOn(commonTest.get())
+            dependencies {
+                implementation(kotlin("test"))
+                implementation(kotlin("test-junit"))
+                implementation(libs.junit)
+                implementation(libs.coroutines.test)
+                implementation(libs.bundles.mockito)
+                implementation(libs.sqlDelight.jvm)
+                implementation(libs.androidx.arch.core.testing)
+                implementation(libs.turbine)
+            }
+        }
+    }
+    compilerOptions {
+        freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 }
 
@@ -144,8 +165,10 @@ sqldelight {
 // FIXME https://github.com/cashapp/sqldelight/issues/4523
 fun KotlinSourceSetContainer.iosIntermediateSourceSets(vararg iosTargets: KotlinNativeTarget) {
     val children: List<Pair<KotlinSourceSet, KotlinSourceSet>> = iosTargets.map { target ->
-        val main = target.compilations.getByName(KotlinCompilation.MAIN_COMPILATION_NAME).defaultSourceSet
-        val test = target.compilations.getByName(KotlinCompilation.TEST_COMPILATION_NAME).defaultSourceSet
+        val main =
+            target.compilations.getByName(KotlinCompilation.MAIN_COMPILATION_NAME).defaultSourceSet
+        val test =
+            target.compilations.getByName(KotlinCompilation.TEST_COMPILATION_NAME).defaultSourceSet
         return@map main to test
     }
     val parent: Pair<KotlinSourceSet, KotlinSourceSet> = Pair(
