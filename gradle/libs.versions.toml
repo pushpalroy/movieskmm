@@ -18,6 +18,7 @@ compose-material3 = "1.1.2"
 composeViewModel = "2.6.2"
 androidx-activityCompose = "1.8.2"
 androidx-navigation = "2.7.6"
+mockative = "2.0.1"
 org-jetbrains-kotlin-jvm = "1.9.21"
 bouquet = "1.1.2"
 buildkonfig = "0.15.1"
@@ -92,6 +93,8 @@ turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 junit = { module = "junit:junit", version.ref = "junit" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito" }
+mockative = { module = "io.mockative:mockative", version.ref = "mockative" }
+mockative-processor = { module = "io.mockative:mockative-processor", version.ref = "mockative" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

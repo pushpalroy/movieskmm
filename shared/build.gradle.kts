@@ -86,6 +86,7 @@ kotlin {
             implementation(libs.ktor.mock)
             implementation(libs.coroutines.test)
             implementation(libs.koin.test)
+            implementation(libs.mockative)
         }
 
         val androidUnitTest by getting {
@@ -186,4 +187,13 @@ fun KotlinSourceSetContainer.createIntermediateSourceSet(
 ): KotlinSourceSet = sourceSets.maybeCreate(name).apply {
     dependsOn(parent)
     children.forEach { it.dependsOn(this) }
+}
+
+// For Mockative
+dependencies {
+    configurations
+        .filter { it.name.startsWith("ksp") && it.name.contains("Test") }
+        .forEach {
+            add(it.name, libs.mockative.processor)
+        }
 }
