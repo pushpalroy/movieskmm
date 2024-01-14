@@ -1,7 +1,6 @@
-package com.example.movieskmm.domain.usecase.security
+package com.example.movieskmm.data.local.db
 
 import com.example.movieskmm.BaseTest
-import com.example.movieskmm.data.local.db.TestSchema
 import com.example.movieskmm.data.local.db.TestSchema.insetEachMovie
 import com.example.movieskmm.data.local.entity.LocalMovieEntity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -17,8 +16,9 @@ class AppDatabaseDaoTest : BaseTest() {
 
     private val appDatabaseDAO = dbHelper.appDatabaseDAO
 
-    private val movies =
-        listOf(TestSchema.firstMovie, TestSchema.secondMovie, TestSchema.thirdMovie)
+    private val movies = listOf(
+        TestSchema.firstMovie, TestSchema.secondMovie, TestSchema.thirdMovie
+    )
 
     @BeforeTest
     fun setUp() = runTest {
