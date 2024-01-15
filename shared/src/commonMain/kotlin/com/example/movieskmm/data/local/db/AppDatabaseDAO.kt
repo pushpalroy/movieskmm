@@ -50,4 +50,9 @@ class AppDatabaseDAO(private val dbQueries: AppDatabaseQueries) {
      * @param id the movie id.
      */
     fun delete(id: Long) = dbQueries.deleteMovieById(id = id)
+
+    /**
+     * Delete all movie by id.
+     */
+    fun deleteAll() = dbQueries.deleteAllMovies()
 }

@@ -15,16 +15,17 @@ import kotlin.test.assertEquals
 class AppDatabaseDaoTest : BaseTest() {
 
     private val appDatabaseDAO = dbHelper.appDatabaseDAO
-
+    private val appDatabase = dbHelper.buildDbIfNeed().appDatabase
     private val movies = listOf(
         TestSchema.firstMovie, TestSchema.secondMovie, TestSchema.thirdMovie
     )
 
     @BeforeTest
     fun setUp() = runTest {
-        val appDatabase = dbHelper.buildDbIfNeed().appDatabase
+        println("Setup done")
         appDatabase.appDatabaseQueries.transaction {
             movies.forEach {
+                println("Inserting movie: ${it.id}")
                 appDatabase.appDatabaseQueries.insetEachMovie(it)
             }
         }
@@ -32,28 +33,30 @@ class AppDatabaseDaoTest : BaseTest() {
 
     @AfterTest
     fun tearDown() = runTest {
-        val appDatabase = dbHelper.buildDbIfNeed().appDatabase
+        println("Tear down")
         appDatabase.appDatabaseQueries.transaction {
-            movies.forEach {
-                appDatabase.appDatabaseQueries.deleteMovieById(it.id)
-            }
+            println("Deleting all movies")
+            appDatabase.appDatabaseQueries.deleteAllMovies()
         }
     }
 
     @Test
     fun should_fetch_all_inserted_movies() = runTest {
-        assertEquals(movies, appDatabaseDAO.getAllFavMovies().first())
+        println("Executing should_fetch_all_inserted_movies")
+        val moviesFlow = appDatabaseDAO.getAllFavMovies()
+        assertEquals(movies, moviesFlow.first())
     }
 
     @Test
     fun should_insert_new_item_correctly() = runTest {
+        println("Executing should_insert_new_item_correctly")
         appDatabaseDAO.insert(
             LocalMovieEntity(
-                4, "Abc", "Xyz", "/abc", "/xyz", 1.1
+                40, "Abc", "Xyz", "/abc", "/xyz", 1.1
             )
         )
         val favouriteMovie = appDatabaseDAO.getAllFavMovies().first().last()
-        assertEquals(4, favouriteMovie.id)
+        assertEquals(40, favouriteMovie.id)
         assertEquals("Abc", favouriteMovie.title)
         assertEquals("Xyz", favouriteMovie.overview)
         assertEquals("/abc", favouriteMovie.backdropPath)
