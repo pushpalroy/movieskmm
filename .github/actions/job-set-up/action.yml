@@ -12,6 +12,19 @@ runs:
         distribution: "zulu"
         java-version: 17
 
+    # Copy secrets
+    - name: Copy secrets
+      id: copy_secrets
+      shell: bash
+      env:
+        API_READ_ACCESS_TOKEN: ${{ secrets.API_READ_ACCESS_TOKEN }}
+        DB_ENCRYPTION_PASS: ${{ secrets.DB_ENCRYPTION_PASS }}
+      run: |
+        touch ./local.properties
+        echo api_read_access_token=\"$API_READ_ACCESS_TOKEN\" >> ./local.properties
+        echo db_encryption_pass=\"$DB_ENCRYPTION_PASS\" >> ./local.properties
+        cat ./local.properties
+
     # Setup gradle
     - name: Setup Gradle
       id: setup_gradle
