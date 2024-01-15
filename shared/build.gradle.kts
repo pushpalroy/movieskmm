@@ -96,10 +96,8 @@ kotlin {
                 implementation(kotlin("test-junit"))
                 implementation(libs.junit)
                 implementation(libs.coroutines.test)
-                implementation(libs.bundles.mockito)
                 implementation(libs.sqlDelight.jvm)
                 implementation(libs.androidx.arch.core.testing)
-                implementation(libs.turbine)
             }
         }
     }
