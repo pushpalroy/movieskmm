@@ -1,0 +1,23 @@
+name: Android Tests CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  Android:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Code checkout
+      - name: Checkout code
+        id: checkout_code
+        uses: actions/checkout@v4
+
+      - name: Job set up
+        uses: ./.github/actions/job-set-up
+
+      - run: ./gradlew clean testDebug -p androidApp/
