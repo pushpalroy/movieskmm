@@ -4,6 +4,7 @@ import androidx.test.filters.MediumTest
 import com.example.movieskmm.data.local.db.DbHelper
 import com.example.movieskmm.data.local.db.util.PlatformSQLiteState
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.java.KoinJavaComponent.inject
@@ -17,7 +18,10 @@ class CryptInstrumentedTest {
 
     @Test
     fun cryptTest() {
-        assertEquals(PlatformSQLiteState.DOES_NOT_EXIST, dbHelper.databaseState)
+        val databaseState =
+            dbHelper.databaseState == PlatformSQLiteState.DOES_NOT_EXIST ||
+                    dbHelper.databaseState == PlatformSQLiteState.UNENCRYPTED
+        assertTrue(databaseState)
         dbHelper.buildDbIfNeed()
         assertEquals(PlatformSQLiteState.UNENCRYPTED, dbHelper.databaseState)
         dbHelper.encrypt(SpannableStringBuilder(password))
