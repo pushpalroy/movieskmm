@@ -24,7 +24,7 @@ import org.junit.runner.RunWith
 
 @MediumTest
 @RunWith(AndroidJUnit4::class)
-class SqlDelightCipherInstrumentedTest {
+class CipherInstrumentedTest {
 
     private val context = ApplicationProvider.getApplicationContext<Context>()
 
