@@ -60,7 +60,7 @@ kotlin {
                 api(libs.koin.android)
                 api(libs.commonsware.saferoom)
                 implementation(libs.ktor.okhttp)
-                implementation(libs.sqldelight.android.driver)
+                api(libs.sqldelight.android.driver)
             }
         }
 
