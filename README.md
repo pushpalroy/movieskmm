@@ -17,16 +17,17 @@ Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on 
 
 ### Tech stack
 
-| Purpose          | Tool used                                                                   | Purpose        | Tool used                                                                |
-|:-----------------|:----------------------------------------------------------------------------|:---------------|:-------------------------------------------------------------------------|
-| Framework        | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      | Database       | [SQLDelight](https://github.com/cashapp/sqldelight)                      |
-| Android UI       | [Jetpack Compose](https://developer.android.com/jetpack/compose)            | Encryption     | [SQLCipher](https://github.com/sqlcipher/sqlcipher)                      |
-| iOS UI           | [SwiftUI](https://developer.apple.com/documentation/swiftui)                | Serialization  | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization) |
-| Lifecycle        | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               | BuildConfig    | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                    |
-| Multi-threading  | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) | Logging        | [Napier](https://github.com/AAkira/Napier)                               |
-| DI               | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  | Lint Check     | [Detekt](https://github.com/detekt/detekt)                               |
-| Networking       | [Ktor](https://github.com/ktorio/ktor)                                      | Image Loading  | [Coroutine Image Loader](https://github.com/coil-kt/coil)                |
-| Testing (Common) | [Mockative](https://github.com/mockative/mockative)                         | Testing (HTTP) | [Ktor Mock](https://ktor.io/docs/http-client-testing.html)               |
+| Purpose                | Tool used                                                                   | Purpose                        | Tool used                                                                                                         |
+|:-----------------------|:----------------------------------------------------------------------------|:-------------------------------|:------------------------------------------------------------------------------------------------------------------|
+| Framework              | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      | Database                       | [SQLDelight](https://github.com/cashapp/sqldelight)                                                               |
+| Android UI             | [Jetpack Compose](https://developer.android.com/jetpack/compose)            | Encryption                     | [SQLCipher](https://github.com/sqlcipher/sqlcipher)                                                               |
+| iOS UI                 | [SwiftUI](https://developer.apple.com/documentation/swiftui)                | Serialization                  | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)                                          |
+| Lifecycle              | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               | BuildConfig                    | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                                                             |
+| Multi-threading        | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) | Logging                        | [Napier](https://github.com/AAkira/Napier)                                                                        |
+| DI                     | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  | Lint Check                     | [Detekt](https://github.com/detekt/detekt)                                                                        |
+| Networking             | [Ktor](https://github.com/ktorio/ktor)                                      | Image Loading                  | [Coroutine Image Loader](https://github.com/coil-kt/coil)                                                         |
+| Testing (Common)       | [Mockative](https://github.com/mockative/mockative)                         | Testing (HTTP)                 | [Ktor Mock](https://ktor.io/docs/http-client-testing.html)                                                        |
+| Testing (Android Unit) | [Mockito](https://site.mockito.org/)                                        | Testing (Android Instrumented) | [AndroidJUnit4](https://developer.android.com/training/testing/instrumented-tests/androidx-test-libraries/runner) |
 
 In this project, [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) is used, to work with flows in iOS.
 It is an open-source solution that supports cancellation and generics with flows, which the Kotlin/Native compiler doesn't yet provide by default.
@@ -48,7 +49,22 @@ https://github.com/sqlcipher/sqlcipher/issues/502. The build is otherwise workin
 | Database DAO           | Done ✅ |
 | Network Source         | Done ✅ |
 | Repository             | Done ✅ |
-| Database Fetch Usecase | Done ✅ |
+| Database Fetch UseCase | Done ✅ |
+
+### Testing (Android - Unit)
+
+| Section                             | Status |
+|:------------------------------------|:-------|
+| Check Encryption Passphrase UseCase | Done ✅ |
+| Enable Encryption UseCase           | Done ✅ |
+
+### Testing (Android - Instrumented)
+
+| Section                             | Status |
+|:------------------------------------|:-------|
+| SQLDelight Cipher Encryption        | Done ✅ |
+| Check Encryption Passphrase UseCase | Done ✅ |
+| Enable Encryption UseCase           | Done ✅ |
 
 ## Architecture
 
