@@ -11,7 +11,10 @@ Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on 
 ![Issues](https://img.shields.io/github/issues/pushpalroy/movieskmm?color=orange&style=for-the-badge)
   
 ![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/android.yml?style=for-the-badge&label=Android%20CI) 
-![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/ios.yml?style=for-the-badge&label=iOS%20CI) 
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/ios.yml?style=for-the-badge&label=iOS%20CI)
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/common_test.yml?style=for-the-badge&label=COMMON%20TEST%20CI)
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/android_test.yml?style=for-the-badge&label=ANDROID%20TEST%20CI)
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/ios_test.yml?style=for-the-badge&label=iOS%20TEST%20CI)
 
 ### Tech stack
 
