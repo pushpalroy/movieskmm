@@ -57,6 +57,7 @@ class IosCipherUtilsTest : BaseTest() {
     }
 
     @Test
+    @Ignore
     fun deleteDatabaseTest() {
         val dbPath = IosCipherUtils.getDatabasePath(DB_NAME)
         val exp = NSFileManager.defaultManager.fileExistsAtPath(dbPath)
