@@ -37,14 +37,14 @@ jobs:
           echo db_encryption_pass=\"$DB_ENCRYPTION_PASS\" >> ./local.properties
           cat ./local.properties
 
+      - name: Run Android Unit Tests
+        run: ./gradlew testDebugUnitTest -p androidApp/
+
       - name: Run Android Instrumented Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
           script: ./gradlew connectedCheck
-
-      - name: Run Android Unit Tests
-        run: ./gradlew testDebugUnitTest -p androidApp/
 
       - name: Upload Android Tests Report
         if: always()
