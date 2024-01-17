@@ -10,6 +10,10 @@ jobs:
   Android:
     runs-on: ubuntu-latest
     if: contains(github.event.head_commit.message, 'trigger build')
+    permissions:
+      checks: write
+      pull-requests: write
+
     steps:
 
       # Code checkout
@@ -49,3 +53,10 @@ jobs:
           path: |
             /Users/runner/work/movieskmm/movieskmm/androidApp/build/reports/androidTests/connected/debug/
             /Users/runner/work/movieskmm/movieskmm/androidApp/build/reports/tests/testDebugUnitTest/
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          check_name: Android Tests CI
+          files: test-results/**/*.xml

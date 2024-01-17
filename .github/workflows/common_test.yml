@@ -73,4 +73,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          path: /Users/runner/work/movieskmm/movieskmm/shared/build/reports/tests/iosSimulatorArm64Test/
+          path:
+            /Users/runner/work/movieskmm/movieskmm/shared/build/reports/tests/iosSimulatorArm64Test/
+            /Users/runner/work/movieskmm/movieskmm/shared/build/reports/tests/iosX64Test/

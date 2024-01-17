@@ -37,8 +37,8 @@ jobs:
 
       - run: xcodebuild build test -workspace iosApp/iosApp.xcworkspace -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 14' -verbose
 
-      - name: Upload logs
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          path: "/Users/runner/Library/Developer/Xcode/DerivedData/*"
+#      - name: Upload logs
+#        if: always()
+#        uses: actions/upload-artifact@v3
+#        with:
+#          path: "/Users/runner/Library/Developer/Xcode/DerivedData/*"
