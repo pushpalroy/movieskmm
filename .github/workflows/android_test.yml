@@ -47,5 +47,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: |
-            file:///home/runner/work/movieskmm/movieskmm/androidApp/build/reports/androidTests/connected/debug/
-            file:///home/runner/work/movieskmm/movieskmm/androidApp/build/reports/tests/testDebugUnitTest/
+            /Users/runner/work/movieskmm/movieskmm/androidApp/build/reports/androidTests/connected/debug/
+            /Users/runner/work/movieskmm/movieskmm/androidApp/build/reports/tests/testDebugUnitTest/
