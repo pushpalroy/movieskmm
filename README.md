@@ -42,6 +42,27 @@ SQLCipher is a standalone fork of the SQLite database library that adds 256 bit 
 There is currently a CI failure for IOS build due to SQLCipher which has been reported here: 
 https://github.com/sqlcipher/sqlcipher/issues/502. The build is otherwise working fine locally. 
 
+## CI/CD Flow (Github Actions)
+
+```mermaid
+flowchart LR
+    A[Push to 'main'] -->|Commit| Z{Trigger keyword found?}
+    Z --> |Yes|B[Trigger Workflows]
+    B --> D[Run Common Tests - KMP Android & KMP iOS]
+    B --> E[Run Android Tests - Unit & Instrumented]
+    B --> F[Run iOS Tests - Simulator]
+    B --> G[Generate Android Build]
+    B --> H[Generate iOS Build]
+    E --> I[Upload & Publish Test Reports]
+    D --> J[Upload Test Reports]
+    F --> K[End]
+    G --> K[End]
+    H --> K[End]
+    I --> K[End]
+    J --> K[End]
+```
+
+
 ### Testing (common)
 
 | Section                | Status |
