@@ -98,6 +98,7 @@ kotlin {
                 implementation(libs.coroutines.test)
                 implementation(libs.sqlDelight.jvm)
                 implementation(libs.androidx.arch.core.testing)
+                implementation(libs.mockk.mockk)
             }
         }
     }

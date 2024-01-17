@@ -27,7 +27,7 @@ Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on 
 | DI                     | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  | Lint Check                     | [Detekt](https://github.com/detekt/detekt)                                                                        |
 | Networking             | [Ktor](https://github.com/ktorio/ktor)                                      | Image Loading                  | [Coroutine Image Loader](https://github.com/coil-kt/coil)                                                         |
 | Testing (Common)       | [Mockative](https://github.com/mockative/mockative)                         | Testing (HTTP)                 | [Ktor Mock](https://ktor.io/docs/http-client-testing.html)                                                        |
-| Testing (Android Unit) | [Mockito](https://site.mockito.org/)                                        | Testing (Android Instrumented) | [AndroidJUnit4](https://developer.android.com/training/testing/instrumented-tests/androidx-test-libraries/runner) |
+| Testing (Android Unit) | [Mockk](https://mockk.io/)                                                  | Testing (Android Instrumented) | [AndroidJUnit4](https://developer.android.com/training/testing/instrumented-tests/androidx-test-libraries/runner) |
 
 In this project, [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) is used, to work with flows in iOS.
 It is an open-source solution that supports cancellation and generics with flows, which the Kotlin/Native compiler doesn't yet provide by default.

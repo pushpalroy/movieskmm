@@ -19,6 +19,7 @@ composeViewModel = "2.6.2"
 androidx-activityCompose = "1.8.2"
 androidx-navigation = "2.7.6"
 mockative = "2.0.1"
+mockk = "1.13.9"
 org-jetbrains-kotlin-jvm = "1.9.21"
 bouquet = "1.1.2"
 buildkonfig = "0.15.1"
@@ -92,6 +93,7 @@ sqlDelight-jvm = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidxArch" }
 junit = { module = "junit:junit", version.ref = "junit" }
+mockk-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockative = { module = "io.mockative:mockative", version.ref = "mockative" }
 mockative-processor = { module = "io.mockative:mockative-processor", version.ref = "mockative" }
 
