@@ -57,10 +57,10 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                api(libs.koin.android)
-                api(libs.commonsware.saferoom)
+                implementation(libs.koin.android)
+                implementation(libs.commonsware.saferoom)
                 implementation(libs.ktor.okhttp)
-                api(libs.sqldelight.android.driver)
+                implementation(libs.sqldelight.android.driver)
             }
         }
 
@@ -94,7 +94,6 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(kotlin("test-junit"))
-                implementation(libs.junit)
                 implementation(libs.coroutines.test)
                 implementation(libs.sqlDelight.jvm)
                 implementation(libs.androidx.arch.core.testing)
