@@ -58,9 +58,9 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(libs.koin.android)
-                implementation(libs.commonsware.saferoom)
                 implementation(libs.ktor.okhttp)
-                implementation(libs.sqldelight.android.driver)
+                api(libs.commonsware.saferoom)
+                api(libs.sqldelight.android.driver)
             }
         }
 
