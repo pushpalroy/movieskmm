@@ -9,21 +9,25 @@ Jetpack Compose and SwiftUI-based Kotlin Multiplatform sample project (based on 
 ![Watchers](https://img.shields.io/github/watchers/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge)
 ![Pull Request](https://img.shields.io/github/issues-pr/pushpalroy/movieskmm?color=yellowgreen&style=for-the-badge)
 ![Issues](https://img.shields.io/github/issues/pushpalroy/movieskmm?color=orange&style=for-the-badge)
-  
 ![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/android.yml?style=for-the-badge&label=Android%20CI) 
-![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/ios.yml?style=for-the-badge&label=iOS%20CI) 
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/ios.yml?style=for-the-badge&label=iOS%20CI)
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/common_test.yml?style=for-the-badge&label=COMMON%20TEST%20CI)
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/android_test.yml?style=for-the-badge&label=ANDROID%20TEST%20CI)
+![CI-MAIN](https://img.shields.io/github/actions/workflow/status/pushpalroy/movieskmm/ios_test.yml?style=for-the-badge&label=iOS%20TEST%20CI)
 
 ### Tech stack
 
-| Purpose         | Tool used                                                                   | Purpose       | Tool used                                                                |
-|:----------------|:----------------------------------------------------------------------------|:--------------|:-------------------------------------------------------------------------|
-| Framework       | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      | Database      | [SQLDelight](https://github.com/cashapp/sqldelight)                      |
-| Android UI      | [Jetpack Compose](https://developer.android.com/jetpack/compose)            | Encryption    | [SQLCipher](https://github.com/sqlcipher/sqlcipher)                      |
-| iOS UI          | [SwiftUI](https://developer.apple.com/documentation/swiftui)                | Serialization | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization) |
-| Lifecycle       | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               | BuildConfig   | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                    |
-| Multi-threading | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) | Logging       | [Napier](https://github.com/AAkira/Napier)                               |
-| DI              | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  | Lint Check    | [Detekt](https://github.com/detekt/detekt)                               |
-| Networking      | [KTor](https://github.com/ktorio/ktor)                                      | Image Loading | [Coroutine Image Loader](https://github.com/coil-kt/coil)                |
+| Purpose                | Tool used                                                                   | Purpose                        | Tool used                                                                                                         |
+|:-----------------------|:----------------------------------------------------------------------------|:-------------------------------|:------------------------------------------------------------------------------------------------------------------|
+| Framework              | [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)      | Database                       | [SQLDelight](https://github.com/cashapp/sqldelight)                                                               |
+| Android UI             | [Jetpack Compose](https://developer.android.com/jetpack/compose)            | Encryption                     | [SQLCipher](https://github.com/sqlcipher/sqlcipher)                                                               |
+| iOS UI                 | [SwiftUI](https://developer.apple.com/documentation/swiftui)                | Serialization                  | [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)                                          |
+| Lifecycle              | [KMM-ViewModel](https://github.com/rickclephas/KMM-ViewModel)               | BuildConfig                    | [BuildKonfig](https://github.com/yshrsmz/BuildKonfig)                                                             |
+| Multi-threading        | [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) | Logging                        | [Napier](https://github.com/AAkira/Napier)                                                                        |
+| DI                     | [Koin](https://insert-koin.io/docs/reference/koin-mp/kmp/)                  | Lint Check                     | [Detekt](https://github.com/detekt/detekt)                                                                        |
+| Networking             | [Ktor](https://github.com/ktorio/ktor)                                      | Image Loading                  | [Coroutine Image Loader](https://github.com/coil-kt/coil)                                                         |
+| Testing (Common)       | [Mockative](https://github.com/mockative/mockative)                         | Testing (HTTP)                 | [Ktor Mock](https://ktor.io/docs/http-client-testing.html)                                                        |
+| Testing (Android Unit) | [Mockk](https://mockk.io/)                                                  | Testing (Android Instrumented) | [AndroidJUnit4](https://developer.android.com/training/testing/instrumented-tests/androidx-test-libraries/runner) |
 
 In this project, [KMP-NativeCoroutines](https://github.com/rickclephas/KMP-NativeCoroutines) is used, to work with flows in iOS.
 It is an open-source solution that supports cancellation and generics with flows, which the Kotlin/Native compiler doesn't yet provide by default.
@@ -37,6 +41,51 @@ SQLCipher is a standalone fork of the SQLite database library that adds 256 bit 
 
 There is currently a CI failure for IOS build due to SQLCipher which has been reported here: 
 https://github.com/sqlcipher/sqlcipher/issues/502. The build is otherwise working fine locally. 
+
+## CI/CD Flow (Github Actions)
+
+```mermaid
+flowchart LR
+    A[Push to 'main'] -->|Commit| Z{Trigger keyword found?}
+    Z --> |Yes|B[Trigger Workflows]
+    B --> D[Run Common Tests - KMP Android & KMP iOS]
+    B --> E[Run Android Tests - Unit & Instrumented]
+    B --> F[Run iOS Tests - Simulator]
+    B --> G[Generate Android Build]
+    B --> H[Generate iOS Build]
+    E --> I[Upload & Publish Test Reports]
+    D --> J[Upload Test Reports]
+    F --> K[End]
+    G --> K[End]
+    H --> K[End]
+    I --> K[End]
+    J --> K[End]
+```
+
+
+### Testing (common)
+
+| Section                | Status |
+|:-----------------------|:-------|
+| Database DAO           | Done ✅ |
+| Network Source         | Done ✅ |
+| Repository             | Done ✅ |
+| Database Fetch UseCase | Done ✅ |
+
+### Testing (Android - Unit)
+
+| Section                             | Status |
+|:------------------------------------|:-------|
+| Check Encryption Passphrase UseCase | Done ✅ |
+| Enable Encryption UseCase           | Done ✅ |
+
+### Testing (Android - Instrumented)
+
+| Section                             | Status |
+|:------------------------------------|:-------|
+| SQLDelight Cipher Encryption        | Done ✅ |
+| Check Encryption Passphrase UseCase | Done ✅ |
+| Enable Encryption UseCase           | Done ✅ |
 
 ## Architecture
 

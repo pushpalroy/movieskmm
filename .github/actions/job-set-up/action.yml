@@ -1,0 +1,18 @@
+name: Java and Gradle set up
+description: Sets up the Java and Gradle
+runs:
+  using: "composite"
+  steps:
+
+    # Setup java
+    - name: Setup JDK 17
+      id: setup_jdk
+      uses: actions/setup-java@v4
+      with:
+        distribution: "zulu"
+        java-version: 17
+
+    # Setup gradle
+    - name: Setup Gradle
+      id: setup_gradle
+      uses: gradle/gradle-build-action@v2

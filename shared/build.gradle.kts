@@ -57,10 +57,10 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                api(libs.koin.android)
-                api(libs.commonsware.saferoom)
+                implementation(libs.koin.android)
                 implementation(libs.ktor.okhttp)
-                implementation(libs.sqldelight.android.driver)
+                api(libs.commonsware.saferoom)
+                api(libs.sqldelight.android.driver)
             }
         }
 
@@ -80,9 +80,29 @@ kotlin {
 
         commonTest.dependencies {
             implementation(kotlin("test"))
+            implementation(kotlin("test-common"))
+            implementation(kotlin("test-annotations-common"))
             implementation(libs.ktor.test)
             implementation(libs.ktor.mock)
+            implementation(libs.coroutines.test)
+            implementation(libs.koin.test)
+            implementation(libs.mockative)
         }
+
+        val androidUnitTest by getting {
+            dependsOn(commonTest.get())
+            dependencies {
+                implementation(kotlin("test"))
+                implementation(kotlin("test-junit"))
+                implementation(libs.coroutines.test)
+                implementation(libs.sqlDelight.jvm)
+                implementation(libs.androidx.arch.core.testing)
+                implementation(libs.mockk.mockk)
+            }
+        }
+    }
+    compilerOptions {
+        freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 }
 
@@ -95,6 +115,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlin {
+        jvmToolchain(17)
     }
 }
 
@@ -144,8 +167,10 @@ sqldelight {
 // FIXME https://github.com/cashapp/sqldelight/issues/4523
 fun KotlinSourceSetContainer.iosIntermediateSourceSets(vararg iosTargets: KotlinNativeTarget) {
     val children: List<Pair<KotlinSourceSet, KotlinSourceSet>> = iosTargets.map { target ->
-        val main = target.compilations.getByName(KotlinCompilation.MAIN_COMPILATION_NAME).defaultSourceSet
-        val test = target.compilations.getByName(KotlinCompilation.TEST_COMPILATION_NAME).defaultSourceSet
+        val main =
+            target.compilations.getByName(KotlinCompilation.MAIN_COMPILATION_NAME).defaultSourceSet
+        val test =
+            target.compilations.getByName(KotlinCompilation.TEST_COMPILATION_NAME).defaultSourceSet
         return@map main to test
     }
     val parent: Pair<KotlinSourceSet, KotlinSourceSet> = Pair(
@@ -163,4 +188,13 @@ fun KotlinSourceSetContainer.createIntermediateSourceSet(
 ): KotlinSourceSet = sourceSets.maybeCreate(name).apply {
     dependsOn(parent)
     children.forEach { it.dependsOn(this) }
+}
+
+// For Mockative
+dependencies {
+    configurations
+        .filter { it.name.startsWith("ksp") && it.name.contains("Test") }
+        .forEach {
+            add(it.name, libs.mockative.processor)
+        }
 }

@@ -1,0 +1,62 @@
+name: Android Tests CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  Android:
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, 'trigger build')
+    permissions:
+      checks: write
+      pull-requests: write
+
+    steps:
+
+      # Code checkout
+      - name: Checkout code
+        id: checkout_code
+        uses: actions/checkout@v4
+
+      - name: Job set up
+        uses: ./.github/actions/job-set-up
+
+      # Copy secrets
+      - name: Copy secrets
+        id: copy_secrets
+        shell: bash
+        env:
+          API_READ_ACCESS_TOKEN: ${{ secrets.API_READ_ACCESS_TOKEN }}
+          DB_ENCRYPTION_PASS: ${{ secrets.DB_ENCRYPTION_PASS }}
+        run: |
+          touch ./local.properties
+          echo api_read_access_token=\"$API_READ_ACCESS_TOKEN\" >> ./local.properties
+          echo db_encryption_pass=\"$DB_ENCRYPTION_PASS\" >> ./local.properties
+          cat ./local.properties
+
+      - name: Run Android Unit Tests
+        run: ./gradlew testDebugUnitTest -p androidApp/
+
+      - name: Run Android Instrumented Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
+
+      - name: Upload Android Tests Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            /Users/runner/work/movieskmm/movieskmm/androidApp/build/reports/androidTests/connected/debug/
+            /Users/runner/work/movieskmm/movieskmm/androidApp/build/reports/tests/testDebugUnitTest/
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          check_name: Android Tests CI
+          files: test-results/**/*.xml
