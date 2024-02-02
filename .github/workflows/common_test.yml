@@ -8,8 +8,7 @@ on:
 
 jobs:
   KMP-Android:
-    runs-on: macos-latest
-    if: contains(github.event.head_commit.message, 'trigger build')
+    runs-on: macos-14
     steps:
       # Code checkout
       - name: Checkout code
@@ -42,8 +41,7 @@ jobs:
           path: /Users/runner/work/movieskmm/movieskmm/shared/build/reports/tests/testDebugUnitTest/
 
   KMP-iOS:
-    runs-on: macos-latest
-    if: contains(github.event.head_commit.message, 'trigger build')
+    runs-on: macos-14
     steps:
       # Code checkout
       - name: Checkout code
