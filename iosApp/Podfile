@@ -3,5 +3,5 @@ target 'iosApp' do
   platform :ios, '14.1'
   pod 'shared', :path => '../shared'
   pod 'KMMViewModelSwiftUI', '1.0.0-ALPHA-16'
-  pod 'KMPNativeCoroutinesAsync', '1.0.0-ALPHA-22'
+  pod 'KMPNativeCoroutinesAsync', '1.0.0-ALPHA-27'
 end
